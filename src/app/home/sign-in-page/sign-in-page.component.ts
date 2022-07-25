@@ -1,5 +1,6 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl,  FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in-page',
@@ -12,6 +13,8 @@ export class SignInPageComponent {
     email: new FormControl('', [Validators.required , Validators.email]  ),
     password: new FormControl('', [Validators.minLength(8) , Validators.required ]) 
   })
+
+
    
   get email(){
     return this.form.get("email");
@@ -19,8 +22,8 @@ export class SignInPageComponent {
   
   get password(){
     return this.form.get("password");
-  }
   
-  }
+  }}
 
+ 
 

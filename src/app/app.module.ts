@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { HomeModule } from './home/home.module';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { CoreModule } from './core/core.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { CoreModule } from './core/core.module';
     BrowserAnimationsModule,
     ButtonModule,
     HomeModule,CoreModule
+    , ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
