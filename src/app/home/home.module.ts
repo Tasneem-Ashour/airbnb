@@ -5,9 +5,14 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {ButtonModule} from 'primeng/button';
+
+
 @NgModule({
   declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent],
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule],
   exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent],
 })
 export class HomeModule {}

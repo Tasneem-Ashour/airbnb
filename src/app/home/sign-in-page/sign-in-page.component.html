@@ -1,44 +1,54 @@
-<p>sign-in-page works!</p>
-
-
-
 <div class="container">
+  <p class="text-uppercase text-center mb-5">sign in</p>
 
-  
-  
-    <form class="gap-3" [formGroup]="form">
-
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" 
-        formControlName="email">
+  <form class="gap-3" [formGroup]="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        formControlName="email"
+      />
     </div>
-  
-    <div class="alert alert-danger" role="alert" *ngIf="email?.touched">
-  email is required  </div>
-    
+
+    <p-message
+      severity="error"
+      text="email is required."
+      *ngIf="email?.touched && email?.invalid"
+    ></p-message>
+
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password"
-       >
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        formControlName="password"
+      />
     </div>
-  
-    <!-- <div class="alert alert-danger" role="alert" *ngIf="password?.minLength(8) ">
-      email is required  </div> -->
-  
-      <!-- <div *ngIf="password?.errors?.['minlength']">
-        Name must be at least 8 characters long.
-      </div> -->
-  
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <button type="submit" class="form-control btn btn-primary submit px-3" href="#!">Login</button>
+
+    <p-message 
+    class="pb-2"
+      severity="error"
+      text="password is required "
+      *ngIf="password?.touched && password?.invalid"
+    >
+    </p-message>
+
+    <!-- <button
+      type="submit"
+      class="form-control btn btn-primary submit px-3"
+      href="#!"
+    >
+      Login
+    </button> -->
+
+    <button pButton pRipple type="button" label="sign in" class="p-button-outlined p-button-rounded p-button-info 
+    form-control form-group py-3 "></button>
+
   </form>
-  </div>
+</div>
