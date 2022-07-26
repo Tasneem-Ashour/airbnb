@@ -1,6 +1,5 @@
-<app-header></app-header>
+<app-header (clickEvent)="reciveBool($event)" *ngIf="hah"></app-header>
+<app-sign-in-header (back)="mainNav($event)" *ngIf="old"></app-sign-in-header>
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
-
-
