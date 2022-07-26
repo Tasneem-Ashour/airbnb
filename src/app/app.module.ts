@@ -10,6 +10,8 @@ import { HomePageComponent } from './home/home-page/home-page.component';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -18,7 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ButtonModule,
     HomeModule,CoreModule
-    , ReactiveFormsModule
+    , ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
