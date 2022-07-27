@@ -15,4 +15,9 @@ export class UserEditProfileComponent implements OnInit {
    this.openPasswordPage=true;
   }
 
+  account(){
+    this.openPasswordPage=false;
+
+  }
+
 }
