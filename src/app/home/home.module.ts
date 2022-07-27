@@ -8,11 +8,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {ButtonModule} from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent],
-  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule],
+  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule],
   exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent],
 })
 export class HomeModule {}

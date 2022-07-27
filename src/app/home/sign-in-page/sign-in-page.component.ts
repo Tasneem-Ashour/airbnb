@@ -1,6 +1,7 @@
 import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl,  FormGroup, Validators } from '@angular/forms';
+import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
   selector: 'app-sign-in-page',
@@ -8,6 +9,8 @@ import { FormControl,  FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sign-in-page.component.css']
 })
 export class SignInPageComponent {
+  isUserLogged:boolean=false;
+  constructor(private authService :UserAuthService ){}
 
   form=new FormGroup({
     email: new FormControl('', [Validators.required , Validators.email]  ),
@@ -23,7 +26,28 @@ export class SignInPageComponent {
   get password(){
     return this.form.get("password");
   
-  }}
+  }
+
+  ngOnInit(){
+    this.isUserLogged=this.authService.isUserLogged;
+  }
+
+
+  Login(){
+    //check if it null 
+this.authService.login(this.form.controls.email.value!,this.form.controls.password.value!).subscribe({next:(tokenDTO)=>{
+  localStorage.setItem("token", tokenDTO); //.token 
+
+
+  //router.nav //nav.url // redirect 
+
+}});
+this.isUserLogged=this.authService.isUserLogged;
+
+}
+
+
+}
 
  
 
