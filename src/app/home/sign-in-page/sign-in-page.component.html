@@ -108,7 +108,9 @@
                     <!-- <button type="button" class="btn btn-primary btn-lg">Login</button> -->
                     <button pButton pRipple type="button" label="sign in" class="p-button-outlined p-button-rounded p-button-info 
                     form-control form-group " 
-                    (click)="Login()"></button>
+                    (click)="Login()"
+                     [disabled]="form.invalid"
+                                type="submit"></button>
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

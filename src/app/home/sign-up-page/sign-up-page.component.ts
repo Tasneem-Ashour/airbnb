@@ -40,6 +40,9 @@ export class SignUpPageComponent  {
     return this.upForm.get("UserType");
   }
 
-
+  Register(){
+    console.log(this.upForm.value);
+    this.upForm.reset();
+  }
 
 }
