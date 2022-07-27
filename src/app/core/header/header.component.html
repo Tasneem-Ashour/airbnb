@@ -7,7 +7,9 @@
         <a routerLink="/signup" (click)="ShowNewNav()" class="btn btn-outline-primary" type="submit"
           >Sign Up</a
         >
-        <button routerLink="/signin" (click)="ShowNewNav()" class="btn btn-outline-success" type="submit">Sign In</button>
+        <button routerLink="/signin" [hidden]="isUserLogged" (click)="ShowNewNav()" class="btn btn-outline-success" type="submit">Sign In</button>
+        <button routerLink="/logout" [hidden]="!isUserLogged" (click)="ShowNewNav()" class="btn btn-outline-success" type="submit">logout</button>
+        <button routerLink="/profile"  class="btn btn-outline-success" type="submit">Profile</button>
 
       </div>
   </div>
