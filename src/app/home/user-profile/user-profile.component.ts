@@ -12,7 +12,7 @@ import { Iprofile } from 'src/app/_models/iprofile';
 })
 export class UserProfileComponent implements OnInit {
   profile:Iprofile|null=null;
-  constructor(public getemailserv:ProfileService,public ar:ActivatedRoute) { }
+  constructor(public userData:ProfileService,public ar:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -22,10 +22,11 @@ export class UserProfileComponent implements OnInit {
 
   //   }
     getdataa() {
-      this.getemailserv.getByEmail('ayahkenawy44@gmail.com').subscribe((a) => {
-        this.profile = a;
+      this.userData.getUserData().subscribe((a)=>{this.profile=a});
+      // .subscribe((a) => {
+      //   this.profile = a;
 
-      });
+      // });
     }
 
 }

@@ -13,10 +13,11 @@ import {ButtonModule} from 'primeng/button';
 import { RouterModule ,Route } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.component';
+import { HostPageComponent } from './host-page/host-page.component';
 
 
 @NgModule({
-  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent],
+  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent],
   imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule ],
   exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent,UserProfileComponent,UserEditProfileComponent],
 })

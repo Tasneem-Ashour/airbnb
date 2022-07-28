@@ -10,9 +10,10 @@ import { Iprofile } from '../_models/iprofile';
 export class ProfileService {
 
   constructor(public http:HttpClient) { }
-  getByEmail(email:string):Observable<Iprofile>{
-    return this.http.get<Iprofile>(`${environment.APIURL}/arusers/getbyemail/${email}`)
+  getUserData():Observable<Iprofile>{
+    return this.http.get<Iprofile>(`${environment.APIURL}/arusers/getuser`);
   }
+
   // export class UserprofileService {
 
   //   constructor(public http:HttpClient,private getemailserv:UserprofileService) { }
