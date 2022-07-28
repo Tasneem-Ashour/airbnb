@@ -38,6 +38,6 @@ export class UserRegisterService {
   ) {
     return this.client.post(`${environment.APIURL}/arusers/register`,
     {email:email,password:password,firstName:firstName,lastName:lastName,UserType:UserType},this.httpOption)
-    .pipe(retry(2),catchError(this.handleError));
+    .pipe(catchError(this.handleError));
   }
 }

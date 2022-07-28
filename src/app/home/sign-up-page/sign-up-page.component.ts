@@ -18,7 +18,7 @@ export class SignUpPageComponent  {
   email:new FormControl('',[Validators.required,Validators.email]),
   password: new FormControl('', [Validators.required]),
   confirmPassword: new FormControl('', [Validators.required]),
-  UserType: new FormControl<boolean|null>(null, [Validators.required]),
+  UserType: new FormControl<string|null>(null, [Validators.required]),
 
   },[PassValidService.MatchValidator('password', 'confirmPassword')])
 
@@ -52,12 +52,12 @@ export class SignUpPageComponent  {
     const fn=this.upForm.value.firstName;
     const ln=this.upForm.value.lastName;
     const pass=this.upForm.value.password;
-    const type=this.upForm.value.UserType;
+    const type=this.upForm.value.UserType =="true";
     //! for later
     this.registerServieces.Register(email!,pass!,fn!,ln!,type!).subscribe(
       resData=>{console.log(resData)},error=>{console.log(error)}
     );
-    this.upForm.reset();
+    // this.upForm.reset();
   }
 
 }
