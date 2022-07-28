@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { PassValidService } from 'src/app/services/pass-valid.service';
+import { UserRegisterService } from 'src/app/services/user-register.service';
 import { IUser } from 'src/app/_models/iuser';
 
 @Component({
@@ -10,16 +11,17 @@ import { IUser } from 'src/app/_models/iuser';
   styleUrls: ['./sign-up-page.component.css']
 })
 export class SignUpPageComponent  {
-
+  constructor(public registerServieces:UserRegisterService){}
   upForm=new FormGroup({
   firstName:new FormControl('',[Validators.required,Validators.maxLength(10)]),
   lastName:new FormControl('',[Validators.required,Validators.minLength(4)]),
   email:new FormControl('',[Validators.required,Validators.email]),
   password: new FormControl('', [Validators.required]),
   confirmPassword: new FormControl('', [Validators.required]),
-  UserType: new FormControl('', [Validators.required]),
+  UserType: new FormControl<boolean|null>(null, [Validators.required]),
 
   },[PassValidService.MatchValidator('password', 'confirmPassword')])
+
 
   get firstName(){
     return this.upForm.get("firstName");
@@ -41,7 +43,20 @@ export class SignUpPageComponent  {
   }
 
   Register(){
-    console.log(this.upForm.value);
+    // console.log(this.upForm.value);
+    // this.upForm.reset();
+    if(!this.upForm.valid){
+      return
+    }
+    const email=this.upForm.value.email;
+    const fn=this.upForm.value.firstName;
+    const ln=this.upForm.value.lastName;
+    const pass=this.upForm.value.password;
+    const type=this.upForm.value.UserType;
+    //! for later
+    this.registerServieces.Register(email!,pass!,fn!,ln!,type!).subscribe(
+      resData=>{console.log(resData)},error=>{console.log(error)}
+    );
     this.upForm.reset();
   }
 
