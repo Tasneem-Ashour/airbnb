@@ -13,10 +13,19 @@ export class HeaderComponent implements OnInit {
   constructor(private authservice:UserAuthService) {}
 
   ngOnInit(): void {
-    
+    this.authservice.isAuth$.subscribe({next:(isAuth)=>{
+      this.isUserLogged=isAuth;
+    }});
   }
   ShowNewNav() {
     this.mainNav = false;
     this.clickEvent.emit(this.mainNav);
   }
+
+  logout(){
+    this.authservice.logout();
+    this.ShowNewNav();
+  }
+
+
 }

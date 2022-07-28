@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ILogin } from '../_models/ILogin';
 
@@ -10,6 +10,8 @@ import { ILogin } from '../_models/ILogin';
 export class UserAuthService {
 
   constructor(private client:HttpClient) { }
+
+  isAuth$=new BehaviorSubject<boolean>(false) ;
 
   login(email:string , password:string) : Observable<any>{
     // let userTocken="";
@@ -22,9 +24,16 @@ export class UserAuthService {
      );
   }
 
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
   logout(){
 localStorage.removeItem("token");
+this.isAuth$.next(false);
   }
+
+  
 
   get isUserLogged() : boolean{
     return(localStorage.getItem("token"))?true:false;

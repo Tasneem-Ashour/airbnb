@@ -1,6 +1,7 @@
 import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl,  FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
@@ -10,7 +11,9 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class SignInPageComponent {
   isUserLogged:boolean=false;
-  constructor(private authService :UserAuthService ){}
+  constructor(private authService :UserAuthService , 
+    private router:Router
+    ){}
 
   form=new FormGroup({
     email: new FormControl('', [Validators.required , Validators.email]  ),
@@ -33,7 +36,7 @@ export class SignInPageComponent {
   }
 
 
-
+responseData:any;
 
   Login(){
 
@@ -47,6 +50,10 @@ export class SignInPageComponent {
     this.authService.login(email!,password!).subscribe(
       resData =>{
         console.log(resData);
+        this.responseData=resData;
+        localStorage.setItem('token',this.responseData.token);
+        this.authService.isAuth$.next(true);
+         this.router.navigate(['']);
       },
       error=>{console.log(error);}
     );
