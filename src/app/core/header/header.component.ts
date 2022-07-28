@@ -42,10 +42,10 @@ export class HeaderComponent implements OnInit {
   //   });
 
   // }
-  getdata() {
-    this.getemailserv.getByEmail('ayahkenawy44@gmail.com').subscribe((a) => {
-      this.profile = a;
+  // getdata() {
+  //   this.getemailserv.getByEmail('ayahkenawy44@gmail.com').subscribe((a) => {
+  //     this.profile = a;
 
-    });
-  }
+  //   });
+  // }
 }

@@ -24,7 +24,7 @@ export class UserProfileComponent implements OnInit {
     getdataa() {
       this.getemailserv.getByEmail('ayahkenawy44@gmail.com').subscribe((a) => {
         this.profile = a;
-        
+
       });
     }
 
