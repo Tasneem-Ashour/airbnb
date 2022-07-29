@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HostService } from 'src/app/services/host.service';
+import { Cities } from 'src/app/_models/cities';
 import { Countries } from 'src/app/_models/countries';
-import { ICountries } from 'src/app/_models/ICountries';
 
-interface City {
-  name: string,
-  code: string
-}
+
 
 @Component({
   selector: 'app-host-page',
@@ -17,11 +14,14 @@ interface City {
 
 export class HostPageComponent  {
 
-constructor(public allCountries:HostService){}
+constructor(public allCountries:HostService ,public allCities:HostService){}
 Countries: Countries[]=[];  
+Cities:Cities[]=[];
+
 
 
 selectedCountry='';
+selectedCity='';
 
   ngOnInit(): void {
   }
@@ -39,6 +39,12 @@ selectedCountry='';
       (country)=>{
         this.Countries=country
       }
+    );
+  }
+
+  getAllCities(){
+    this.allCities.getCities().subscribe(
+      (city)=>{this.Cities=city}
     );
   }
   

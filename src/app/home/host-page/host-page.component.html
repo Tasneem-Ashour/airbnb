@@ -56,15 +56,22 @@
                         <h4 class="font-italic mb-4">What kind of place you will be host?</h4>
                         <!-- <p class="font-italic text-muted mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit unde nemo dicta nisi enim necessitatibus commodi optio ipsa modi deserunt quasi assumenda, rerum molestiae a quae ex atque sunt itaque! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
                         <button (click)="getAllCountries()" >getAllCountries</button>
+                        <button (click)="getAllCities()" >getAllCities</button>
+
                         <!-- <P>{{Countries?.name}}</P> -->
 
                         <!-- <select  class="selectpicker dropdown mt-4 ml-3" id="type" data-live-search="true">
                             <option *ngFor="let test of Countries" [value]="test.id">{{test.name}}</option>
                          </select> -->
-                         <div (click)="getAllCountries()" class="country-item country-item-value">
+                         <div  class="country-item country-item-value">
 
                              <p-dropdown [options]="Countries" formControlName="selectedCountry" optionLabel="name"  filterBy="name" [showClear]="true" placeholder="Select a Country" ></p-dropdown>
                          </div>
+
+                         <div  class="country-item country-item-value">
+
+                            <p-dropdown [options]="Cities" formControlName="selectedCity" optionLabel="name"  filterBy="name" [showClear]="true" placeholder="Select a City" ></p-dropdown>
+                        </div>
 <!-- <p-dropdown [options]="Countries" [(ngModel)]="selectedCountry" optionLabel="name" optionDisabled="inactive"></p-dropdown> -->
 
 
