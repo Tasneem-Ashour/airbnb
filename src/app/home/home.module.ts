@@ -16,11 +16,13 @@ import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.
 import { HostPageComponent } from './host-page/host-page.component';
 import {ListboxModule} from 'primeng/listbox';
 import { HostEditPageComponent } from './host-edit-page/host-edit-page.component';
+import {DropdownModule} from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent, HostEditPageComponent],
-  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule,ListboxModule ],
+  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule,ListboxModule ,DropdownModule,BrowserAnimationsModule],
   exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent,UserProfileComponent,UserEditProfileComponent],
 })
 export class HomeModule {}
