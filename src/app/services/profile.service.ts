@@ -14,6 +14,11 @@ export class ProfileService {
     return this.http.get<Iprofile>(`${environment.APIURL}/arusers/getuser`);
   }
 
+  // update profile info
+  updateUserProfile(iprofile:Iprofile){
+    return this.http.put(`${environment.APIURL}/ArUsers/Update`,iprofile);
+  }
+
   // export class UserprofileService {
 
   //   constructor(public http:HttpClient,private getemailserv:UserprofileService) { }

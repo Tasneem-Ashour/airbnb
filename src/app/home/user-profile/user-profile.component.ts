@@ -14,7 +14,7 @@ export class UserProfileComponent implements OnInit {
   profile:Iprofile|null=null;
   constructor(public userData:ProfileService,public ar:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {this.getdataa()
   }
 
   // getdata(){
@@ -27,6 +27,10 @@ export class UserProfileComponent implements OnInit {
       //   this.profile = a;
 
       // });
+    }
+    onUpdateClicked(){
+      let currentProfile=this.profile;
+      console.log(currentProfile);
     }
 
 }

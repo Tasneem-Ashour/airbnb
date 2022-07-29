@@ -116,54 +116,37 @@
                             <h5 class="card-title mb-0">Puplic info</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form [formGroup]="upProfile" (ngSubmit)="update()">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputFirstName">First name</label>
-                                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
+                                        <label for="inputFirstName">First Name</label>
+                                        <input  disabled type="text" class="form-control" id="inputFirstName" placeholder="First name" [value]="updateProfile.firstName" [(ngModel)]="updateProfile.firstName">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputLastName">Last name</label>
-                                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+                                        <label for="inputLastName">Last Name</label>
+                                        <input disabled type="text" class="form-control" id="inputLastName" placeholder="Last name"[value]="updateProfile.lastName" [(ngModel)]="updateProfile.lastName">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    <input disabled type="email" class="form-control" id="inputEmail4" placeholder="Email"[value]="updateProfile.email" [(ngModel)]="updateProfile.email">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputAddress">Date Of Birth</label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="28/3/1997">
+                                    <input formControlName="dateOfBirth" type="date" class="form-control" id="inputAddress" placeholder="28/3/1997" [(ngModel)]="updateProfile.dateOfBirth" >
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddress2">FacebookID</label>
-                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Mohamedayman1997">
+                                    <input formControlName="facebookId" type="text" class="form-control" id="inputAddress2" placeholder="Mohamedayman1997" [(ngModel)]="updateProfile.facebookId">
                                 </div>
                                 <div class="form-group">
                                   <label for="inputAddress2">TwitterID</label>
-                                  <input type="text" class="form-control" id="inputAddress2" placeholder="@ Mohamedayman1997">
+                                  <input formControlName="twitterId" type="text" class="form-control" id="inputAddress2" placeholder="@ Mohamedayman1997" [(ngModel)]="updateProfile.twitterId">
                               </div>
                               <div class="form-group">
                                 <label for="inputUsername">Biography</label>
-                                <textarea rows="1" class="form-control" id="inputBio" placeholder="Tell something about yourself"></textarea>
+                                <textarea formControlName="about" rows="1" class="form-control" id="inputBio" placeholder="Tell something about yourself" [(ngModel)]="updateProfile.about"></textarea >
                             </div>
-                                <!-- <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputCity">City</label>
-                                        <input type="text" class="form-control" id="inputCity">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">State</label>
-                                        <select id="inputState" class="form-control">
-                                            <option selected="">Choose...</option>
-                                            <option>...</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Zip</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                </div> -->
                                 <button type="submit" class="btn btn-primary m-2">Save changes</button>
                             </form>
 
