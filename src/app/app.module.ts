@@ -14,13 +14,14 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 
 
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+
     BrowserAnimationsModule,
     ButtonModule,
     HomeModule,CoreModule
