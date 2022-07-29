@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HostService } from 'src/app/services/host.service';
 import { Cities } from 'src/app/_models/cities';
 import { Countries } from 'src/app/_models/countries';
+import { HostProperties } from 'src/app/_models/host-properties';
+import { RoomType } from 'src/app/_models/room-type';
 
 
 
@@ -14,9 +16,14 @@ import { Countries } from 'src/app/_models/countries';
 
 export class HostPageComponent  {
 
-constructor(public allCountries:HostService ,public allCities:HostService){}
+constructor(public allCountries:HostService ,
+  public allCities:HostService ,
+  public roomType:HostService,
+  public hostProperty:HostService){}
 Countries: Countries[]=[];  
 Cities:Cities[]=[];
+Room:RoomType[]=[];
+hostProp:HostProperties[]=[];
 
 
 
@@ -34,6 +41,16 @@ selectedCity='';
 
   saveData(){}
 
+
+  getAllPropirty(){
+    this.hostProperty.getAllProperties().subscribe(
+      (req)=>{
+        this.hostProp=req
+      }
+    );
+
+  }
+
   getAllCountries(){
     this.allCountries.getContries().subscribe(
       (country)=>{
@@ -46,6 +63,12 @@ selectedCity='';
     this.allCities.getCities().subscribe(
       (city)=>{this.Cities=city}
     );
+  }
+
+  getRoomType(){
+this.roomType.getRoomType().subscribe(
+  (req)=>{this.Room=req}
+);
   }
   
 
