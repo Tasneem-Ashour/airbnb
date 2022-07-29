@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home/home-page/home-page.component';
+import { HostEditPageComponent } from './home/host-edit-page/host-edit-page.component';
 import { HostPageComponent } from './home/host-page/host-page.component';
 import { SignInPageComponent } from './home/sign-in-page/sign-in-page.component';
 import { SignUpPageComponent } from './home/sign-up-page/sign-up-page.component';
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: "profile", component: UserProfileComponent },
   { path: "edit", component: UserEditProfileComponent },
   { path: "host", component: HostPageComponent },
+  { path: "hostEdit", component: HostEditPageComponent },
+
 
 
 ];

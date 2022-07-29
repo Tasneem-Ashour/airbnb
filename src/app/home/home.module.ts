@@ -14,11 +14,13 @@ import { RouterModule ,Route } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.component';
 import { HostPageComponent } from './host-page/host-page.component';
+import {ListboxModule} from 'primeng/listbox';
+import { HostEditPageComponent } from './host-edit-page/host-edit-page.component';
 
 
 @NgModule({
-  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent],
-  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule ],
+  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent, HostEditPageComponent],
+  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule,ListboxModule ],
   exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent,UserProfileComponent,UserEditProfileComponent],
 })
 export class HomeModule {}
