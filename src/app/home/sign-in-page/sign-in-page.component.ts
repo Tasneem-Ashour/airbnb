@@ -54,10 +54,10 @@ responseData:any;
         localStorage.setItem('token',this.responseData.token);
         this.authService.isAuth$.next(true);
          this.router.navigate(['']);
-         this.router.navigateByUrl("/home")
-      },
-      error=>{console.log(error);}
-    );
+        },
+        error=>{console.log(error);}
+        );
+        this.router.navigateByUrl("/home")
     // this.form.reset();
     //check if it null
 // this.authService.login(this.form.controls.email.value!,this.form.controls.password.value!).subscribe({next:(tokenDTO)=>{

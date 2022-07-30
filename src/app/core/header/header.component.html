@@ -1,6 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <nav class="navbar bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand">Airbnb</a>
+    <a class="navbar-brand pointer">
+      
+      <i class="fa fa-globe" [routerLink]="['/home']"> vacation</i>
+    </a>
 
       <div class="d-flex">
 
@@ -11,7 +15,7 @@
         <button routerLink="/logout" [hidden]="!isUserLogged" (click)="logout()" class="btn btn-outline-success" type="submit">logout</button>
         <button routerLink="/profile"  class="btn btn-outline-success" type="submit" >Profile</button>
         <button routerLink="/host"  class="btn btn-outline-success" type="submit" >Became a Host</button>
-      
+
       </div>
   </div>
 </nav>

@@ -6,8 +6,9 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./sign-in-header.component.css']
 })
 export class SignInHeaderComponent implements OnInit {
-  @Output() back = new EventEmitter<boolean>();
+  
   old:boolean=true;
+  @Output() back = new EventEmitter<boolean>();
   mainNav(){
       this.old = false;
     this.back.emit(this.old);
