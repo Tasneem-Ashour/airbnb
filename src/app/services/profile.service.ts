@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Iprofile } from '../_models/iprofile';
+import { Password } from '../_models/password';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,9 @@ export class ProfileService {
   // update profile info
   updateUserProfile(iprofile:Iprofile){
     return this.http.put(`${environment.APIURL}/ArUsers/Update`,iprofile);
+  }
+  changeUserPassword(password:Password){
+   return this.http.put(`${environment.APIURL}/ArUsers/ChangePassword`,password);
   }
 
   // export class UserprofileService {

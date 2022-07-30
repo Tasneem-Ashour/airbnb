@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Iprofile } from 'src/app/_models/iprofile';
+import { Password } from 'src/app/_models/password';
 
 @Component({
   selector: 'app-user-edit-profile',
@@ -13,6 +14,7 @@ export class UserEditProfileComponent implements OnInit {
   openPasswordPage: boolean = false;
   constructor(public proSer: ProfileService,public router:Router) {}
   updateProfile:Iprofile = new Iprofile("","","",new Date(),",","","");
+  changePassword:Password=new Password("","");
   upProfile=new FormGroup({email:new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -21,6 +23,10 @@ export class UserEditProfileComponent implements OnInit {
     twitterId: new FormControl(''),
     about:new FormControl('')
 
+  })
+  upPass=new FormGroup({
+    oldPassword:new FormControl(''),
+    newPassword:new FormControl('')
   })
 
   load() {
@@ -31,6 +37,8 @@ export class UserEditProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.load();
+    console.log(this.updateProfile.email)
+    console.log("this.updateProfile.email")
   }
   chagnePassword() {
     this.openPasswordPage = true;
@@ -43,5 +51,10 @@ export class UserEditProfileComponent implements OnInit {
     console.log(this.updateProfile)
     this.proSer.updateUserProfile(this.updateProfile).subscribe(a=>{console.log(a)});
     this.router.navigateByUrl("/profile")
+  }
+  changePass(){
+    this.proSer.changeUserPassword(this.changePassword).subscribe(p=>{console.log(p)});
+    this.router.navigateByUrl("/profile")
+
   }
 }

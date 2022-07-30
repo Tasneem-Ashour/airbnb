@@ -1,3 +1,6 @@
 export class Password {
-  constructor(){}
+  constructor(
+   public oldPassword: string,
+ public newPassword: string
+  ){}
 }

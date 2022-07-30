@@ -11,24 +11,24 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class SignInPageComponent {
   isUserLogged:boolean=false;
-  constructor(private authService :UserAuthService , 
+  constructor(private authService :UserAuthService ,
     private router:Router
     ){}
 
   form=new FormGroup({
     email: new FormControl('', [Validators.required , Validators.email]  ),
-    password: new FormControl('', [ Validators.required ]) 
+    password: new FormControl('', [ Validators.required ])
   })
 
 
-   
+
   get email(){
     return this.form.get("email");
   }
-  
+
   get password(){
     return this.form.get("password");
-  
+
   }
 
   ngOnInit(){
@@ -54,16 +54,17 @@ responseData:any;
         localStorage.setItem('token',this.responseData.token);
         this.authService.isAuth$.next(true);
          this.router.navigate(['']);
+         this.router.navigateByUrl("/home")
       },
       error=>{console.log(error);}
     );
     // this.form.reset();
-    //check if it null 
+    //check if it null
 // this.authService.login(this.form.controls.email.value!,this.form.controls.password.value!).subscribe({next:(tokenDTO)=>{
-//   localStorage.setItem("token", tokenDTO); //.token 
+//   localStorage.setItem("token", tokenDTO); //.token
 
 
-//   //router.nav //nav.url // redirect 
+//   //router.nav //nav.url // redirect
 
 // }});
 // this.isUserLogged=this.authService.isUserLogged;
@@ -73,5 +74,5 @@ responseData:any;
 
  }
 
- 
+
 
