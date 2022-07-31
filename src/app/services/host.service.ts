@@ -7,6 +7,7 @@ import { Category } from '../_models/category';
 import { Cities } from '../_models/cities';
 import { Countries } from '../_models/countries';
 import { HostProperties } from '../_models/host-properties';
+import { PropertyTypes } from '../_models/property-types';
 import { RoomType } from '../_models/room-type';
 import { SubCategory } from '../_models/sub-category';
 
@@ -36,6 +37,27 @@ updateProperty(updateProprty:HostProperties){
 deleteProperty(deleteProprty:HostProperties){
   return this.http.put(`${environment.APIURL}/ArProperties/delete/${deleteProprty.id}`,deleteProprty);
 }
+
+
+//property types
+
+getAllPropertyType():Observable<PropertyTypes[]>{
+  return this.http.get<PropertyTypes[]>(`${environment.APIURL}/ArPropertyTypes`);
+}
+
+AddPropertyType(AddPropertyType:PropertyTypes){
+  return this.http.post<PropertyTypes>(`${environment.APIURL}/ArPropertyTypes`,AddPropertyType);
+}
+
+
+updatePropertyType(updatePropertyType:PropertyTypes){
+  return this.http.put(`${environment.APIURL}/ArPropertyTypes/${updatePropertyType.id}`,updatePropertyType);
+}
+
+deletePropertyType(deletePropertyType:PropertyTypes){
+  return this.http.put(`${environment.APIURL}/ArPropertyTypes/${deletePropertyType.id}`,deletePropertyType);
+}
+
 
 
 // category crud
