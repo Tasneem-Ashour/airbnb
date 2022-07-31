@@ -1,117 +1,106 @@
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<section class="py-5 header">
-    <div class="container py-4">
-        <header class="text-center mb-5 pb-5 text-white">
-            <h1 class="display-4">Wellcom to Hosting </h1>
-            <p class="font-italic mb-1">Making advantage of Bootstrap 4 components, easily build an awesome tabbed interface.</p>
-            <!-- <p class="font-italic">Snippet by
-                <a class="text-white" href="https://bootstrapious.com/">
-                    <u>Bootstrapious</u>
-                </a>
-            </p> -->
-        </header>
-
-
-        <div class="row">
-            <div class="col-md-3">
-                <!-- Tabs nav -->
-                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical"  >
-                    <a class="nav-link mb-3 p-3 shadow active " id="v-pills-home-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-home" aria-selected="true"  (click)="scroll(target)">
-                        <i class="fa fa-user-circle-o mr-2"></i>
-                        <span class="font-weight-bold small text-uppercase">What kind of place you will be host?</span></a>
-
-                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-profile" aria-selected="false" (click)="scroll(target2)">
-                        <i class="fa fa-calendar-minus-o mr-2"></i>
-                        <span class="font-weight-bold small text-uppercase">Which of these best description your place?</span></a>
-
-                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-messages" aria-selected="false"  (click)="scroll(target3)" >
-                        <i class="fa fa-star mr-2"></i>
-                        <span class="font-weight-bold small text-uppercase">What kind of place will guests have?</span></a>
-
-                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-settings" aria-selected="false" (click)="scroll(target4)">
-                        <i class="fa fa-check mr-2"></i>
-                        <span class="font-weight-bold small text-uppercase">Confirm your address</span></a>
-
-                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-settings" aria-selected="false" (click)="scroll(target5)">
-                            <i class="fa fa-check mr-2"></i>
-                            <span class="font-weight-bold small text-uppercase">How many gests would you like to welcome</span></a>
-                            <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-settings" aria-selected="false"  (click)="scroll(target6)">
-                                <i class="fa fa-check mr-2"></i>
-                                <span class="font-weight-bold small text-uppercase">Let gest know what your place has to offer</span></a>
-                                <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-settings" aria-selected="false"  (click)="scroll(target7)">
-                                    <i class="fa fa-check mr-2"></i>
-                                    <span class="font-weight-bold small text-uppercase">Add photo of your place</span></a>
-                        </div>
-            </div>
-
-
-            <div class="col-md-9" >
-                <!-- Tabs content -->
-                <div class="tab-content" id="v-pills-tabContent" >
-
-
-                    <div class="tab-pane fade shadow-7 rounded bg-transparent show active p-5 m-4" #target >
-                        <h4 class="font-italic mb-4">What kind of place you will be host?</h4>
-                        <!-- <p class="font-italic text-muted mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit unde nemo dicta nisi enim necessitatibus commodi optio ipsa modi deserunt quasi assumenda, rerum molestiae a quae ex atque sunt itaque! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-                        <button (click)="getAllCountries()" >getAllCountries</button>
-                        <button (click)="getAllCities()" >getAllCities</button>
-
-                        <!-- <P>{{Countries?.name}}</P> -->
-
-                        <!-- <select  class="selectpicker dropdown mt-4 ml-3" id="type" data-live-search="true">
-                            <option *ngFor="let test of Countries" [value]="test.id">{{test.name}}</option>
-                         </select> -->
-                         <div  class="country-item country-item-value">
-
-                             <p-dropdown [options]="Countries" formControlName="selectedCountry" optionLabel="name"  filterBy="name" [showClear]="true" placeholder="Select a Country" ></p-dropdown>
-                         </div>
-
-                         <div  class="country-item country-item-value">
-
-                            <p-dropdown [options]="Cities" formControlName="selectedCity" optionLabel="name"  filterBy="name" [showClear]="true" placeholder="Select a City" ></p-dropdown>
-                        </div>
-<!-- <p-dropdown [options]="Countries" [(ngModel)]="selectedCountry" optionLabel="name" optionDisabled="inactive"></p-dropdown> -->
-
-
-                    </div>
-                    
-                    <div class="tab-pane fade shadow-7 rounded bg-transparent show active p-5 m-4"   #target2>
-                        <h4 class="font-italic mb-4">Which of these best description your place?</h4>
-                    </div>
-                    
-                    <div class="tab-pane fade shadow-7 rounded bg-transparent show active p-5 m-4"   #target3>
-                        <h4 class="font-italic mb-4">What kind of place will guests have?</h4>
-                    </div>
-                    
-                    <div class="tab-pane fade shadow-7 rounded bg-transparent show active p-5 m-4 "   #target4>
-                        <h4 class="font-italic mb-4">Confirm your address</h4>
-                    </div>
-
-                    <div class="tab-pane fade shadow-7 rounded bg-transparent show active p-5 m-4 "   #target5>
-                        <h4 class="font-italic mb-4">How many gests would you like to welcome</h4>
-                    </div>
-
-                    <div class="tab-pane fade shadow-7 rounded bg-transparent show active p-5 m-4 "   #target6>
-                        <h4 class="font-italic mb-4">Let gest know what your place has to offer</h4>
-                    </div>
-
-                    <div class="tab-pane fade shadow-7 rounded bg-transparent show active p-5 m-4 "   #target7>
-                        <h4 class="font-italic mb-4">Add photo of your place</h4>
-                    </div>
-
-                    <div lass="tab-pane fade ">
-                      <input name="" id="" class="btn btn-success m-2 d-flex justify-content-end " type="button" value="Save " (click)="saveData()">
-                      <input name="" id="" class="btn btn-info m-2 d-flex justify-content-end" type="button" value="Update" routerLink="/hostEdit" >
-                       
-                    </div>
-                </div>
-            </div>
+<nav class="navbar bg-danger p-3  bg-opacity-75 ">
+  <div class="container-fluid d-flex justify-content-center">
+    <span class="navbar-brand mb-0 h1 text-white font">WELCOME TO HOST</span>
+  </div>
+</nav>
+<div class="accordion w-50 p-3 center" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button bg-danger p-3 bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        What Kind of place will you host?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="list-group">
+          <a id="current" href="#" class="list-group-item list-group-item-action bg-light p-3  " aria-current="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            The current link item
+          </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A second link item</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" >A third link item</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A fourth link item</a>
+          <a class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A disabled link item</a>
         </div>
+ </div>
     </div>
-</section>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        What Kind of space will guests have ?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="list-group">
+          <a id="current" href="#" class="list-group-item list-group-item-action bg-light p-3  " aria-current="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+            The current link item
+          </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">A second link item</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" >A third link item</a>
 
+        </div>
+        <!-- <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. -->
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed bg-danger p-3 bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+       Which of these best describes your place ?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="list-group">
+          <a id="current" href="#" class="list-group-item list-group-item-action bg-light p-3  " aria-current="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+            The current link item
+          </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">A second link item</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" >A third link item</a>
+
+        </div>
+        <!-- <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. -->
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Where is your place located ?
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed bg-danger p-3 bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        How many guests would you like to welcome ?
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingSix">
+      <button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        Let guests Know what your place has to offer
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
