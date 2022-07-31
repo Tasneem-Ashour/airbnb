@@ -18,17 +18,17 @@ export class HostService {
   constructor(public http:HttpClient) { }
 
 getAllProperties():Observable<HostProperties[]>{
-  return this.http.get<HostProperties[]>(`${environment.APIURL}/ArCategories`)
+  return this.http.get<HostProperties[]>(`${environment.APIURL}/ArProperties/GetAll`)
 }
 
 
 
 getAllCategory():Observable<Category[]>{
-  return this.http.get<Category[]>(`${environment.APIURL}/ArCountries/GetAll`)
+  return this.http.get<Category[]>(`${environment.APIURL}/ArCategories`)
 }
 
 getAllSubCategory():Observable<SubCategory[]>{
-  return this.http.get<SubCategory[]>(`${environment.APIURL}/ArCountries/GetAll`)
+  return this.http.get<SubCategory[]>(`${environment.APIURL}/ArSubcategories`)
 }
   
 getContries():Observable<Countries[]>{
