@@ -23,6 +23,7 @@ import { BookingComponent } from './booking/booking.component';
 
 
 
+
 @NgModule({
   declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent, HostEditPageComponent, ViewComponent, BookingComponent],
   imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule,ListboxModule ,DropdownModule,BrowserAnimationsModule,FormsModule],

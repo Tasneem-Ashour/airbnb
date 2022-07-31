@@ -104,7 +104,7 @@ body{
 
 .team .team-content {
   position: absolute;
-  bottom: 25px;
+  bottom: 10px;
   margin: 0 20px;
   left: 0;
   right: 0;
@@ -139,7 +139,7 @@ body{
 }
 
 .team:hover .team-content-inner {
-  background-color: #009b72;
+  background-color: #71e3e9;
   color: #ffffff;
   padding: 20px 20px 90px;
 }
