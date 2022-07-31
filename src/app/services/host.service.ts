@@ -23,7 +23,7 @@ export class HostService {
   // property curd 
 
 getAllProperties():Observable<HostProperties[]>{
-  return this.http.get<HostProperties[]>(`${environment.APIURL}/ArProperties/GetAll`)
+  return this.http.get<HostProperties[]>(`${environment.APIURL}/ArCategories`)
 }
 
 AddProperty(AddProprty:HostProperties){
@@ -68,7 +68,9 @@ deletePropertyType(deletePropertyType:PropertyTypes){
 // category crud
 
 getAllCategory():Observable<Category[]>{
-  return this.http.get<Category[]>(`${environment.APIURL}/ArCategories`);
+  // return this.http.get<Category[]>(`${environment.APIURL}/ArCategories`);
+  return this.http.get<Category[]>(`${environment.APIURL}/ArCountries/GetAll`)
+
 }
 
 AddCategory(AddCategory:Category){
@@ -87,9 +89,13 @@ deleleCategory(deleleCategory:Category){
 
 // sub Category crud
 
-getAllSubCategory():Observable<SubCategory[]>{
-  return this.http.get<SubCategory[]>(`${environment.APIURL}/ArSubcategories`);
-}
+// getAllSubCategory():Observable<SubCategory[]>{
+// <<<<<<< HEAD
+//   return this.http.get<SubCategory[]>(`${environment.APIURL}/ArSubcategories`);
+// =======
+//   return this.http.get<SubCategory[]>(`${environment.APIURL}/ArCountries/GetAll`)
+// >>>>>>> parent of 08b9784 (edit host)
+// }
   
 AddSubCategory(AddSubCategory:SubCategory){
 return this.http.post<SubCategory>(`${environment.APIURL}/ArSubcategories`,AddSubCategory);

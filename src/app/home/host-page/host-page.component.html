@@ -1,4 +1,5 @@
 <nav class="navbar bg-danger p-4  bg-opacity-75 ">
+<nav class="navbar bg-danger p-3  bg-opacity-75 ">
   <div class="container-fluid d-flex justify-content-center">
     <span class="navbar-brand mb-0 h1 text-white font">You can host
       anything, anywhere</span>
@@ -13,13 +14,14 @@
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <div class="list-group" *ngFor="let item of cat">
+        <div class="list-group">
           <a id="current" href="#" class="list-group-item list-group-item-action bg-light p-3  " aria-current="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                {{item.name}}   </a>
-          <!-- <a href="#" class="list-group-item list-group-item-action bg-light p-3  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A second link item</a>
+            The current link item
+          </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light p-3  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A second link item</a>
           <a href="#" class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" >A third link item</a>
           <a href="#" class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A fourth link item</a>
-          <a class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A disabled link item</a> -->
+          <a class="list-group-item list-group-item-action bg-light p-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">A disabled link item</a>
         </div>
  </div>
     </div>
