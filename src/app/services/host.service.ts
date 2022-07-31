@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Category } from '../_models/category';
 import { Cities } from '../_models/cities';
 import { Countries } from '../_models/countries';
+import { Currencies } from '../_models/currencies';
 import { HostProperties } from '../_models/host-properties';
 import { PropertyTypes } from '../_models/property-types';
 import { RoomType } from '../_models/room-type';
@@ -57,6 +58,10 @@ updatePropertyType(updatePropertyType:PropertyTypes){
 deletePropertyType(deletePropertyType:PropertyTypes){
   return this.http.put(`${environment.APIURL}/ArPropertyTypes/${deletePropertyType.id}`,deletePropertyType);
 }
+
+
+
+
 
 
 
@@ -128,6 +133,8 @@ getCities():Observable<Cities[]>{
   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetAll`)
 }
 
-
+getCurrencies():Observable<Currencies[]>{
+  return this.http.get<Currencies[]>(`${environment.APIURL}/ArCurrencies`)
+}
 
 }
