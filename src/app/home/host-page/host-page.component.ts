@@ -31,7 +31,13 @@ export class HostPageComponent {
   selectedCountry = '';
   selectedCity = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllCities()
+    this.getAllCountries()
+    this.getAllPropirty()
+    this.getAllCategories()
+    this.getAllSubCategories()
+  }
 
   scroll(e1: HTMLElement) {
     e1.scrollIntoView();
@@ -42,6 +48,7 @@ export class HostPageComponent {
   getAllPropirty() {
     this.hostProperty.getAllProperties().subscribe((req) => {
       this.hostProp = req;
+    
     });
   }
 

@@ -2,9 +2,9 @@ export class Cities {
 
     constructor(
 
-        id: number,
-        name: string,
-        status: boolean,
-        countryId: number
+   public  id: number,
+       public name: string,
+      public  status: boolean,
+     public   countryId: number
     ){}
 }
