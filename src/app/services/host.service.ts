@@ -17,6 +17,9 @@ export class HostService {
 
   constructor(public http:HttpClient) { }
 
+
+  // property curd 
+
 getAllProperties():Observable<HostProperties[]>{
   return this.http.get<HostProperties[]>(`${environment.APIURL}/ArProperties/GetAll`)
 }
@@ -34,9 +37,28 @@ deleteProperty(deleteProprty:HostProperties){
   return this.http.put(`${environment.APIURL}/ArProperties/delete/${deleteProprty.id}`,deleteProprty);
 }
 
+
+// category crud
+
 getAllCategory():Observable<Category[]>{
   return this.http.get<Category[]>(`${environment.APIURL}/ArCategories`)
 }
+
+AddCategory(AddCategory:Category){
+  return this.http.post<Category>(`${environment.APIURL}/ArCategories/${AddCategory.id}`,AddCategory)
+}
+
+updateCategory(updateCategory:Category){
+  return this.http.put<Category>(`${environment.APIURL}/ArCategories/${updateCategory.id}`,updateCategory)
+}
+
+
+deleleCategory(deleleCategory:Category){
+  return this.http.delete<Category>(`${environment.APIURL}/ArCategories/${deleleCategory.id}`)
+}
+
+
+// sub Category crud
 
 getAllSubCategory():Observable<SubCategory[]>{
   return this.http.get<SubCategory[]>(`${environment.APIURL}/ArSubcategories`)
