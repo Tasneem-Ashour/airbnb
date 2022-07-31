@@ -31,13 +31,7 @@ export class HostPageComponent {
   selectedCountry = '';
   selectedCity = '';
 
-  ngOnInit(): void {
-    this.getAllCities()
-    this.getAllCountries()
-    this.getAllPropirty()
-    this.getAllCategories()
-    this.getAllSubCategories()
-  }
+  ngOnInit(): void {}
 
   scroll(e1: HTMLElement) {
     e1.scrollIntoView();
@@ -48,7 +42,6 @@ export class HostPageComponent {
   getAllPropirty() {
     this.hostProperty.getAllProperties().subscribe((req) => {
       this.hostProp = req;
-    
     });
   }
 
@@ -58,11 +51,11 @@ export class HostPageComponent {
     });
   }
 
-  getAllSubCategories() {
-    this.subCategory.getAllSubCategory().subscribe((req) => {
-      this.sub = req;
-    });
-  }
+  // getAllSubCategories() {
+  //   this.subCategory.getAllSubCategory().subscribe((req) => {
+  //     this.sub = req;
+  //   });
+  // }
 
   getAllCountries() {
     this.allCountries.getContries().subscribe((country) => {
