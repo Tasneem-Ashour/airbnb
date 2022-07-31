@@ -21,7 +21,18 @@ getAllProperties():Observable<HostProperties[]>{
   return this.http.get<HostProperties[]>(`${environment.APIURL}/ArProperties/GetAll`)
 }
 
+AddProperty(AddProprty:HostProperties){
+  return this.http.post<HostProperties>(`${environment.APIURL}/ArProperties`,AddProprty);
+}
 
+
+updateProperty(updateProprty:HostProperties){
+  return this.http.put(`${environment.APIURL}/ArProperties/update/${updateProprty.id}`,updateProprty);
+}
+
+deleteProperty(deleteProprty:HostProperties){
+  return this.http.put(`${environment.APIURL}/ArProperties/delete/${deleteProprty.id}`,deleteProprty);
+}
 
 getAllCategory():Observable<Category[]>{
   return this.http.get<Category[]>(`${environment.APIURL}/ArCategories`)

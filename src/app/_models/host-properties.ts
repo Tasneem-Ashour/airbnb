@@ -1,6 +1,7 @@
 export class HostProperties {
 
     constructor(
+        public id:number,
     public    name: string,
      public   description: string,
     public    propertyTypeId: number,
