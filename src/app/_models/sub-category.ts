@@ -1,12 +1,12 @@
 export class SubCategory {
     constructor(
 
-        id: number,
-        name: string,
-        categoryId: number,
-        description: string,
-        created: Date,
-        modified: Date,
-        status: boolean
+    public    id: number,
+     public   name: string,
+     public   categoryId: number,
+     public   description: string,
+     public   created: Date,
+     public   modified: Date,
+    public    status: boolean
     ){}
 }

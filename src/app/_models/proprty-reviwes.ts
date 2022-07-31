@@ -1,14 +1,14 @@
 export class ProprtyReviwes {
     constructor(
 
-        id: number,
-        propertyId: number,
-        reviewByUser: string,
-        bookingId: number,
-        comment: string,
-        rating: number,
-        created: Date,
-        modified: Date,
-        status: boolean
+   public     id: number,
+    public    propertyId: number,
+     public   reviewByUser: string,
+     public   bookingId: number,
+    public    comment: string,
+     public   rating: number,
+     public   created: Date,
+     public   modified: Date,
+     public   status: boolean
     ){}
 }
