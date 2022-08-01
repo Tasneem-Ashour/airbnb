@@ -55,7 +55,7 @@ input[type="checkbox"]:checked + label {
   background-color: rgb(138, 58, 147);
 }
 
-label {
+.label {
   position: absolute;
   display: block;
   top: 0;
@@ -136,6 +136,8 @@ input, label {
   width: 50%;
 }
 
-
+.fv{
+  margin-top: 40px;
+}
 
 
