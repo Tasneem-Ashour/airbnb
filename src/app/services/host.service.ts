@@ -26,6 +26,9 @@ getAllProperties():Observable<HostProperties[]>{
   return this.http.get<HostProperties[]>(`${environment.APIURL}/ArCategories`)
 }
 
+getPropeetiesByHostId(HostID:HostProperties):Observable<HostProperties[]>{
+  return this.http.get<HostProperties[]>(`${environment.APIURL}/ArProperties/GetWithAllData/${HostID.id}`);
+}
 AddProperty(AddProprty:HostProperties){
   return this.http.post<HostProperties>(`${environment.APIURL}/ArProperties`,AddProprty);
 }
