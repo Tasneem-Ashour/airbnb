@@ -1,8 +1,6 @@
 <div class="container text-center p-5  ">
   <div class="row flex-container">
-    <div class="col-6  bk text-light w card " id="container">
-      What Kind of place will you host?
-    </div>
+    <div class="col-6  bk text-light w card " id="container">What Kind of place will you host?</div>
     <div class="col-6 input card ">
       <!-- first -->
       <!-- start button list -->
@@ -10,64 +8,140 @@
 
       <div class="w">
 
-          <div class="input-container w">
+          <div class="input-container w first">
             <input id="1" type="checkbox" name="1" value="1">
-            <label for="1"><span>Option</span></label>
+            <label for="1"><span>Apartment</span></label>
           </div>
-          <div class="input-container">
+          <div class="input-container first">
             <input id="2" type="checkbox" name="2" value="2">
-            <label for="2"><span>Option</span></label>
+            <label for="2"><span>House</span></label>
           </div>
-          <div class="input-container">
+          <div class="input-container first">
             <input id="3" type="checkbox" name="3" value="3">
-            <label for="3"><span>Option</span></label>
+            <label for="3"><span>Secondary unit</span></label>
           </div>
-          <div class="input-container">
+          <div class="input-container first">
             <input id="4" type="checkbox" name="4" value="4">
-            <label for="4"><span>Option</span></label>
+            <label for="4"><span>Unique space</span></label>
           </div>
-          <div class="input-container">
+          <div class="input-container first">
             <input id="5" type="checkbox" name="5" value="5">
-            <label for="5"><span>Option</span></label>
+            <label for="5"><span>Bed and Breakfast</span></label>
           </div>
-          <div class="input-container ">
+          <div class="input-container first">
             <input id="6" type="checkbox" name="6" value="6">
-            <label for="6"><span>Option</span></label>
+            <label for="6"><span>Boutique Hotel</span></label>
           </div>
 
           <!-- <input type="submit" class="button" value="Next &raquo;"> -->
-
-      </div>
-
-      </div>
-
-
-
-
-
-
-
-
-
 
         <!-- <input type="text" placeholder="first group" class=" first w" >
         <input type="text" placeholder="first group" class=" first w" >
         <input type="text" placeholder="first group" class=" first w" > -->
 
       <!-- sec -->
+      <div class="input-container w sec d-none">
+        <input id="1" type="checkbox" name="1" value="1">
+        <label for="1"><span>Apartment</span></label>
+      </div>
+      <div class="input-container sec d-none">
+        <input id="2" type="checkbox" name="2" value="2">
+        <label for="2"><span>House</span></label>
+      </div>
+      <div class="input-container sec d-none">
+        <input id="3" type="checkbox" name="3" value="3">
+        <label for="3"><span>Secondary unit</span></label>
+      </div>
 
+      <!-- <input type="text" placeholder="sec group" class=" sec d-none" >
       <input type="text" placeholder="sec group" class=" sec d-none" >
-      <input type="text" placeholder="sec group" class=" sec d-none" >
-      <input type="text" placeholder="sec group" class=" sec d-none" >
+      <input type="text" placeholder="sec group" class=" sec d-none" > -->
 
       <!-- third -->
+      <div class="input-container w th d-none">
+        <input id="1" type="checkbox" name="1" value="1">
+        <label for="1"><span>Apartment</span></label>
+      </div>
+      <div class="input-container th d-none">
+        <input id="2" type="checkbox" name="2" value="2">
+        <label for="2"><span>House</span></label>
+      </div>
+      <div class="input-container th d-none" >
+        <input id="3" type="checkbox" name="3" value="3">
+        <label for="3"><span>Secondary unit</span></label>
+      </div>
+      <div class="input-container th d-none">
+        <input id="4" type="checkbox" name="4" value="4">
+        <label for="4"><span>Unique space</span></label>
+      </div>
 
+      <!-- <input type="text" placeholder=" group" class=" th d-none" >
       <input type="text" placeholder=" group" class=" th d-none" >
-      <input type="text" placeholder=" group" class=" th d-none" >
-      <input type="text" placeholder=" group" class=" th d-none" >
-       <br>
-      <button (click)="myfun()" class=" first btn btn-primary btn-lg"  >next</button>
-      <button (click)="myfun2()"  class=" sec d-none btn btn-primary btn-lg" >next 2</button>
+       <input type="text" placeholder=" group" class=" th d-none" > -->
+
+       <!-- fourth btn -->
+       <div class="form-group fr d-none">
+        <div><h2>Enter Your Address</h2></div>
+        <input type="street"
+               class="form-control"
+               id="autocomplete"
+               placeholder="Street">
+
+        <input type="city"
+               class="form-control"
+               id="inputCity"
+               placeholder="City">
+
+        <input type="state"
+               class="form-control"
+               id="inputState"
+               placeholder="State">
+
+
+        <input type="zip"
+               class="form-control"
+               id="inputZip"
+               placeholder="Zip">
+
+        <input type="county"
+               class="form-control"
+               id="inputCounty"
+               placeholder="County">
+
+        <input type="country"
+               class="form-control"
+               id="inputCountry"
+               placeholder="Country">
+
+               <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul>
+              </div>
+
+
+      </div>
+
+
+
+       <!-- first btn -->
+      <!-- <button (click)="myfun()" class=" first btn btn-danger btn-lg">Back</button> -->
+      <button (click)="myfun()" class=" first btn btn-primary btn-lg  marg">Next</button>
+         <!-- sec btn -->
+      <button (click)="myfun()"  class=" sec d-none btn btn-primary btn-lg" >Back</button>
+      <button (click)="myfun2()"  class=" sec d-none btn btn-primary btn-lg" >next2</button>
+
+      <!-- th btn -->
+      <button (click)="myfun2()"  class=" th d-none btn btn-primary btn-lg" >Back3</button>
+      <button (click)="myfun3()"  class=" th d-none btn btn-primary btn-lg" >Next3</button>
+      <!-- fr btn -->
+      <button (click)="myfun3()"  class=" fr d-none btn btn-primary btn-lg" >Back4</button>
+      <button (click)="myfun4()"  class=" fr d-none btn btn-primary btn-lg" >Next4</button>
+
     </div>
   </div>
 

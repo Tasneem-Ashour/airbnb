@@ -52,7 +52,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + label {
-  background-color: #888;
+  background-color: rgb(138, 58, 147);
 }
 
 label {
@@ -77,7 +77,7 @@ label:hover {
 }
 
 label:hover, input[type="checkbox"]:checked + label:hover {
-  background-color: #555;
+  background-color: rgb(157, 70, 160);
 }
 
 label span {
@@ -95,5 +95,47 @@ label span {
   justify-content: center;
   align-items: center;
 }
+.marg{
+
+  margin-left: 300px;
+}
+input, label {
+  margin: 5px 5px;
+}
+
+.form-group {
+  margin: 30px auto;
+  width: 450px;
+}
+
+.form-control {
+  float: left;
+}
+
+#inputStreet {
+  width: 100%;
+}
+
+#inputCity {
+  width: 50%;
+}
+
+#inputState {
+  width: 15%;
+}
+
+#inputZip {
+  width: 28%;
+}
+
+#inputCounty {
+  width: 45%;
+}
+
+#inputCountry {
+  width: 50%;
+}
+
+
 
 
