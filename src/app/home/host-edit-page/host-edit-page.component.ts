@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HostService } from 'src/app/services/host.service';
 import { Cities } from 'src/app/_models/cities';
 import { Countries } from 'src/app/_models/countries';
+import { PropertyTypes } from 'src/app/_models/property-types';
 
 @Component({
   selector: 'app-host-edit-page',
@@ -12,12 +13,14 @@ export class HostEditPageComponent implements OnInit {
   constructor(
     public allCountries: HostService,
     public allCities: HostService,
+    public propType:HostService
 
 
   ) {}
 
   Countries: Countries[] = [];
   Cities: Cities[] = [];
+  propertyType: PropertyTypes[]=[];
 
   selectedCountry ='';
   selectedCity = '';
@@ -26,6 +29,7 @@ export class HostEditPageComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCountries();
     this.getAllCities();
+    this.getPropertyType();
   }
   xxx: any;
   // first next
@@ -118,5 +122,12 @@ export class HostEditPageComponent implements OnInit {
     this.allCities.getCities().subscribe((city) => {
       this.Cities = city;
     });
+  }
+
+  getPropertyType(){
+    this.propType.getAllPropertyType().subscribe((req)=>
+  
+   this.propertyType=req
+    );
   }
 }

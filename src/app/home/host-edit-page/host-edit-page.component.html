@@ -6,13 +6,14 @@
       <!-- start button list -->
       <div class="dd-none">
 
-      <div class="w">
+      <div class="w" >
 
-          <div class="input-container w first">
+        
+          <div class="input-container w first" *ngFor="let item of propertyType">
             <input id="1" type="checkbox" name="1" value="1">
-            <label for="1"><span>Apartment</span></label>
+            <label for="1"><span>{{item.name}}</span></label>
           </div>
-          <div class="input-container first">
+          <!-- <div class="input-container first">
             <input id="2" type="checkbox" name="2" value="2">
             <label for="2"><span>House</span></label>
           </div>
@@ -31,7 +32,7 @@
           <div class="input-container first">
             <input id="6" type="checkbox" name="6" value="6">
             <label for="6"><span>Boutique Hotel</span></label>
-          </div>
+          </div> -->
 
           <!-- <input type="submit" class="button" value="Next &raquo;"> -->
 
