@@ -12,7 +12,7 @@ export class BookingService {
   constructor(public http:HttpClient) { }
 
   //admin only
-  getAllPBooking():Observable<Booking[]>{
+  getAllBooking():Observable<Booking[]>{
     return this.http.get<Booking[]>(`${environment.APIURL}/ArBookings`);
   }
 
@@ -21,7 +21,7 @@ export class BookingService {
     return this.http.post<Booking>(`${environment.APIURL}/ArBookings`,AddBooking);
   }
 
-  updatePromCode(updateBooking:Booking){
+  updateBooking(updateBooking:Booking){
     return this.http.put<Booking>(`${environment.APIURL}/ArBookings/${updateBooking.id}`,updateBooking);
   }
 
