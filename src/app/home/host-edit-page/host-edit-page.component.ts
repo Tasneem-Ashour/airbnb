@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HostService } from 'src/app/services/host.service';
+import { Cities } from 'src/app/_models/cities';
+import { Countries } from 'src/app/_models/countries';
 
 @Component({
   selector: 'app-host-edit-page',
@@ -6,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./host-edit-page.component.css'],
 })
 export class HostEditPageComponent implements OnInit {
-  constructor() {}
+  constructor(
+    public allCountries: HostService,
+    public allCities: HostService,
 
-  ngOnInit(): void {}
+
+  ) {}
+
+  Countries: Countries[] = [];
+  Cities: Cities[] = [];
+
+  selectedCountry ='';
+  selectedCity = '';
+
+
+  ngOnInit(): void {
+    this.getAllCountries();
+    this.getAllCities();
+  }
   xxx: any;
   // first next
   myfun() {
@@ -88,5 +106,17 @@ export class HostEditPageComponent implements OnInit {
 
     this.xxx = document.querySelector('.bk');
     this.xxx.innerHTML = 'How many guests would you like to welcome?';
+  }
+
+  getAllCountries() {
+    this.allCountries.getContries().subscribe((country) => {
+      this.Countries = country;
+    });
+  }
+
+  getAllCities() {
+    this.allCities.getCities().subscribe((city) => {
+      this.Cities = city;
+    });
   }
 }
