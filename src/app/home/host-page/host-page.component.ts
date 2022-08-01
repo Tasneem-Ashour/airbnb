@@ -31,7 +31,9 @@ export class HostPageComponent {
   selectedCountry = '';
   selectedCity = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getRoomType()
+  }
 
   scroll(e1: HTMLElement) {
     e1.scrollIntoView();
