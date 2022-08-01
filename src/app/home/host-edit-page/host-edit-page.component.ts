@@ -125,7 +125,7 @@ export class HostEditPageComponent implements OnInit {
       this.xxx.innerHTML = 'Where is your place located ?';
     }
   }
-  
+
   getPropType(){
     this.propertyType.getAllPropertyType().subscribe((req)=>{
       this.propTy=req;

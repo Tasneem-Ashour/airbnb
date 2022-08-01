@@ -90,7 +90,7 @@ deleleCategory(deleleCategory:Category){
 }
 
 
-// sub Category crud
+//sub Category crud
 
 getAllSubCategory():Observable<SubCategory[]>{
 
