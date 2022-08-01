@@ -47,7 +47,7 @@ export class HostProfileComponent implements OnInit {
     );
   }
 
- 
+
 
   getPropertyType(){
     this.propertyT.getAllPropertyType().subscribe((req)=>this.properyType=req);

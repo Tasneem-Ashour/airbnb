@@ -116,25 +116,6 @@ input, label {
   width: 100%;
 }
 
-#inputCity {
-  width: 50%;
-}
-
-#inputState {
-  width: 15%;
-}
-
-#inputZip {
-  width: 28%;
-}
-
-#inputCounty {
-  width: 45%;
-}
-
-#inputCountry {
-  width: 50%;
-}
 
 .fv{
   margin-top: 40px;

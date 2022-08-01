@@ -40,9 +40,9 @@
         <input type="text" placeholder="first group" class=" first w" > -->
 
       <!-- sec -->
-      <div class="input-container w sec d-none">
+      <div class="input-container w sec d-none"*ngFor="let ca of cat">
         <input id="1" type="checkbox" name="1" value="1">
-        <label for="1" class="label"><span>Apartment</span></label>
+        <label for="1" class="label"><span>{{ca.name}}</span></label>
       </div>
       <!-- <div class="input-container sec d-none">
         <input id="2" type="checkbox" name="2" value="2">
@@ -58,9 +58,9 @@
       <input type="text" placeholder="sec group" class=" sec d-none" > -->
 
       <!-- third -->
-      <div class="input-container w th d-none">
+      <div class="input-container w th d-none" *ngFor="let su of sub">
         <input id="1" type="checkbox" name="1" value="1">
-        <label for="1" class="label"><span>Apartment</span></label>
+        <label for="1" class="label"><span>{{su.name}}</span></label>
       </div>
 
 
@@ -71,12 +71,12 @@
        <!-- fourth btn -->
        <div class="form-group fr d-none">
         <div><h2>Enter Your Address</h2></div>
-        <input type="street"
+        <input type="text"
                class="form-control"
                id="autocomplete"
-               placeholder="Street">
+               placeholder="Address">
 
-        <input type="city"
+        <!-- <input type="city"
                class="form-control"
                id="inputCity"
                placeholder="City">
@@ -117,8 +117,10 @@
                   <li><a href="#">JavaScript</a></li>
                 </ul>
 
-              </div>
+              </div> -->
+
               <select  class=" selectpicker dropdown mt-4 ml-3 btn btn-light dropdown-toggle " id="type" data-live-search="true" formControlName="selectedCountry" >
+
                 <option *ngFor="let test of Countries" [value]="test.name">{{test.name}}</option>
              </select>
 
@@ -175,7 +177,7 @@
       <button (click)="myfun4()"  class=" fr d-none btn btn-primary btn-lg" >Next4</button>
       <!-- fv btn -->
       <button (click)="myfun4()"  class=" fv d-none btn btn-primary btn-lg" >Back5</button>
-      <button (click)="myfun5()"  class=" fv d-none btn btn-primary btn-lg" >Next5</button>
+      <button   class=" fv d-none btn btn-primary btn-lg" type="submit" >Submit</button>
 
     </div>
   </div>
