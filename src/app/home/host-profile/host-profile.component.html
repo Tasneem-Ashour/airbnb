@@ -1,9 +1,4 @@
-<!-- <div *ngFor="let item of hostProp">
-    <p>
-        {{item.name}}
-    
-    </p>
-</div> -->
+
 
 
 
@@ -27,7 +22,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="heading-section mb-5 mt-5 mt-lg-0">
-                    <h2 class="mb-3">Wellcom {{item.name}} </h2>
+                    <h2 class="mb-3"> {{item.name}} </h2>
                     <p>{{item.description}} </p>
                 </div>
                 <div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
@@ -113,8 +108,8 @@
                         </div>
                         <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo" >
                             <div class="card-body py-3 px-0">
-                                <ol *ngFor="let item of geniralProperty">
-                                    <li>bed: {{item.bedCount}}</li>
+                                <ol *ngFor="let item of geniralProperty ">
+                                    <li >bed: {{item.bedCount}}</li>
                                     <li>bath room: {{item.bathroomCount}}</li>
                                     <li>bed room: {{item.bedroomCount}}</li>
                                     <li>gest: {{item.accomodatesCount}}</li>
@@ -145,15 +140,21 @@
                         </div>
                         <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="card-body py-3 px-0">
-                                <p>
-                                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                                    language ocean.
-                                </p>
+                                <ol *ngFor="let item of hostSubCategory">
+                                    <li>{{item.name}}</li>
+                             
+                                </ol>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
+        <div class="d-flex justify-content-end" >
+
+            <button type="button" class="btn btn-danger" (click)="deleteProperty()" [routerLink]="['/hostProfile',item.id]">Delete</button>
+        </div>
+
     </div>
 </section>

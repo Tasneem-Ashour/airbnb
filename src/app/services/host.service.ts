@@ -90,15 +90,11 @@ deleleCategory(deleleCategory:Category){
 }
 
 
-// sub Category crud
+//sub Category crud
 
-// getAllSubCategory():Observable<SubCategory[]>{
-// <<<<<<< HEAD
-//   return this.http.get<SubCategory[]>(`${environment.APIURL}/ArSubcategories`);
-// =======
-//   return this.http.get<SubCategory[]>(`${environment.APIURL}/ArCountries/GetAll`)
-// >>>>>>> parent of 08b9784 (edit host)
-// }
+getAllSubCategory():Observable<SubCategory[]>{
+  return this.http.get<SubCategory[]>(`${environment.APIURL}/ArSubcategories`);
+}
   
 AddSubCategory(AddSubCategory:SubCategory){
 return this.http.post<SubCategory>(`${environment.APIURL}/ArSubcategories`,AddSubCategory);

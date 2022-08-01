@@ -13,14 +13,12 @@ export class HostEditPageComponent implements OnInit {
   constructor(
     public allCountries: HostService,
     public allCities: HostService,
-    public propType:HostService
 
 
   ) {}
 
   Countries: Countries[] = [];
   Cities: Cities[] = [];
-  propertyType: PropertyTypes[]=[];
 
   selectedCountry ='';
   selectedCity = '';
@@ -29,7 +27,6 @@ export class HostEditPageComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCountries();
     this.getAllCities();
-    this.getPropertyType();
   }
   xxx: any;
   // first next
@@ -124,10 +121,5 @@ export class HostEditPageComponent implements OnInit {
     });
   }
 
-  getPropertyType(){
-    this.propType.getAllPropertyType().subscribe((req)=>
-  
-   this.propertyType=req
-    );
-  }
+
 }
