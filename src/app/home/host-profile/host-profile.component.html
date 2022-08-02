@@ -1,15 +1,10 @@
-<div *ngFor="let item of hostProp">
-    <p>
-        {{item.name}}
-    
-    </p>
+
+
+
+<div class="heading-section mb-5 mt-5 mt-lg-0">
+    <h2 class="mb-3">Wellcom {{HostName?.firstName |titlecase}} {{HostName?.lastName |titlecase}}</h2>
 </div>
-
-
-
-
-
-<section class="ftco-section bg-light ftco-faqs">
+<section class="ftco-section bg-light ftco-faqs" *ngFor="let item of geniralProperty ; let i =index"  >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 order-md-last">
@@ -25,8 +20,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="heading-section mb-5 mt-5 mt-lg-0">
-                    <h2 class="mb-3">Frequently Asks Questions</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <h2 class="mb-3"> {{item.name}} </h2>
+                    <p>{{item.description}} </p>
                 </div>
                 <div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
                     <div class="card">
@@ -40,19 +35,19 @@
                                 aria-expanded="false"
                                 aria-controls="collapseOne"
                               >
-                                  <p class="mb-0">How to train your pet dog?</p>
+                                  <p class="mb-0">Kind of place you host</p>
                                     <i class="fa" aria-hidden="true"></i>
                                 </button>
                             </h2>
                         </div>
                         <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
                             <div class="card-body py-3 px-0">
-                                <ol>
-                                    <li>Far far away, behind the word mountains</li>
-                                    <li>Consonantia, there live the blind texts</li>
+                                <ol *ngFor="let item of properyType">
+                                    <li>{{item.name}}</li>
+                                    <!-- <li>Consonantia, there live the blind texts</li>
                                     <li>When she reached the first hills of the Italic Mountains</li>
                                     <li>Bookmarksgrove, the headline of Alphabet Village</li>
-                                    <li>Separated they live in Bookmarksgrove right</li>
+                                    <li>Separated they live in Bookmarksgrove right</li> -->
                                 </ol>
                             </div>
                         </div>
@@ -68,19 +63,19 @@
                                 aria-expanded="false"
                                 aria-controls="collapseTwo"
                               >
-                                    <p class="mb-0">How to manage your pets?</p>
+                                    <p class="mb-0">space will guests have</p>
                                     <i class="fa" aria-hidden="true"></i>
                                 </button>
                             </h2>
                         </div>
                         <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo" >
                             <div class="card-body py-3 px-0">
-                                <ol>
-                                    <li>Far far away, behind the word mountains</li>
-                                    <li>Consonantia, there live the blind texts</li>
+                                <ol *ngFor="let item of hostCategory">
+                                    <li>{{item.name}}</li>
+                                    <!-- <li>Consonantia, there live the blind texts</li>
                                     <li>When she reached the first hills of the Italic Mountains</li>
                                     <li>Bookmarksgrove, the headline of Alphabet Village</li>
-                                    <li>Separated they live in Bookmarksgrove right</li>
+                                    <li>Separated they live in Bookmarksgrove right</li> -->
                                 </ol>
                             </div>
                         </div>
@@ -104,19 +99,23 @@
                                 aria-controls="collapseThree"
                               >
 
-                                    <p class="mb-0">What is the best grooming for your pets?</p>
+                                    <p class="mb-0">Number of Gest , bed room , beds, path room  </p>
                                     <i class="fa" aria-hidden="true"></i>
                                 </button>
                             </h2>
                         </div>
                         <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo" >
                             <div class="card-body py-3 px-0">
-                                <ol>
-                                    <li>Far far away, behind the word mountains</li>
-                                    <li>Consonantia, there live the blind texts</li>
+                                <ol >
+                                    <li >bed: {{geniralProperty[i].bedCount}}</li>
+                                    <li>bath room: {{geniralProperty[i].bathroomCount}}</li>
+                                    <li>bed room: {{geniralProperty[i].bedroomCount}}</li>
+                                    <li>gest: {{geniralProperty[i].accomodatesCount}}</li>
+
+                                    <!-- <li>Consonantia, there live the blind texts</li>
                                     <li>When she reached the first hills of the Italic Mountains</li>
                                     <li>Bookmarksgrove, the headline of Alphabet Village</li>
-                                    <li>Separated they live in Bookmarksgrove right</li>
+                                    <li>Separated they live in Bookmarksgrove right</li> -->
                                 </ol>
                             </div>
                         </div>
@@ -132,22 +131,28 @@
                                 aria-expanded="false"
                                 aria-controls="collapseFour"
                               >
-                                    <p class="mb-0">What are those requirements for sitting pets?</p>
+                                    <p class="mb-0">your place offer</p>
                                     <i class="fa" aria-hidden="false"></i>
                                 </button>
                             </h2>
                         </div>
                         <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="card-body py-3 px-0">
-                                <p>
-                                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                                    language ocean.
-                                </p>
+                                <ol *ngFor="let item of hostSubCategory">
+                                    <li>{{item.name}}</li>
+
+                                </ol>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+        <div class="d-flex justify-content-end" >
+
+            <button type="button" class="btn btn-danger" (click)="deleteProperty()" [routerLink]="['/hostProfile',item.id]">Delete</button>
+        </div>
+
     </div>
 </section>

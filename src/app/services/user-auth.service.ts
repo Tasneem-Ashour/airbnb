@@ -12,6 +12,9 @@ export class UserAuthService {
   constructor(private client:HttpClient) { }
 
   isAuth$=new BehaviorSubject<boolean>(false) ;
+  isWith$=new BehaviorSubject<boolean>(true);
+
+  
 
   login(email:string , password:string) : Observable<any>{
     // let userTocken="";
@@ -31,6 +34,7 @@ export class UserAuthService {
   logout(){
 localStorage.removeItem("token");
 this.isAuth$.next(false);
+this.isWith$.next(false);
   }
 
   

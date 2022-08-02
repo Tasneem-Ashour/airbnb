@@ -55,7 +55,7 @@ input[type="checkbox"]:checked + label {
   background-color: rgb(138, 58, 147);
 }
 
-label {
+.label {
   position: absolute;
   display: block;
   top: 0;
@@ -116,26 +116,9 @@ input, label {
   width: 100%;
 }
 
-#inputCity {
-  width: 50%;
+
+.fv{
+  margin-top: 40px;
 }
-
-#inputState {
-  width: 15%;
-}
-
-#inputZip {
-  width: 28%;
-}
-
-#inputCounty {
-  width: 45%;
-}
-
-#inputCountry {
-  width: 50%;
-}
-
-
 
 

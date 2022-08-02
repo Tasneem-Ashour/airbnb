@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HostService } from 'src/app/services/host.service';
+import { Category } from 'src/app/_models/category';
 import { Cities } from 'src/app/_models/cities';
 import { Countries } from 'src/app/_models/countries';
+import { HostProperties } from 'src/app/_models/host-properties';
+import { PropertyTypes } from 'src/app/_models/property-types';
+import { SubCategory } from 'src/app/_models/sub-category';
 
 @Component({
   selector: 'app-host-edit-page',
@@ -12,12 +16,18 @@ export class HostEditPageComponent implements OnInit {
   constructor(
     public allCountries: HostService,
     public allCities: HostService,
+    public propertyType:HostService,
+    public category:HostService,
+    public subCat:HostService
 
 
   ) {}
 
   Countries: Countries[] = [];
   Cities: Cities[] = [];
+  propTy:PropertyTypes[]=[];
+  cat:Category[]=[];
+  sub:SubCategory[]=[];
 
   selectedCountry ='';
   selectedCity = '';
@@ -26,6 +36,9 @@ export class HostEditPageComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCountries();
     this.getAllCities();
+    this.getPropType();
+    this.getPropCategory();
+    this.getSubCategory();
   }
   xxx: any;
   // first next
@@ -98,14 +111,37 @@ export class HostEditPageComponent implements OnInit {
       // Do stuff here
       el.classList.toggle('d-none');
     });
-    var xx = document.getElementsByClassName('five');
+    var xx = document.getElementsByClassName('fv');
     Array.prototype.forEach.call(xx, function (el) {
       // Do stuff here
       el.classList.toggle('d-none');
     });
 
     this.xxx = document.querySelector('.bk');
-    this.xxx.innerHTML = 'How many guests would you like to welcome?';
+    // this.xxx.innerHTML = 'Your place Details';
+    if (this.xxx.innerHTML == 'Where is your place located ?') {
+      this.xxx.innerHTML = 'Your place Details';
+    } else {
+      this.xxx.innerHTML = 'Where is your place located ?';
+    }
+  }
+
+  getPropType(){
+    this.propertyType.getAllPropertyType().subscribe((req)=>{
+      this.propTy=req;
+
+    })
+  }
+  getPropCategory(){
+    this.category.getAllCategory().subscribe((cat)=>{
+      console.log(cat)
+      this.cat=cat
+    })
+  }
+  getSubCategory(){
+   this.subCat.getAllSubCategory().subscribe((s)=>{
+    this.sub=s
+   })
   }
 
   getAllCountries() {
@@ -119,4 +155,6 @@ export class HostEditPageComponent implements OnInit {
       this.Cities = city;
     });
   }
+
+
 }
