@@ -38,8 +38,8 @@ updateProperty(updateProprty:HostProperties){
   return this.http.put(`${environment.APIURL}/ArProperties/update/${updateProprty.id}`,updateProprty);
 }
 
-deleteProperty(deleteProprty:HostProperties){
-  return this.http.put(`${environment.APIURL}/ArProperties/delete/${deleteProprty.id}`,deleteProprty);
+deleteProperty(id:number){
+  return this.http.put(`${environment.APIURL}/ArProperties/delete/${id}`,{});
 }
 
 

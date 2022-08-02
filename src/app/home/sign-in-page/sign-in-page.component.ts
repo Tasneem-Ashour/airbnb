@@ -32,7 +32,7 @@ export class SignInPageComponent {
   }
 
   ngOnInit(){
-    this.isUserLogged=this.authService.isUserLogged;
+    this.authService.isAuth$.subscribe((value)=>{this.isUserLogged=value})
   }
 
 

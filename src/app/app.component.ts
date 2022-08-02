@@ -1,4 +1,4 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from './services/user-auth.service';
 
 @Component({
@@ -10,31 +10,30 @@ export class AppComponent {
   title = 'airbnb';
   hah = true;
   old = false;
-isTokenIn:boolean=true;
-  constructor(public Auth:UserAuthService){}
+  isTokenIn: boolean = true;
+  constructor(public Auth: UserAuthService) {}
+
+  
 
   ngOnInit(): void {
-    this.Auth.isWith$.subscribe({
-      next: (isWith) => {
-        this.isTokenIn= isWith;
-      },
-    });
+    this.checkUserLogin();
   }
   reciveBool(bool: any) {
     this.hah = bool;
-    this.old=true;
+    this.old = true;
   }
   mainNav(bool: boolean) {
     this.old = false;
-    this.hah=true;
+    this.hah = true;
+  }
+
+  checkUserLogin() {
+    var token = localStorage.getItem('token');
+    if (!token) {
+      return;
+    }
+    this.Auth.isAuth$.next(true);
   }
 }
-export class Model {
-  handleClick() {
-    //execute action
-  }
-get isTokenIn():boolean{
-  return (localStorage.getItem("token"))?true:false;
-}
- 
-}
+
+
