@@ -4,8 +4,7 @@
 <div class="heading-section mb-5 mt-5 mt-lg-0">
     <h2 class="mb-3">Wellcom {{HostName?.firstName |titlecase}} {{HostName?.lastName |titlecase}}</h2>
 </div>
-
-<section class="ftco-section bg-light ftco-faqs" *ngFor="let item of geniralProperty">
+<section class="ftco-section bg-light ftco-faqs" *ngFor="let item of geniralProperty ; let i =index"  >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 order-md-last">
@@ -107,11 +106,11 @@
                         </div>
                         <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo" >
                             <div class="card-body py-3 px-0">
-                                <ol *ngFor="let item of geniralProperty ">
-                                    <li >bed: {{item.bedCount}}</li>
-                                    <li>bath room: {{item.bathroomCount}}</li>
-                                    <li>bed room: {{item.bedroomCount}}</li>
-                                    <li>gest: {{item.accomodatesCount}}</li>
+                                <ol >
+                                    <li >bed: {{geniralProperty[i].bedCount}}</li>
+                                    <li>bath room: {{geniralProperty[i].bathroomCount}}</li>
+                                    <li>bed room: {{geniralProperty[i].bedroomCount}}</li>
+                                    <li>gest: {{geniralProperty[i].accomodatesCount}}</li>
 
                                     <!-- <li>Consonantia, there live the blind texts</li>
                                     <li>When she reached the first hills of the Italic Mountains</li>
@@ -132,7 +131,7 @@
                                 aria-expanded="false"
                                 aria-controls="collapseFour"
                               >
-                                    <p class="mb-0">What are those requirements for sitting pets?</p>
+                                    <p class="mb-0">your place offer</p>
                                     <i class="fa" aria-hidden="false"></i>
                                 </button>
                             </h2>

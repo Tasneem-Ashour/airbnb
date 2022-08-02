@@ -21,13 +21,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewComponent } from './view/view.component';
 import { BookingComponent } from './booking/booking.component';
 import { HostProfileComponent } from './host-profile/host-profile.component';
+import { UserViewComponent } from './user-view/user-view.component';
 
 
 
 
 @NgModule({
-  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent, HostEditPageComponent, ViewComponent, BookingComponent, HostProfileComponent],
+  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent, HostEditPageComponent, ViewComponent, BookingComponent, HostProfileComponent, UserViewComponent],
   imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule,ListboxModule ,DropdownModule,BrowserAnimationsModule,FormsModule],
-  exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent,UserProfileComponent,UserEditProfileComponent,ViewComponent,BookingComponent,HostPageComponent],
+  exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent,UserProfileComponent,UserEditProfileComponent,ViewComponent,BookingComponent,HostPageComponent,UserViewComponent],
 })
 export class HomeModule {}
