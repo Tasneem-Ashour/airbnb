@@ -1,1 +1,99 @@
-<p>booking works!</p>
+<div class="diamond"></div>
+<div class="form-wrap">
+  <h3 class="mAob">Request to Book</h3>
+  <form [formGroup]="bookingForm">
+    <div class="location">
+      <label for="location">LOCATION</label><br />
+      <input
+        type="text"
+        name="location"
+        formControlName="location"
+        placeholder="New York, NY"
+      /><br />
+    </div>
+    <div class="guests">
+      <label for="guests">NUMBER OF GUESTS</label><br /><br />
+      <button
+        class="counter-btn"
+        id="cnt-down"
+        type="button"
+        (click)="decrease()"
+      >
+        -
+      </button>
+      <input
+        id="guestNo"
+        type="text"
+        formControlName="guests"
+        name="guests"
+        value="2"
+      />
+      <button
+        class="counter-btn"
+        id="cnt-up"
+        type="button"
+        (click)="increase()"
+      >
+        +
+      </button>
+      <br />
+      <label
+        *ngIf="
+          bookingForm.controls.guests.touched &&
+          bookingForm.controls.guests.hasError('required')
+        "
+        class="text-danger"
+      >
+        The field is required.
+      </label>
+      <label
+        *ngIf="
+          bookingForm.controls.guests.touched &&
+          bookingForm.controls.guests.hasError('max')
+        "
+        class="text-danger"
+      >
+        You exceeded max value.
+      </label>
+      <label
+        *ngIf="
+          bookingForm.controls.guests.touched &&
+          bookingForm.controls.guests.hasError('min')
+        "
+        class="text-danger"
+      >
+        The value is below minimum.
+      </label>
+      <br />
+    </div>
+ 
+    <div class="dates">
+      <div class="arrival">
+        <label for="arrival">ARRIVAL</label><br />
+        <input
+          name="arrival"
+          formControlName="arrival"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+          placeholder="10/03/2016"
+        />
+      </div>
+      <div class="departure">
+        <label for="arrival">DEPARTURE</label><br />
+        <input
+          name="departure"
+          formControlName="departure"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+          placeholder="05/11/2016"
+        />
+      </div>
+    </div>
+  </form>
+  <button (click)="bookNow()" class="btn" type="button">BOOK NOW</button>
+</div>
+ 
+ 
+
