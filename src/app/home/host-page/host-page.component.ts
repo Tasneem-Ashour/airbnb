@@ -3,7 +3,9 @@ import { HostService } from 'src/app/services/host.service';
 import { Category } from 'src/app/_models/category';
 import { Cities } from 'src/app/_models/cities';
 import { Countries } from 'src/app/_models/countries';
+import { Currencies } from 'src/app/_models/currencies';
 import { HostProperties } from 'src/app/_models/host-properties';
+import { PropertyTypes } from 'src/app/_models/property-types';
 import { RoomType } from 'src/app/_models/room-type';
 import { SubCategory } from 'src/app/_models/sub-category';
 
@@ -13,71 +15,102 @@ import { SubCategory } from 'src/app/_models/sub-category';
   styleUrls: ['./host-page.component.css'],
 })
 export class HostPageComponent {
-  constructor(
-    public allCountries: HostService,
-    public allCities: HostService,
-    public roomType: HostService,
-    public hostProperty: HostService,
-    public category: HostService,
-    public subCategory: HostService
-  ) {}
+  constructor(public hostService: HostService) {}
+  propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
   Cities: Cities[] = [];
-  Room: RoomType[] = [];
-  hostProp: HostProperties[] = [];
-  cat: Category[] = [];
-  sub: SubCategory[] = [];
+  roomType: RoomType[] = [];
+  category: Category[] = [];
+  subCategory:SubCategory[]=[];
+  curency: Currencies[] = [];
+    // oject from hostProp to send it to API/////////////
+    newProp = new HostProperties();
+
+
+
 
   selectedCountry = '';
   selectedCity = '';
 
   ngOnInit(): void {
-    this.getRoomType()
+    this.getAllCountries();
+    this.getAllCities();
+    this.getPropType();
+    this.getRoomType();
+    this.getPropCategory();
+    this.getCarency();
+    this.getSubCategory();
   }
-
-  scroll(e1: HTMLElement) {
-    e1.scrollIntoView();
-  }
-
-  saveData() {}
-
-  getAllPropirty() {
-    this.hostProperty.getAllProperties().subscribe((req) => {
-      this.hostProp = req;
-    });
-  }
-
-  getAllCategories() {
-    this.category.getAllCategory().subscribe((req) => {
-      this.cat = req;
-    });
-  }
-
-  // getAllSubCategories() {
-  //   this.subCategory.getAllSubCategory().subscribe((req) => {
-  //     this.sub = req;
-  //   });
-  // }
 
   getAllCountries() {
-    this.allCountries.getContries().subscribe((country) => {
+    this.hostService.getContries().subscribe((country) => {
       this.Countries = country;
+      console.log(this.Countries);
     });
   }
-
   getAllCities() {
-    this.allCities.getCities().subscribe((city) => {
+    this.hostService.getCities().subscribe((city) => {
       this.Cities = city;
     });
   }
-
-  getRoomType() {
-    this.roomType.getRoomType().subscribe((req) => {
-      this.Room = req;
+  getPropType() {
+    this.hostService.getAllPropertyType().subscribe((req) => {
+      this.propType = req;
+      console.log(req);
     });
   }
-  //change acvtive
-  placeActive(event: any) {
-    document.getElementById('current')?.classList.remove('active');
+  getRoomType() {
+    this.hostService.getRoomType().subscribe((type) => {
+      this.roomType = type;
+    });
   }
+  getPropCategory() {
+    this.hostService.getAllCategory().subscribe((cat) => {
+      this.category = cat;
+    });
+  }
+  getSubCategory(){
+    this.hostService.getAllSubCategory().subscribe((sub)=>{
+      this.subCategory=sub
+    })
+  }
+  getCarency() {
+    this.hostService.getCurrencies().subscribe((c) => {
+      this.curency = c;
+    });
+  }
+
+
+  //getting Data from user ////////////////////
+  getProPTypeID(propTypeID:any){
+    this.newProp.propertyTypeId=propTypeID;
+     }
+  getRoomTypeId(roomTypeId:any){
+   this.newProp.roomTypeId=roomTypeId;
+
+  }
+  getCatID(categoryId:any){
+    this.newProp.categoryId=categoryId;
+
+    }
+  getSubCatId(subId:any){
+    this.newProp.subcategoryId=subId
+    this.newProp.subcategoryId
+  }
+  getCountryId(country: any) {
+    this.newProp.countryId = country;
+  }
+  getCityId(c:any){
+    this.newProp.cityId=c
+ }
+ getCurencyId(cu:any){
+  this.newProp.currencyId=cu
+ }
+ addNewProperty(){
+  this.hostService.AddProperty(this.newProp).subscribe((prop)=>{
+  })
+  console.log(this.newProp)
+  this.hostService.getAllProperties().subscribe(f=>{console.log(f)})
+ }
+
 }

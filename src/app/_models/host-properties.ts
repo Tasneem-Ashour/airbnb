@@ -1,34 +1,34 @@
 export class HostProperties {
-  constructor(
-    public id: number,
-    public name: string,
-    public userId: string,
-    public description: string,
-    public propertyTypeId: number,
-    public roomTypeId: number,
-    public categoryId: number,
-    public subcategoryId: number,
-    public countryId: number,
-    public stateId: any,
-    public cityId: number,
-    public address: string,
-    public latitude: string,
-    public longitude: string,
-    public bedroomCount: number,
-    public bedCount: number,
-    public bathroomCount: number,
-    public accomodatesCount: number,
-    public availabilityType: boolean,
-    public startDate: Date,
-    public endDate: Date,
-    public price: number,
-    public currencyId: number,
-    public priceType: any,
-    public minimumStay: number,
-    public minimumStayType: any,
-    public refundType: boolean,
-    public created: any,
-    public modified: any,
-    public status: boolean
-  ) {}
+  constructor() {}
+  id: number = 0;
+  name: string = '';
+  userId: number = 0;
+  description: string = '';
+  propertyTypeId: number = 0;
+  roomTypeId: number = 0;
+  categoryId: number = 0;
+  subcategoryId: number = 0;
+  countryId: number = 0;
+  stateId: any;
+  cityId: number = 0;
+  address: string = '';
+  latitude: string = '';
+  longitude: string = '';
+  bedroomCount: number = 0;
+  bedCount: number = 0;
+  bathroomCount: number = 0;
+  accomodatesCount: number = 0;
+  availabilityType: boolean = true;
+  startDate: Date = new Date();
+  endDate: Date = new Date();
+  price: number = 0;
+  currencyId: number = 0;
+  priceType: any;
+  minimumStay: number = 0;
+  minimumStayType: any;
+  refundType: boolean = true;
+  created: Date = new Date();
+  modified: Date = new Date();
+  status: boolean = true;
+  Url: string = '';
 }

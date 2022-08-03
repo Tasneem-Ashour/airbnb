@@ -1,291 +1,149 @@
-<nav class="navbar bg-danger p-4 bg-opacity-75">
-  <nav class="navbar bg-danger p-3 bg-opacity-75">
-    <div class="container-fluid d-flex justify-content-center">
-      <span class="navbar-brand mb-0 h1 text-white font"
-        >You can host anything, anywhere</span
-      >
-    </div>
-  </nav>
-  <div class="accordion w-50 p-3 center" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button
-          class="accordion-button bg-danger p-3 bg-opacity-50"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseOne"
-          aria-expanded="true"
-          aria-controls="collapseOne"
-        >
-          What Kind of place will you host?
-        </button>
-      </h2>
-      <div
-        id="collapseOne"
-        class="accordion-collapse collapse show"
-        aria-labelledby="headingOne"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <div class="list-group">
-            <a
-              id="current"
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              aria-current="true"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-            >
-              The current link item
-            </a>
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              >A second link item</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              >A third link item</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              >A fourth link item</a
-            >
-            <a
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              >A disabled link item</a
-            >
-          </div>
-        </div>
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+ <!--<title>Responsive Regisration Form </title>-->
+<body class="accordion-item" >
+ <div class="container">
+    <div class="d-flex align-items-center mb-3 pb-1">
+        <!-- <i class="fa fa-futbol-o mb-3 mx-2" aria-hidden="true"></i> -->
+        <i class="fa fa-house-user mb-3 mx-2" aria-hidden="true"></i>
+        <span routerLink="" class="h3 fw-bold mb-3" style="color: #2fa7ab;"> Host everything , every where</span>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button
-          class="accordion-button collapsed p-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseTwo"
-          aria-expanded="false"
-          aria-controls="collapseTwo"
-        >
-          What Kind of space will guests have ?
-        </button>
-      </h2>
-      <div
-        id="collapseTwo"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingTwo"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <div class="list-group">
-            <a
-              id="current"
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              aria-current="true"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-            >
-              The current link item
-            </a>
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              >A second link item</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              >A third link item</a
-            >
-          </div>
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It's also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
+    <h4 class = "t-orange1" style="color: #2fa7ab">Registration</h4>
+     <div class="new">
+         <div class="form first" style="overflow-y: scroll; height:400px;">
+             <div class="details personal">
+                 <span class="title ">
+                     <p class = "t-orange1" style="color: #2fa7ab">Place Details </p>
+                 </span>
+
+                 <div class="fields">
+                     <!-- <div class="input-field">
+                         <label >First Name</label>
+                         <input formControlName="fname" type="text" placeholder="Enter your first name" required>
+                     </div> -->
+                     <div class="input-field">
+                      <label>Property Type </label>
+                      <select #prop data-live-search="true" (change)="getProPTypeID(prop.value)">
+                          <option   *ngFor="let item of propType" [value]="item.id">{{item.name}}</option>
+                      </select>
+                  </div>
+
+                    <div class="input-field">
+                      <label>Room Type </label>
+                      <select #room data-live-search="true" (change)="getRoomTypeId(room.value)">
+                          <option  *ngFor="let item of roomType" [value]="item.id">{{item.name}}</option>
+
+                      </select>
+                  </div>
+                  <div class="input-field">
+                    <label>Property Name</label>
+                    <input type="text"  placeholder="Enter your Prperty Name"[(ngModel)]="newProp.name">
+                 </div>
+                 <div class="input-field">
+                  <label>Description </label>
+                  <input type="text"  placeholder="About your"[(ngModel)]="newProp.description">
+              </div>
+
+
+                     <div class="input-field">
+                      <label>Features</label>
+                      <select #cat data-live-search="true"(change)="getCatID(cat.value)">
+                          <option  *ngFor="let item of category" [value]="item.id">{{item.name}}</option>
+                      </select>
+
+
+                  </div>
+                  <div class="input-field">
+                      <label>Extra Features</label>
+                      <select #subcat data-live-search="true"(change)="getSubCatId(subcat.value)">
+                          <option  *ngFor="let item of subCategory" [value]="item.id">{{item.name}}</option>
+                      </select>
+
+
+                  </div>
+                     <div class="input-field">
+                         <label>Address</label>
+                         <input type="text"  placeholder="Enter your Address" [(ngModel)]="newProp.address">
+                     </div>
+
+                     <div class="input-field">
+                        <label>Place Location </label>
+                        <input type="text"  placeholder="Enter Your Location Url"[(ngModel)]="newProp.latitude">
+                    </div>
+
+                    <div class="input-field">
+                      <label>Country</label>
+                      <select #country  data-live-search="true" (change)="getCountryId(country.value)">
+                          <option  *ngFor="let test of Countries" [value]="test.id">{{test.name}}</option>
+
+                      </select>
+                  </div>
+                     <div class="input-field">
+                         <label>City</label>
+                         <select #city data-live-search="true" (change)="getCityId(city.value)" >
+                             <option *ngFor="let test of Cities" [value]="test.id">{{test.name}}</option>
+
+                         </select>
+                     </div>
+
+                 </div>
+             </div>
+
+             <div class="details ID">
+                 <span class="title">Identity Details</span>
+
+                 <div class="fields">
+                     <div class="input-field">
+                         <label>No of BedRoom</label>
+                         <input type="number" placeholder="Number of Bedroom" [(ngModel)]="newProp.bedroomCount">
+                     </div>
+
+                     <div class="input-field">
+                        <label>No of Bed</label>
+                        <input type="number" placeholder="Number of Bed" [(ngModel)]="newProp.bedCount">
+                    </div>
+                    <div class="input-field">
+                      <label>No of Bathroom</label>
+                      <input type="number" placeholder="Number of Bathroom"[(ngModel)]="newProp.bathroomCount">
+                  </div>
+                  <div class="input-field">
+                    <label>No of Guest</label>
+                    <input type="number" placeholder="Place Capacity"[(ngModel)]="newProp.accomodatesCount">
+                </div>
+
+                     <div class="input-field">
+                         <label>Price </label>
+                         <input type="number"  placeholder="Enter your Price"[(ngModel)]="newProp.price" >
+                     </div>
+
+                     <div class="input-field">
+                      <label>Curency</label>
+                      <select #curn data-live-search="true" (change)="getCurencyId(curn.value)">
+                          <option *ngFor="let item of curency"[value]="item.id" >{{item.name}}</option>
+
+                      </select>
+                  </div>
+
+
+                     <div class="input-field">
+                        <label>Upload Your place photo</label>
+                        <input type="file" class="form-control" placeholder="Upload your place photo"[(ngModel)]="newProp.Url">
+                    </div>
+
+                 </div>
+
+
+             <input type="submit" value="Add Property" class="btn t-white1 bg-teal1 " (click)="addNewProperty()">
+
+             </div>
+         </div>
+
+
         </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button
-          class="accordion-button collapsed bg-danger p-3 bg-opacity-50"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseThree"
-          aria-expanded="false"
-          aria-controls="collapseThree"
-        >
-          Which of these best describes your place ?
-        </button>
-      </h2>
-      <div
-        id="collapseThree"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingThree"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <div class="list-group">
-            <a
-              id="current"
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              aria-current="true"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
-            >
-              The current link item
-            </a>
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
-              >A second link item</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light p-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
-              >A third link item</a
-            >
-          </div>
-          <strong>This is the third item's accordion body.</strong> It is hidden
-          by default, until the collapse plugin adds the appropriate classes
-          that we use to style each element. These classes control the overall
-          appearance, as well as the showing and hiding via CSS transitions. You
-          can modify any of this with custom CSS or overriding our default
-          variables. It's also worth noting that just about any HTML can go
-          within the <code>.accordion-body</code>, though the transition does
-          limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFour">
-        <button
-          class="accordion-button collapsed p-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseFour"
-          aria-expanded="false"
-          aria-controls="collapseFour"
-        >
-          Where is your place located ?
-        </button>
-      </h2>
-      <div
-        id="collapseFour"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingFour"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It's also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFive">
-        <button
-          class="accordion-button collapsed bg-danger p-3 bg-opacity-50"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseFive"
-          aria-expanded="false"
-          aria-controls="collapseFive"
-        >
-          How many guests would you like to welcome ?
-        </button>
-      </h2>
-      <div
-        id="collapseFive"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingFive"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It's also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingSix">
-        <button
-          class="accordion-button collapsed p-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseSix"
-          aria-expanded="false"
-          aria-controls="collapseSix"
-        >
-          Let guests Know what your place has to offer
-        </button>
-      </h2>
-      <div
-        id="collapseSix"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingSix"
-        data-bs-parent="#accordionExample"
-      >
-        <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It's also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+ </div>
+
+</body>

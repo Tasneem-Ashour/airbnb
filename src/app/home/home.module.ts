@@ -15,20 +15,20 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.component';
 import { HostPageComponent } from './host-page/host-page.component';
 import {ListboxModule} from 'primeng/listbox';
-import { HostEditPageComponent } from './host-edit-page/host-edit-page.component';
 import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewComponent } from './view/view.component';
 import { BookingComponent } from './booking/booking.component';
 import { HostProfileComponent } from './host-profile/host-profile.component';
 import { UserViewComponent } from './user-view/user-view.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
 
 @NgModule({
-  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent, HostEditPageComponent, ViewComponent, BookingComponent, HostProfileComponent, UserViewComponent],
-  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule,ListboxModule ,DropdownModule,BrowserAnimationsModule,FormsModule],
+  declarations: [SignInPageComponent, SignUpPageComponent, HomePageComponent, UserProfileComponent, UserEditProfileComponent, HostPageComponent, ViewComponent, BookingComponent, HostProfileComponent, UserViewComponent],
+  imports: [CommonModule,ReactiveFormsModule,MessagesModule,MessageModule,ButtonModule,RouterModule,ListboxModule ,DropdownModule,BrowserAnimationsModule,FormsModule,BrowserModule],
   exports: [SignInPageComponent, SignUpPageComponent, HomePageComponent,UserProfileComponent,UserEditProfileComponent,ViewComponent,BookingComponent,HostPageComponent,UserViewComponent],
 })
 export class HomeModule {}

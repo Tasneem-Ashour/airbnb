@@ -23,7 +23,8 @@ export class HostService {
   // property curd
 
 getAllProperties():Observable<HostProperties[]>{
-  return this.http.get<HostProperties[]>(`${environment.APIURL}/ArCategories`)
+  return this.http.get<HostProperties[]>(`${environment.APIURL}/ArProperties/GetAll`)
+
 }
 
 getPropertiesByHostId(){

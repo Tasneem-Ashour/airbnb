@@ -15,7 +15,7 @@ import { SubCategory } from 'src/app/_models/sub-category';
   styleUrls: ['./host-profile.component.css'],
 })
 export class HostProfileComponent implements OnInit {
- 
+
   constructor(
     public ar: ActivatedRoute,
     public HostProperty: HostService,
@@ -27,7 +27,7 @@ export class HostProfileComponent implements OnInit {
     public router :Router,
   ) {}
 
-tasneem = new HostProperties();
+// tasneem = new HostProperties();
   HostName: Iprofile | null = null;
   geniralProperty: HostProperties[] = [];
   properyType: PropertyTypes[] = [];
