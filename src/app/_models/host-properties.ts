@@ -9,9 +9,10 @@ export class HostProperties {
   name: string = '';
  // userId: number = 0;
   description: string = '';
-  propertyTypeId:number=0;
-  roomTypeId: number=0 ;
-  categoryId: number=0;
+  propertyTypeId: number = 0;
+  roomTypeId: number=0;
+  categoryId: number = 0;
+  // subcategoryId: number = 0;
   countryId: number = 0;
   stateId: any;
   cityId: number = 0;
@@ -23,7 +24,6 @@ export class HostProperties {
   bathroomCount: number = 0;
   accomodatesCount: number = 0;
   availabilityType: boolean = true;
-  // wrwq
   price: number = 0;
   currencyId:number=0;
   priceType: any;

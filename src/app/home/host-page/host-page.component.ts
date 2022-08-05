@@ -111,6 +111,7 @@ export class HostPageComponent {
   getCountryId(country: any) {
     this.newProp.countryId = country;
     this.getAllCities();
+    alert(this.newProp.countryId)
   }
   getCityId(c:any){
     this.newProp.cityId=c
@@ -139,9 +140,9 @@ this.status='image uploaded successfully';
   this.hostService.AddProperty(this.newProp).subscribe((prop)=>{
     // this.hostService.test=66;
     // alert(this.hostService.test)
-    // console.log(this.newProp)
-    this.newProp=prop;
+    // this.newProp=prop;
   })
+  console.log(this.newProp)
   // this.hostService.test=66;
   // alert(this.hostService.test)
   // console.log(this.newProp)
