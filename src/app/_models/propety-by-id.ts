@@ -51,8 +51,8 @@ export class PropetyById {
         city:Cities|null=null;
         country: Countries|null=null;
         currency: Currencies|null=null;
-        propertyType: PropertyTypes[]=[];
-        roomType:RoomType[]=[];
+        propertyType: PropertyTypes|null=null;
+        roomType:RoomType|null=null;
         user:Arusers|null=null;
     
 }
