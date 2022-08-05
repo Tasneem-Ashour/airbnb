@@ -15,7 +15,8 @@ export class UserViewComponent implements OnInit {
   constructor(public property:HostService , public ar:ActivatedRoute) { }
 
   HostProp =new PropetyById();
-  currencyName:Currencies[]=[];
+  url=new HostProperties();
+
   ngOnInit(): void {
   // this.getAllData(25);
   this.ar.params.subscribe((a)=>{

@@ -3,6 +3,7 @@ import { share } from 'rxjs';
 import { ProfileService } from 'src/app/services/profile.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 import { Iprofile } from 'src/app/_models/iprofile';
+import { IUser } from 'src/app/_models/iuser';
 
 @Component({
   selector: 'app-header',
@@ -35,6 +36,7 @@ export class HeaderComponent implements OnInit {
     this.ShowNewNav();
   }
   profile: Iprofile | null = null;
+  userType:IUser|null=null;
   // getdata() {
   //   this.get.getByEmail('ayahkenawy44@gmail.com').subscribe((a) => {
   //     this.profile = a;
@@ -48,4 +50,6 @@ export class HeaderComponent implements OnInit {
 
   //   });
   // }
+
+
 }
