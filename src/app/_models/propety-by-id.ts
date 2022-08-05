@@ -17,9 +17,9 @@ export class PropetyById {
         name:string= '';
         userId:string='';
         description: string='';
-        propertyTypeId: number=0;
-        roomTypeId: number=0;
-        categoryId: number=0;
+        propertyTypeId: PropertyTypes|null=null;
+        roomTypeId: RoomType|null=null;
+        categoryId: Category|null=null;
         countryId: number=0;
         stateId: number=0;
         cityId: number=0;
@@ -51,8 +51,8 @@ export class PropetyById {
         city:Cities|null=null;
         country: Countries|null=null;
         currency: Currencies|null=null;
-        propertyType: PropertyTypes[]=[];
-        roomType:RoomType[]=[];
+        propertyType: PropertyTypes|null=null;
+        roomType:RoomType|null=null;
         user:Arusers|null=null;
     
 }
