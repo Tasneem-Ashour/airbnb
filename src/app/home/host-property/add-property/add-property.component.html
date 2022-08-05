@@ -16,14 +16,14 @@
 
     <mat-form-field appearance="outline">
         <mat-label>Property Type</mat-label>
-        <mat-select formControlName="PropertyType" #prop placeholder="Property Type" (change)="getProPTypeID(prop.value)" [(ngModel)]="newProp.propertyTypeId">
+        <mat-select formControlName="PropertyType" #prop placeholder="Property Type" (change)="getProPTypeID(prop.value)">
             <mat-option *ngFor="let item of propType" [value]="item.id">{{ item.name }}</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Room Type</mat-label>
-        <mat-select formControlName="RoomType" #room placeholder="Room Type" (change)="getRoomTypeId(room.value)" [(ngModel)]="newProp.roomTypeId">
+        <mat-select formControlName="RoomType" #room placeholder="Room Type" (change)="getRoomTypeId(room.value)">
             <mat-option *ngFor="let item of roomType" [value]="item.id">{{
                 item.name
                 }}</mat-option>
@@ -32,7 +32,7 @@
 
     <mat-form-field appearance="outline">
         <mat-label>Features</mat-label>
-        <mat-select formControlName="category" #cat placeholder="category" (change)="getCatID(cat.value)" [(ngModel)]="newProp.categoryId">
+        <mat-select formControlName="category" #cat placeholder="category" (change)="getCatID(cat.value)">
             <mat-option *ngFor="let item of category" [value]="item.id">{{
                 item.name
                 }}</mat-option>
@@ -60,8 +60,8 @@
 
     <mat-form-field appearance="outline">
         <mat-label>City</mat-label>
-        <mat-select #city  placeholder="City"  (change)="getCityId(city.value)" [(ngModel)]="newProp.cityId">
-            <mat-option *ngFor="let test of Cities" [value]="test.id">{{
+        <mat-select formControlName="City" placeholder="City" #country (change)="getCountryId(country.value)" [(ngModel)]="newProp.cityId">
+            <mat-option *ngFor="let test of Countries" [value]="test.id">{{
                 test.name
                 }}</mat-option>
         </mat-select>
@@ -102,24 +102,15 @@
         <input formControlName="NumberofGuest" matInput type="number" placeholder=" Number of Guest" [(ngModel)]="newProp.accomodatesCount" />
     </mat-form-field>
 
-   
-
     <!-- <mat-form-field appearance="outline">
         <mat-label>Upload Your place photo</mat-label>
         <input matInput type="file" placeholder=" Upload Your place photo" [(ngModel)]="newProp.Url"/>
       </mat-form-field> -->
     </form>
-
-    
-        <div class="input-field">
-            <label>Upload Your place photo</label>
-            <input type="file" class="form-control" placeholder="Upload your place photo"[(ngModel)]="newProp.Url">
-        </div>
-
 </div>
 <div mat-dialog-action [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 10px" mat-raised-button color="primary"  (click)=" addNewProperty()">
+    <button style="margin-left: 10px" mat-raised-button color="primary"  (click)="testData()">
         Save
     </button>
 </div>

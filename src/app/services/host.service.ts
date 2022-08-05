@@ -97,7 +97,7 @@ updateCategory(updateCategory:Category){
 
 
 deleleCategory(deleleCategory:Category){
-  return this.http.put<Category>(`${environment.APIURL}/ArCategories/${deleleCategory.id}`,{});
+  return this.http.put<Category>(`${environment.APIURL}/ArCategories/${deleleCategory.id}`,deleleCategory);
 }
 
 
@@ -154,9 +154,9 @@ getCityByContryId(countryId:number):Observable<Cities[]>{
   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
 }
 
-// getCityByContryId(countryId:number):Observable<Cities[]>{
-//   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
-// }
+getCityByContryId(countryId:number):Observable<Cities[]>{
+  return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
+}
 
 getCurrencies():Observable<Currencies[]>{
   return this.http.get<Currencies[]>(`${environment.APIURL}/ArCurrencies`)

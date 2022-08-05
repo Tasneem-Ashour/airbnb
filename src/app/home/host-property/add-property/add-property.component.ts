@@ -15,7 +15,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { error } from 'jquery';
 @Component({
   selector: 'app-add-property',
   templateUrl: './add-property.component.html',
@@ -41,7 +40,7 @@ export class AddPropertyComponent implements OnInit {
     Address: new FormControl('', Validators.required),
     PlaceLocation: new FormControl('', Validators.required),
     Country: new FormControl('', Validators.required),
-   // City: new FormControl('', Validators.required),
+    City: new FormControl('', Validators.required),
     Price: new FormControl('', Validators.required),
     Cuurency: new FormControl('', Validators.required),
     NumberofBedRoom: new FormControl('', Validators.required),
@@ -76,7 +75,6 @@ export class AddPropertyComponent implements OnInit {
     this.getCarency();
     this.getSubCategory();
   }
-
   getAllCountries() {
     this.hostService.getContries().subscribe((country) => {
       this.Countries = country;
@@ -84,7 +82,7 @@ export class AddPropertyComponent implements OnInit {
     });
   }
   getAllCities() {
-    this.hostService.getCityByContryId(this.newProp.countryId).subscribe((city) => {
+    this.hostService.getCities().subscribe((city) => {
       this.Cities = city;
     });
   }
@@ -125,13 +123,12 @@ export class AddPropertyComponent implements OnInit {
   getCatID(categoryId: any) {
     this.newProp.categoryId = categoryId;
   }
-  // getSubCatId(subId: any) {
-  //   this.newProp.subcategoryId = subId;
-  //   this.newProp.subcategoryId;
-  // }
+  getSubCatId(subId: any) {
+    this.newProp.subcategoryId = subId;
+    this.newProp.subcategoryId;
+  }
   getCountryId(country: any) {
     this.newProp.countryId = country;
-    this.getAllCities();
   }
   getCityId(c: any) {
     this.newProp.cityId = c;
@@ -140,14 +137,11 @@ export class AddPropertyComponent implements OnInit {
     this.newProp.currencyId = cu;
   }
   addNewProperty() {
-    this.hostService.AddProperty(this.newProp).subscribe((prop) => {
-
-      console.log(this.newProp);
-    this.newProp=prop;
-
-     
+    this.hostService.AddProperty(this.newProp).subscribe((prop) => {});
+    console.log(this.newProp);
+    this.hostService.getAllProperties().subscribe((f) => {
+      console.log(f);
     });
-  
   }
 
   testData() {
@@ -155,12 +149,12 @@ export class AddPropertyComponent implements OnInit {
     if (this.propertyForm.valid) {
       this.hostService.AddProperty(this.newProp).subscribe({
         next: (res) => {
-          console.log('product added successfully');
+          alert('product added successfully');
           this.propertyForm.reset();
           this.dialogRef.close('save');
         },
         error: () => {
-          console.log(error);
+          alert('Error while adding the property');
         },
       });
     }

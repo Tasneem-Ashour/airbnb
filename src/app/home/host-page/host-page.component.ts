@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HostService } from 'src/app/services/host.service';
-import { PropertyImagesService } from 'src/app/services/property-images.service';
 import { Category } from 'src/app/_models/category';
 import { Cities } from 'src/app/_models/cities';
 import { Countries } from 'src/app/_models/countries';
 import { Currencies } from 'src/app/_models/currencies';
 import { HostProperties } from 'src/app/_models/host-properties';
-import { PropertyImages } from 'src/app/_models/property-images';
 import { PropertyTypes } from 'src/app/_models/property-types';
 import { RoomType } from 'src/app/_models/room-type';
 import { SubCategory } from 'src/app/_models/sub-category';
@@ -18,14 +15,7 @@ import { SubCategory } from 'src/app/_models/sub-category';
   styleUrls: ['./host-page.component.css'],
 })
 export class HostPageComponent {
-
-
-
-  form=new FormGroup({
-    uploadImage:new FormControl<string>('',[Validators.required]),
-  });
-  
-  constructor(public hostService: HostService , public img:PropertyImagesService) {}
+  constructor(public hostService: HostService) {}
   propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
   Cities: Cities[] = [];
@@ -38,7 +28,7 @@ export class HostPageComponent {
 
 
 
-    status = '';
+
   selectedCountry = '';
   selectedCity = '';
 
@@ -111,7 +101,6 @@ export class HostPageComponent {
   getCountryId(country: any) {
     this.newProp.countryId = country;
     this.getAllCities();
-    alert(this.newProp.countryId)
   }
   getCityId(c:any){
     this.newProp.cityId=c
@@ -119,30 +108,13 @@ export class HostPageComponent {
  getCurencyId(cu:any){
   this.newProp.currencyId=cu
  }
-
- uploadPhoto(target:EventTarget|null){
-  if(!target) return;
-  var input=target as HTMLInputElement;
-  if(!input.files) return;
-  this.status ='image uploading started';
-  this.img.uploadPropertyImage(input.files[0]).subscribe({
-    next:(res)=>{
-console.log(res.image);
-this.form.patchValue({uploadImage:res.image});
-this.status='image uploaded successfully';
-    },
-    error:()=>{
-      this.status='Try again';
-    }
- });
- }
  addNewProperty(){
   this.hostService.AddProperty(this.newProp).subscribe((prop)=>{
     // this.hostService.test=66;
     // alert(this.hostService.test)
-    // this.newProp=prop;
+    // console.log(this.newProp)
+    this.newProp=prop;
   })
-  console.log(this.newProp)
   // this.hostService.test=66;
   // alert(this.hostService.test)
   // console.log(this.newProp)

@@ -90,7 +90,7 @@ export class HostPropertyComponent implements OnInit {
   HostPropertyById() {
     this.hostServise.getPropertiesByHostId().subscribe({
       next: (res) => {
-         console.log(res);
+        // console.log(res);
 
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;

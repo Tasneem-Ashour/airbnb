@@ -1,16 +1,11 @@
-import { Category } from "./category";
-import { Currencies } from "./currencies";
-import { PropertyTypes } from "./property-types";
-import { RoomType } from "./room-type";
-
 export class HostProperties {
   constructor() {}
   id: number = 0;
   name: string = '';
- // userId: number = 0;
+  userId: number = 0;
   description: string = '';
   propertyTypeId: number = 0;
-  roomTypeId: number=0;
+  roomTypeId: any|null ;
   categoryId: number = 0;
   // subcategoryId: number = 0;
   countryId: number = 0;
@@ -24,8 +19,9 @@ export class HostProperties {
   bathroomCount: number = 0;
   accomodatesCount: number = 0;
   availabilityType: boolean = true;
+  // wrwq
   price: number = 0;
-  currencyId:number=0;
+  currencyId:any;
   priceType: any;
   // minimumStay: number = 0;
   // minimumStayType: any;

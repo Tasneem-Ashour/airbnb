@@ -25,8 +25,7 @@ import {MenuItem} from 'primeng/api';
     HttpClientModule,
     BrowserAnimationsModule,
     ButtonModule,
-    HomeModule,
-    CoreModule,
+    HomeModule,CoreModule,
     ReactiveFormsModule,
     StepsModule
   ],

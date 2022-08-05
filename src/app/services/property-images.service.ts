@@ -16,26 +16,20 @@ export class PropertyImagesService {
     }
   
     
-    // AddPropertyImage(AddPropertyImage:PropertyImages){
-    //   return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages`,AddPropertyImage);
-    // }
+    AddPropertyImage(AddPropertyImage:PropertyImages){
+      return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages`,AddPropertyImage);
+    }
   
-    // updatePropertyImage(updatePropertyImage:PropertyImages){
-    //   return this.http.put<PropertyImages>(`${environment.APIURL}/ArPropertyImages/${updatePropertyImage.id}`,updatePropertyImage);
-    // }
-
-    uploadPropertyImage(file:File):Observable<PropertyImages>{
-      var formData = new FormData();
-      formData.append('image',file);
-      return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages/UploadImg`,formData);
+    updatePropertyImage(updatePropertyImage:PropertyImages){
+      return this.http.put<PropertyImages>(`${environment.APIURL}/ArPropertyImages/${updatePropertyImage.id}`,updatePropertyImage);
     }
   
     deletePropertyImage(deletePropertyImage:PropertyImages){
       return this.http.put<PropertyImages>(`${environment.APIURL}/ArPropertyImages/Delete/${deletePropertyImage.id}`,deletePropertyImage);
     }
 
-    // uploadImage(uploadImage:PropertyImages){
-    //   return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages/UploadImg`,uploadImage.image)
-    // }
+    uploadImage(uploadImage:PropertyImages){
+      return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages/UploadImg`,uploadImage.image)
+    }
    }
 
