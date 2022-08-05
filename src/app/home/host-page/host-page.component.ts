@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HostService } from 'src/app/services/host.service';
+import { PropertyImagesService } from 'src/app/services/property-images.service';
 import { Category } from 'src/app/_models/category';
 import { Cities } from 'src/app/_models/cities';
 import { Countries } from 'src/app/_models/countries';
@@ -15,7 +17,12 @@ import { SubCategory } from 'src/app/_models/sub-category';
   styleUrls: ['./host-page.component.css'],
 })
 export class HostPageComponent {
-  constructor(public hostService: HostService) {}
+
+  form=new FormGroup({
+    uploadImage:new FormControl<string>('',[Validators.required]),
+  });
+  
+  constructor(public hostService: HostService , public img:PropertyImagesService) {}
   propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
   Cities: Cities[] = [];
@@ -28,6 +35,7 @@ export class HostPageComponent {
 
 
 
+    status = '';
 
   selectedCountry = '';
   selectedCity = '';
@@ -119,6 +127,23 @@ export class HostPageComponent {
   // alert(this.hostService.test)
   // console.log(this.newProp)
 
+ }
+
+ uploadPhoto(target:EventTarget|null){
+  if(!target) return;
+  var input=target as HTMLInputElement;
+  if(!input.files) return;
+  this.status ='image uploading started';
+  this.img.uploadPropertyImage(input.files[0]).subscribe({
+    next:(res)=>{
+console.log(res.image);
+this.form.patchValue({uploadImage:res.image});
+this.status='image uploaded successfully';
+    },
+    error:()=>{
+      this.status='Try again';
+    }
+ });
  }
 
 }

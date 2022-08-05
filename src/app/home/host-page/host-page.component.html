@@ -129,10 +129,19 @@
                   </div>
 
 
-                     <div class="input-field">
+                     <!-- <div class="input-field">
                         <label>Upload Your place photo</label>
                         <input type="file" class="form-control" placeholder="Upload your place photo"[(ngModel)]="newProp.Url">
-                    </div>
+                    </div> -->
+
+                    <form action="" [formGroup]="form">
+                        <div class="input-field">
+                            <label>Upload Your place photo</label>
+                            <input type="file" class="form-control" placeholder="Upload your place photo"
+                                (change)="uploadPhoto($event.target)">
+                            <label>{{status}}</label>
+                        </div>
+                    </form>
 
                  </div>
 

@@ -20,8 +20,10 @@ export class PropertyImagesService {
       return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages`,AddPropertyImage);
     }
   
-    updatePropertyImage(updatePropertyImage:PropertyImages){
-      return this.http.put<PropertyImages>(`${environment.APIURL}/ArPropertyImages/${updatePropertyImage.id}`,updatePropertyImage);
+    uploadPropertyImage(file:File):Observable<PropertyImages>{
+      var formData = new FormData();
+      formData.append('image',file);
+      return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages/UploadImg`,formData);
     }
   
     deletePropertyImage(deletePropertyImage:PropertyImages){

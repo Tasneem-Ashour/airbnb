@@ -67,7 +67,7 @@
       background-color: #fff;
       transition: 0.3s ease;
   }
-  
+
   form.secActive .form.first{
       opacity: 0;
       pointer-events: none;
@@ -157,7 +157,7 @@
   .new .buttons button , .backBtn{
       margin-right: 14px;
   }
-  
+
   @media (max-width: 750px) {
       .container .new{
           overflow-y: scroll;
@@ -169,18 +169,18 @@
           width: calc(100% / 2 - 15px);
       }
   }
-  
+
   @media (max-width: 550px) {
     .new .fields .input-field{
           width: 100%;
       }
   }
-  
-  
+
+
   /* color classes */
-  
+
   /* background colors */
-  
+
   /* black */
   .bg-black {
       background-color: #060606;
@@ -209,9 +209,9 @@
   .bg-white1 {
       background-color: #EEE7E1;
   }
-  
+
   /* text colors */
-  
+
   /* black */
   .t-black {
       color: #060606;
