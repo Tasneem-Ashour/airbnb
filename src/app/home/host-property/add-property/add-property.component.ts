@@ -123,10 +123,10 @@ export class AddPropertyComponent implements OnInit {
   getCatID(categoryId: any) {
     this.newProp.categoryId = categoryId;
   }
-  getSubCatId(subId: any) {
-    this.newProp.subcategoryId = subId;
-    this.newProp.subcategoryId;
-  }
+  // getSubCatId(subId: any) {
+  //   this.newProp.subcategoryId = subId;
+  //   this.newProp.subcategoryId;
+  // }
   getCountryId(country: any) {
     this.newProp.countryId = country;
   }

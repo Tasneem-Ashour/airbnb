@@ -154,9 +154,9 @@ getCityByContryId(countryId:number):Observable<Cities[]>{
   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
 }
 
-getCityByContryId(countryId:number):Observable<Cities[]>{
-  return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
-}
+// getCityByContryId(countryId:number):Observable<Cities[]>{
+//   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
+// }
 
 getCurrencies():Observable<Currencies[]>{
   return this.http.get<Currencies[]>(`${environment.APIURL}/ArCurrencies`)

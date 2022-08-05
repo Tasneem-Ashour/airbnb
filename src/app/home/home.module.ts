@@ -22,7 +22,7 @@ import { HostProfileComponent } from './host-profile/host-profile.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';
-import { HostPropertyComponent } from './host-property/host-property.component';
+// import { HostPropertyComponent } from './host-property/host-property.component';
 
 // to create curd using angular material
 
@@ -40,7 +40,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { MatSortModule } from '@angular/material/sort';
 import { HostPropertyComponent } from './host-property/host-property.component';
-import { AddPropertyComponent } from './host-property/add-property/add-property.component';
+// import { AddPropertyComponent } from './host-property/add-property/add-property.component';
 
 @NgModule({
   declarations: [
