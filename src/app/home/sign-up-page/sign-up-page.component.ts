@@ -41,6 +41,9 @@ export class SignUpPageComponent  {
   get UserType(){
     return this.upForm.get("UserType");
   }
+  get password(){
+    return this.upForm.get("password")
+  }
 
   Register(){
     // console.log(this.upForm.value);
