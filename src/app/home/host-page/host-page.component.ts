@@ -110,6 +110,10 @@ export class HostPageComponent {
  }
  addNewProperty(){
   this.hostService.AddProperty(this.newProp).subscribe((prop)=>{
+    // this.hostService.test=66;
+    // alert(this.hostService.test)
+    // console.log(this.newProp)
+    this.newProp=prop;
   })
   // this.hostService.test=66;
   // alert(this.hostService.test)

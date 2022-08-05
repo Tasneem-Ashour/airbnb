@@ -1,8 +1,185 @@
-body{margin-top:20px;}
+*{
+  margin:0 ;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'poppins' , 'sans-serif';
+}
 
+
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background:linear-gradient(-225deg, rgba(0,0,0,0.6) 50%, rgba(0,36,61,0.6) 80%),url(/assets/images/banner.png);
+  background-size: cover;
+  background-position: center;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 7%;
+}
+
+.logo{
+  width: 140px;
+  cursor: pointer;
+}
+
+
+.nav-links li {
+  list-style: none;
+  display: inline-block;
+  margin: 10px 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+
+}
+.register-btn{
+  background: #fff;
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.container{
+  padding: 0 7%;
+
+}
+
+.header h1{
+  font-size: 4vw;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  padding-top: 22%;
+}
+
+
+/* cards */
+
+.Cantainer{
+  display: flex;
+}
+.card{
+  height: 400px;
+  margin: 50px;
+  box-shadow: 5px 5px 20px black;
+  overflow: hidden;
+}
+
+img{
+  height: 500px;
+  width: 350px;
+  border-radius: 3px;
+}
+.intro{
+height: 70px;
+width: 350px;
+padding: 6px;
+box-sizing: border-box;
+position: absolute;
+margin-block-start: 330px;
+/* bottom: 70px; */
+background: rgb(27,27,27,.5);
+color: #fff;
+transition: 0.5s;
+}
+
+h1{
+  margin: 10px;
+  font-size: 20px;
+}
+
+p{
+  font-size: 10px;
+  margin: 20px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+span{
+  font-weight: bold;
+}
+
+.card:hover{
+  cursor: pointer;
+}
+
+.card:hover .intro{
+  height: 200px;
+margin-block-start: 230px;
+  background-color: rgba(0, 0, 0, 0.571);
+}
+
+.card:hover p{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media (max-width: 575.98px) {
+   .card {
+      width: 50%;
+  } 
+}
+
+/* .card:hover img{
+  transform: scale(1.1) rotate(-3deg);
+} */
+
+/* @media (max-width:1080){
+  .card{
+    flex: 100%;
+    max-width: 480px;
+  }
+
+  @media (min-width:300px) {
+    .card{
+      flex:100%;
+      min-width:200px;
+    } */
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
 /* service part
 ---------------------*/
-.feature-box-1 {
+/* .feature-box-1 {
   padding: 32px;
   box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
   margin: 15px 0;
@@ -89,10 +266,10 @@ body{margin-top:20px;}
     margin: 0 0 15px;
     border-left: 5px solid #fc5356;
     padding-left: 15px;
-}
+} */
 /* cards
 ---------------------*/
-body{
+/* body{
   background:#eee;
   margin-top:20px;}
 
@@ -242,7 +419,7 @@ body{
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-}
+*/
 /* footer
 ---------------------*/
 

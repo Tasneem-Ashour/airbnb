@@ -9,6 +9,7 @@ import { Countries } from '../_models/countries';
 import { Currencies } from '../_models/currencies';
 import { HostProperties } from '../_models/host-properties';
 import { PropertyTypes } from '../_models/property-types';
+import { PropetyById } from '../_models/propety-by-id';
 import { RoomType } from '../_models/room-type';
 import { SubCategory } from '../_models/sub-category';
 
@@ -29,6 +30,15 @@ getAllProperties():Observable<HostProperties[]>{
 
 getPropertiesByHostId(){
   return this.http.get<HostProperties[]>(`${environment.APIURL}/ArProperties/GetWithByHostId`);
+}
+
+getPropertyById(id:number){
+  return this.http.get<HostProperties>(`${environment.APIURL}/ArProperties/${id}`);
+
+}
+
+geWithAllData(IdProperty:number){
+  return this.http.get<PropetyById>(`${environment.APIURL}/ArProperties/GetWithAllData/${IdProperty}`);
 }
 AddProperty(AddProprty:HostProperties){
   return this.http.post<HostProperties>(`${environment.APIURL}/ArProperties`,AddProprty);
@@ -140,6 +150,10 @@ getContries():Observable<Countries[]>{
 getCities():Observable<Cities[]>{
   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetAll`)
 }
+getCityByContryId(countryId:number):Observable<Cities[]>{
+  return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
+}
+
 getCityByContryId(countryId:number):Observable<Cities[]>{
   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
 }

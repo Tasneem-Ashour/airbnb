@@ -1,7 +1,6 @@
-<p>user-view works!</p>
 <div class="hosuse-details">
     <div class="hosuse-title">
-        <h1>Wenge House</h1>
+        <h1>{{HostProp.name}}</h1>
         <div class="row">
             <div>
                 <li class="fas fa-star"></li>
@@ -12,7 +11,7 @@
                 <span>245 Reviwes</span>
             </div>
             <div>
-                <p>Location: san francisco , California , US</p>
+                <p>Location:{{HostProp.address}}</p>
             </div>
         </div>
     </div>
@@ -24,9 +23,9 @@
         <div><img src="./assets/images/house-5.png" alt="" /></div>
     </div>
     <div class="small-details">
-        <h2>Entire rental unit hosted by Brandon</h2>
-        <p>2 guest &nbsp; 2 beds &nbsp; &nbsp; 1 bathroom</p>
-        <h4> 100 $ / day </h4>
+        <h2>{{HostProp.description}}</h2>
+        <p>{{HostProp.accomodatesCount}} guests &nbsp; {{HostProp.bedroomCount}} Rooms &nbsp; {{HostProp.bedCount}} beds &nbsp; &nbsp; {{HostProp.bathroomCount}} bathroom</p>
+        <h4> {{HostProp.price}} {{HostProp.currency?.name}} / day </h4>
     </div>
     <hr class="line">
     <form class="check-form">
@@ -48,7 +47,7 @@
     </form>
 
     <ul class="details-list">
-        <li><i class="fas fa-home"></i>Entire Home <span>You will have the entire flat for you</span></li>
+        <li><i class="fas fa-home"></i>Entire Home <span>{{HostProp.roomTypeId}}</span></li>
         <li><i class="fas fa-paint-brush"></i>Enhanced Clean<span>You will have the entire flat for you</span></li>
         <li><i class="fas fa-map-marked-alt"></i>Grade Location <span>You will have the entire flat for you</span></li>
         <li><i class="fas fa-heart"></i>Great check-in experience <span>You will have the entire flat for you</span>
@@ -56,9 +55,7 @@
 
     </ul>
     <hr class="line">
-    <p class="home-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae illo provident voluptas
-        consectetur corporis, dolor quos molestiae nobis cumque quasi adipisci, optio voluptate quam, quo officiis. Quia
-        pariatur reiciendis placeat.</p>
+    <p class="home-desc">{{HostProp.description}}</p>
     <hr class="line">
     <div class="map">
         <h3>Location on map</h3>
