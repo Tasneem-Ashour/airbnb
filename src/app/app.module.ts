@@ -11,6 +11,8 @@ import { HomePageComponent } from './home/home-page/home-page.component';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import {StepsModule} from 'primeng/steps';
+import {MenuItem} from 'primeng/api';
 
 
 
@@ -21,11 +23,11 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
     BrowserAnimationsModule,
     ButtonModule,
-    HomeModule,CoreModule
-    , ReactiveFormsModule,
+    HomeModule,CoreModule,
+    ReactiveFormsModule,
+    StepsModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,

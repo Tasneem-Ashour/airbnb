@@ -1,22 +1,11 @@
 export class Booking {
     constructor(
-      public  id: number,
-        public propertyId: number,
-       public userId: any,
-       public  checkInDate: Date,
-        public checkOutDate: Date,
-        public pricePerDay: number,
-        public pricePerStay: number,
-        public taxPaid: number,
-        public siteFees: number,
-        public amountPaid: number,
-        public isRefund: boolean,
-        public cancelDate:  Date,
-        public refundPaid: number,
-        public bookingDate: Date,
-        public created: Date,
-        public modified: Date,
-        public status: boolean
-
     ){}
+    propertyId: number=0;
+    checkInDate:Date = new Date() ;
+    checkOutDate:Date = new Date() ;
+    pricePerStay: number=0;
+    roomsCount: number=0;
+    guestCount: number=0;
+    childrenCount: number=0;
 }

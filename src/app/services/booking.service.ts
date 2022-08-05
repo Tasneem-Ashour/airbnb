@@ -10,22 +10,28 @@ import { Booking } from '../_models/booking';
 export class BookingService {
 
   constructor(public http:HttpClient) { }
+  // propID:Number=0;
+  // Price:number=0;
+  book:Booking=new Booking();
 
   //admin only
-  getAllBooking():Observable<Booking[]>{
-    return this.http.get<Booking[]>(`${environment.APIURL}/ArBookings`);
-  }
+  // getAllBooking():Observable<Booking[]>{
+  //   return this.http.get<Booking[]>(`${environment.APIURL}/ArBookings`);
+  // }
+  // getBookingById(bookId:number):Observable<Booking[]>{
+  //  return this.http.get<Booking[]>(`${environment.APIURL}/ArBookings/${bookId}`)
+  // }
 
-  
+
   AddBooking(AddBooking:Booking){
     return this.http.post<Booking>(`${environment.APIURL}/ArBookings`,AddBooking);
   }
 
-  updateBooking(updateBooking:Booking){
-    return this.http.put<Booking>(`${environment.APIURL}/ArBookings/${updateBooking.id}`,updateBooking);
-  }
+  // updateBooking(updateBooking:Booking){
+  //   return this.http.put<Booking>(`${environment.APIURL}/ArBookings/${updateBooking.id}`,updateBooking);
+  // }
 
-  deleteBooking(deleteBooking:Booking){
-    return this.http.put<Booking>(`${environment.APIURL}/ArBookings/delete/${deleteBooking.id}`,deleteBooking);
-  }
+  // deleteBooking(deleteBooking:Booking){
+  //   return this.http.put<Booking>(`${environment.APIURL}/ArBookings/delete/${deleteBooking.id}`,deleteBooking);
+  // }
 }

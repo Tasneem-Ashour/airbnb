@@ -18,7 +18,7 @@ import { SubCategory } from '../_models/sub-category';
 export class HostService {
 
   constructor(public http:HttpClient) { }
-
+test:number=0;
 
   // property curd
 
@@ -130,7 +130,7 @@ updateRoom(updateRoom:RoomType){
 
 //only for admin
 deleteRoom(deleteRoom:RoomType){
-  return this.http.delete<RoomType>(`${environment.APIURL}/ArRoomTypes${deleteRoom.id}`);
+  return this.http.delete<RoomType>(`${environment.APIURL}/ArRoomTypes/${deleteRoom.id}`);
 }
 
 getContries():Observable<Countries[]>{
@@ -139,6 +139,9 @@ getContries():Observable<Countries[]>{
 
 getCities():Observable<Cities[]>{
   return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetAll`)
+}
+getCityByContryId(countryId:number):Observable<Cities[]>{
+  return this.http.get<Cities[]>(`${environment.APIURL}/ArCities/GetByCountryID/${countryId}`)
 }
 
 getCurrencies():Observable<Currencies[]>{

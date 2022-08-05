@@ -7,7 +7,7 @@ export class HostProperties {
   propertyTypeId: number = 0;
   roomTypeId: number = 0;
   categoryId: number = 0;
-  subcategoryId: number = 0;
+  // subcategoryId: number = 0;
   countryId: number = 0;
   stateId: any;
   cityId: number = 0;
@@ -19,13 +19,12 @@ export class HostProperties {
   bathroomCount: number = 0;
   accomodatesCount: number = 0;
   availabilityType: boolean = true;
-  startDate: Date = new Date();
-  endDate: Date = new Date();
+  // wrwq
   price: number = 0;
   currencyId: number = 0;
   priceType: any;
-  minimumStay: number = 0;
-  minimumStayType: any;
+  // minimumStay: number = 0;
+  // minimumStayType: any;
   refundType: boolean = true;
   created: Date = new Date();
   modified: Date = new Date();

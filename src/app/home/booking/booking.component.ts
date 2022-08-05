@@ -1,44 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
- 
+import {MenuItem} from 'primeng/api';
+import { BookingService } from 'src/app/services/booking.service';
+import { Booking } from 'src/app/_models/booking';
+
+
+
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css'],
 })
-export class BookingComponent implements OnInit {
-  bookingForm = new FormGroup({
-    location: new FormControl<string | null>(null, [Validators.required]),
-    guests: new FormControl<number | null>(2, [
-      Validators.required,
-      Validators.min(0),
-      Validators.max(20),
-    ]),
-    arrival: new FormControl<Date | null>(null, [Validators.required]),
-    departure: new FormControl<Date | null>(null, [Validators.required]),
-  });
- 
-  constructor() {
-    this.bookingForm.controls.guests.hasError;
+export class BookingComponent {
+
+
+  constructor(public bookingServices:BookingService) {
+
   }
- 
-  ngOnInit(): void {}
- 
-  increase() {
-    let oldValue = this.bookingForm.controls.guests.value ?? 0;
-    if (oldValue === 20) return;
-    this.bookingForm.patchValue({ guests: +oldValue + 1 });
+
+
+    // oject from booking to send it to API/////////////
+  newBook=new Booking();
+
+  ngOnInit(): void {
+
   }
- 
-  decrease() {
-    let oldValue = this.bookingForm.controls.guests.value ?? 0;
-    if (oldValue === 1) return;
-    this.bookingForm.patchValue({ guests: +oldValue - 1 });
+  getRoomNumber(roomNo:any){
+   this.newBook.roomsCount=roomNo;
+
   }
- 
-  bookNow(){
-    console.log(this.bookingForm.value)
+  getAdultsNumber(adultNo:any){
+    this.newBook.guestCount=adultNo;
+
+   }
+   getChildNumber(childNo:any){
+    this.newBook.childrenCount=childNo;
+
+   }
+  addNewBook(){
+    this.newBook.propertyId=28;
+    this.newBook.pricePerStay=5000;
+   this.bookingServices.AddBooking(this.newBook).subscribe((book)=>{})
+    this.bookingServices.book=this.newBook;
+   console.log(this.newBook)
   }
+
+
 }
- 
+
 

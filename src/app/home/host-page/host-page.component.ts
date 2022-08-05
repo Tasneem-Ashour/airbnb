@@ -49,7 +49,7 @@ export class HostPageComponent {
     });
   }
   getAllCities() {
-    this.hostService.getCities().subscribe((city) => {
+    this.hostService.getCityByContryId(this.newProp.countryId).subscribe((city) => {
       this.Cities = city;
     });
   }
@@ -92,13 +92,15 @@ export class HostPageComponent {
   getCatID(categoryId:any){
     this.newProp.categoryId=categoryId;
 
+
     }
-  getSubCatId(subId:any){
-    this.newProp.subcategoryId=subId
-    this.newProp.subcategoryId
-  }
+  // getSubCatId(subId:any){
+  //   this.newProp.subcategoryId=subId
+  //   this.newProp.subcategoryId
+  // }
   getCountryId(country: any) {
     this.newProp.countryId = country;
+    this.getAllCities();
   }
   getCityId(c:any){
     this.newProp.cityId=c
@@ -109,8 +111,10 @@ export class HostPageComponent {
  addNewProperty(){
   this.hostService.AddProperty(this.newProp).subscribe((prop)=>{
   })
-  console.log(this.newProp)
-  this.hostService.getAllProperties().subscribe(f=>{console.log(f)})
+  // this.hostService.test=66;
+  // alert(this.hostService.test)
+  // console.log(this.newProp)
+
  }
 
 }

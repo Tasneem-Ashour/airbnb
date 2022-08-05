@@ -39,6 +39,7 @@ export class HostProfileComponent implements OnInit {
     this.hostName();
     this.getPropertyType();
     this.getCategory();
+    alert(this.HostProperty.test)
   }
 
   HostPropertyById() {

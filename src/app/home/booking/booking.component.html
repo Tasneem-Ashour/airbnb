@@ -1,99 +1,80 @@
-<div class="diamond"></div>
-<div class="form-wrap">
-  <h3 class="mAob">Request to Book</h3>
-  <form [formGroup]="bookingForm">
-    <div class="location">
-      <label for="location">LOCATION</label><br />
-      <input
-        type="text"
-        name="location"
-        formControlName="location"
-        placeholder="New York, NY"
-      /><br />
-    </div>
-    <div class="guests">
-      <label for="guests">NUMBER OF GUESTS</label><br /><br />
-      <button
-        class="counter-btn"
-        id="cnt-down"
-        type="button"
-        (click)="decrease()"
-      >
-        -
-      </button>
-      <input
-        id="guestNo"
-        type="text"
-        formControlName="guests"
-        name="guests"
-        value="2"
-      />
-      <button
-        class="counter-btn"
-        id="cnt-up"
-        type="button"
-        (click)="increase()"
-      >
-        +
-      </button>
-      <br />
-      <label
-        *ngIf="
-          bookingForm.controls.guests.touched &&
-          bookingForm.controls.guests.hasError('required')
-        "
-        class="text-danger"
-      >
-        The field is required.
-      </label>
-      <label
-        *ngIf="
-          bookingForm.controls.guests.touched &&
-          bookingForm.controls.guests.hasError('max')
-        "
-        class="text-danger"
-      >
-        You exceeded max value.
-      </label>
-      <label
-        *ngIf="
-          bookingForm.controls.guests.touched &&
-          bookingForm.controls.guests.hasError('min')
-        "
-        class="text-danger"
-      >
-        The value is below minimum.
-      </label>
-      <br />
-    </div>
- 
-    <div class="dates">
-      <div class="arrival">
-        <label for="arrival">ARRIVAL</label><br />
-        <input
-          name="arrival"
-          formControlName="arrival"
-          type="text"
-          onfocus="(this.type='date')"
-          onblur="(this.type='text')"
-          placeholder="10/03/2016"
-        />
-      </div>
-      <div class="departure">
-        <label for="arrival">DEPARTURE</label><br />
-        <input
-          name="departure"
-          formControlName="departure"
-          type="text"
-          onfocus="(this.type='date')"
-          onblur="(this.type='text')"
-          placeholder="05/11/2016"
-        />
-      </div>
-    </div>
-  </form>
-  <button (click)="bookNow()" class="btn" type="button">BOOK NOW</button>
-</div>
- 
- 
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5">
+						<div class="booking-cta">
+							<h1>Make your reservation</h1>
+							<p>  A new journey full of happiness awaits you
+							</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-7">
+						<div class="booking-form">
+							<div>
 
+                <!-- <div class="form-group">
+									<span class="form-label">Your Destination</span>
+									<input class="form-control" type="text" placeholder="Enter a destination or hotel name">
+								</div> -->
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Check In</span>
+											<input class="form-control" type="date" required [(ngModel)]="newBook.checkInDate">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Check out</span>
+											<input class="form-control" type="date" required [(ngModel)]="newBook.checkOutDate">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<span class="form-label">Rooms</span>
+											<select #Room class="form-control" (change)="getRoomNumber(Room.value)">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<span class="form-label">Adults</span>
+											<select #adult class="form-control" (change)="getAdultsNumber(adult.value)" >
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<span class="form-label">Children</span>
+											<select #child class="form-control"(change)="getChildNumber(child.value)" >
+												<option>0</option>
+												<option>1</option>
+												<option>2</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button class="submit-btn " (click)="addNewBook()" routerLink="/confirmbooking">Book Now</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
