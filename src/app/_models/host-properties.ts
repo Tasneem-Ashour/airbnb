@@ -7,7 +7,6 @@ export class HostProperties {
   propertyTypeId: number = 0;
   roomTypeId: any|null ;
   categoryId: number = 0;
-  // subcategoryId: number = 0;
   countryId: number = 0;
   stateId: any;
   cityId: number = 0;
