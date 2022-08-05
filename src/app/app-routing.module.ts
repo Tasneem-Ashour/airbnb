@@ -6,7 +6,7 @@ import { HomePageComponent } from './home/home-page/home-page.component';
 
 import { HostPageComponent } from './home/host-page/host-page.component';
 import { HostProfileComponent } from './home/host-profile/host-profile.component';
-// import { HostPropertyComponent } from './home/host-property/host-property.component';
+import { HostPropertyComponent } from './home/host-property/host-property.component';
 
 import { SignInPageComponent } from './home/sign-in-page/sign-in-page.component';
 import { SignUpPageComponent } from './home/sign-up-page/sign-up-page.component';
@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: "userView", component: UserViewComponent },
   { path: "confirmbooking", component: ConfirmBookingComponent },
 
-  // { path: "hostProfile", component: HostPropertyComponent },
+  { path: "hostProfile", component: HostPropertyComponent },
   { path: "userView/:id", component: UserViewComponent },
 
 

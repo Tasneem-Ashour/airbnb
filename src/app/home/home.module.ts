@@ -22,7 +22,7 @@ import { HostProfileComponent } from './host-profile/host-profile.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';
-// import { HostPropertyComponent } from './host-property/host-property.component';
+import { HostPropertyComponent } from './host-property/host-property.component';
 
 // to create curd using angular material
 
@@ -30,7 +30,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-// import { AddPropertyComponent } from './host-property/add-property/add-property.component';
+import { AddPropertyComponent } from './host-property/add-property/add-property.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
@@ -53,8 +53,8 @@ import { MatSortModule } from '@angular/material/sort';
     HostProfileComponent,
     UserViewComponent,
     ConfirmBookingComponent,
-    // HostPropertyComponent,
-    // AddPropertyComponent,
+    HostPropertyComponent,
+    AddPropertyComponent,
   ],
   imports: [
     CommonModule,
