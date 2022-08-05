@@ -77,13 +77,24 @@
                     </div>
                   </div>
 
-                  <p-message
+                  <!-- <p-message
                   class="d-flex flex-row align-items-center mb-4 pl-3"
                   severity="error"
                   text="email is required."
 
                   *ngIf="email?.touched && email?.invalid"
-                ></p-message>
+                ></p-message> -->
+                <div
+                class="alert alert-warning"
+                [hidden]="email?.valid || email?.untouched"
+              >
+                <small *ngIf="email?.errors?.['required']">
+                  Email is required
+                </small>
+                <small *ngIf="email?.errors?.['email']">
+                  Should bs correct form of email
+                </small>
+              </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -93,14 +104,23 @@
                     </div>
                   </div>
 
-                  <p-message
+                  <!-- <p-message
                   class="d-flex flex-row align-items-center mb-4 pl-3"
                     severity="error"
                     text="password is required ."
 
                     *ngIf="password?.touched && password?.invalid"
                   >
-                  </p-message>
+                  </p-message> -->
+                  <div
+                  class="alert alert-warning"
+                  [hidden]="password?.valid || password?.untouched"
+                >
+                  <small *ngIf="password?.errors?.['required']">
+                    Password is required
+                  </small>
+
+                </div>
 
 
 
