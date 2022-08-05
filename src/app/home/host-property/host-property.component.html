@@ -49,7 +49,7 @@
             <ng-container matColumnDef="action">
               <th mat-header-cell *matHeaderCellDef mat-sort-header example-spacer> action </th>
               <td mat-cell *matCellDef="let row">
-                <button mat-icon-button color="primary" (click)="editProperty(row)">
+                <button mat-icon-button color="primary" (click)="editProperty(row)" (click)="updateProperty(row.id)">
                   <mat-icon>edite</mat-icon>
                       </button>
 

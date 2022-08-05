@@ -18,6 +18,7 @@ export class HostPropertyComponent implements OnInit {
   geniralProperty: HostProperties[] = [];
   totalProperty = new PropetyById();
 
+
   displayedColumns: string[] = [
     'PropertyName',
     'PropertyType',
@@ -29,6 +30,8 @@ export class HostPropertyComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  newProp = new HostProperties();
+
 
   constructor(public dialog: MatDialog, public hostServise: HostService) {}
 
@@ -71,12 +74,20 @@ export class HostPropertyComponent implements OnInit {
   }
 
   editProperty(row: any) {
-    console.log("tasneem", row);
+   // console.log("tasneem", row);
     this.dialog.open(AddPropertyComponent, {
       
       width: '50%',
       data: row,
       
+    });
+  }
+
+  updateProperty(id:number){
+    
+    this.hostServise.updateProperty(id).subscribe((req)=>{
+      console.log(req);
+      this.HostPropertyById();
     });
   }
 

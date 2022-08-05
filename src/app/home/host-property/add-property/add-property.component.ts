@@ -15,6 +15,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PropertyImagesService } from 'src/app/services/property-images.service';
 @Component({
   selector: 'app-add-property',
   templateUrl: './add-property.component.html',
@@ -24,6 +25,7 @@ export class AddPropertyComponent implements OnInit {
   constructor(
     public hostService: HostService,
     private FormBulider: FormBuilder,
+    public img: PropertyImagesService,
     @Inject(MAT_DIALOG_DATA) public editProperty: any,
     // @Inject(MAT_DIALOG_DATA) public data: DialogData
     private dialogRef: MatDialogRef<AddPropertyComponent>
@@ -31,7 +33,7 @@ export class AddPropertyComponent implements OnInit {
     console.log('tasneem2', editProperty);
   }
 
-  propertyForm = new FormGroup({
+    form = new FormGroup({
     PropertyName: new FormControl('', Validators.required),
     PropertyDescription: new FormControl('', Validators.required),
     PropertyType: new FormControl('', Validators.required),
@@ -47,6 +49,7 @@ export class AddPropertyComponent implements OnInit {
     NumberofBed: new FormControl('', Validators.required),
     NumberofBathroom: new FormControl('', Validators.required),
     NumberofGuest: new FormControl('', Validators.required),
+    uploadImage: new FormControl<string>('', [Validators.required]),
   });
   propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
@@ -60,13 +63,13 @@ export class AddPropertyComponent implements OnInit {
 
   selectedCountry = '';
   selectedCity = '';
+  status = '';
 
   ngOnInit(): void {
     if (this.editProperty) {
-      this.newProp=this.editProperty;
-     
+      this.newProp = this.editProperty;
     }
-
+    this.addNewProperty() ;
     this.getAllCountries();
     this.getAllCities();
     this.getPropType();
@@ -82,9 +85,11 @@ export class AddPropertyComponent implements OnInit {
     });
   }
   getAllCities() {
-    this.hostService.getCities().subscribe((city) => {
-      this.Cities = city;
-    });
+    this.hostService
+      .getCityByContryId(this.newProp.countryId)
+      .subscribe((city) => {
+        this.Cities = city;
+      });
   }
   getPropType() {
     this.hostService.getAllPropertyType().subscribe((req) => {
@@ -137,26 +142,48 @@ export class AddPropertyComponent implements OnInit {
     this.newProp.currencyId = cu;
   }
   addNewProperty() {
-    this.hostService.AddProperty(this.newProp).subscribe((prop) => {});
-    console.log(this.newProp);
-    this.hostService.getAllProperties().subscribe((f) => {
-      console.log(f);
+    this.hostService.AddProperty(this.newProp).subscribe((prop) => {
+      console.log(this.newProp);
+
+      this.newProp = prop;
     });
   }
 
-  testData() {
-    console.log(this.propertyForm.value);
-    if (this.propertyForm.valid) {
-      this.hostService.AddProperty(this.newProp).subscribe({
-        next: (res) => {
-          alert('product added successfully');
-          this.propertyForm.reset();
-          this.dialogRef.close('save');
-        },
-        error: () => {
-          alert('Error while adding the property');
-        },
-      });
-    }
-  }
+
+ 
+
+
+  uploadPhoto(target:EventTarget|null){
+    if(!target) return;
+    var input=target as HTMLInputElement;
+    if(!input.files) return;
+    this.status ='image uploading started';
+    this.img.uploadPropertyImage(input.files[0]).subscribe({
+      next:(res)=>{
+  console.log(res.image);
+  this.form.patchValue({uploadImage:res.image});
+  this.status='image uploaded successfully';
+      },
+      error:()=>{
+        this.status='Try again';
+      }
+   });
+   }
+
+
+  // testData() {
+  //   console.log(this.propertyForm.value);
+  //   if (this.propertyForm.valid) {
+  //     this.hostService.AddProperty(this.newProp).subscribe({
+  //       next: (res) => {
+  //         alert('product added successfully');
+  //         this.propertyForm.reset();
+  //         this.dialogRef.close('save');
+  //       },
+  //       error: () => {
+  //         alert('Error while adding the property');
+  //       },
+  //     });
+  //   }
+  // }
 }
