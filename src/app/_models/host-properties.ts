@@ -5,7 +5,7 @@ export class HostProperties {
   userId: number = 0;
   description: string = '';
   propertyTypeId: number = 0;
-  roomTypeId: number = 0;
+  roomTypeId: any|null ;
   categoryId: number = 0;
   subcategoryId: number = 0;
   countryId: number = 0;
@@ -22,10 +22,10 @@ export class HostProperties {
   startDate: Date = new Date();
   endDate: Date = new Date();
   price: number = 0;
-  currencyId: number = 0;
+  currencyId:any;
   priceType: any;
-  minimumStay: number = 0;
-  minimumStayType: any;
+  // minimumStay: number = 0;
+  // minimumStayType: any;
   refundType: boolean = true;
   created: Date = new Date();
   modified: Date = new Date();

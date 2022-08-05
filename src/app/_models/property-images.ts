@@ -1,10 +1,12 @@
 export class PropertyImages {
   constructor(
-    public id: number,
-    public propertyId: number,
-    public addedByUser: any,
-    public image: string,
-    public created: Date,
-    public status: boolean
+  
   ) {}
+
+   id: number=0;
+   propertyId: number=0;
+   addedByUser: number=0;
+   image: string='';
+   created: Date=new Date;
+   status: boolean=true
 }

@@ -57,14 +57,14 @@
 
 
                   </div>
-                  <div class="input-field">
+                  <!-- <div class="input-field">
                       <label>Extra Features</label>
                       <select #subcat data-live-search="true"(change)="getSubCatId(subcat.value)">
                           <option  *ngFor="let item of subCategory" [value]="item.id">{{item.name}}</option>
                       </select>
 
 
-                  </div>
+                  </div> -->
                      <div class="input-field">
                          <label>Address</label>
                          <input type="text"  placeholder="Enter your Address" [(ngModel)]="newProp.address">
@@ -137,7 +137,7 @@
                  </div>
 
 
-             <input type="submit" value="Add Property" class="btn t-white1 bg-teal1 " (click)="addNewProperty()">
+             <input type="submit" value="Add Property" class="btn t-white1 bg-teal1 " (click)="addNewProperty()" routerLink="/hostProfile">
 
              </div>
          </div>

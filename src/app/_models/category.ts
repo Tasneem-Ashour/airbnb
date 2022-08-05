@@ -6,6 +6,8 @@ export class Category {
         public description: string,
         public created: Date,
         public modified: Date,
-        public status: boolean
-    ) { }
+        public status: boolean,
+        ) { }
+        
+        arSubcategories:[]=[];
 }

@@ -1,329 +1,84 @@
+<div class="header">
+  <nav>
+    <!-- <img src="" alt="logo" class="logo">  -->
+    <a >
+
+      <i class="fa fa-globe" [routerLink]="['/home']"> vacation</i>
+    </a>
+  <ul class="nav-links">
+    <li><a href="">link1</a></li>
+    <li><a href="">link2</a></li>
+    <li><a href="">link3</a></li>
+    <li><a href="">link4</a></li>
+
+  </ul>
+  <a href="" class="register-btn">Register Now</a>
+  </nav>
+  <div class="container">
+    <h1>Find You Next Stay</h1>
+  </div>
+</div>
+
+
+<!-- card -->
+
+<div class="Cantainer">
+  <div class="row clearfix">
+
+  <div class="card col-md-3 col-sm-6 col-xs-12" *ngFor="let item of prop" >
+    <img class="img-responsive" src="./assets/images/house-1.png"  alt=""  [routerLink]="['/userView',item.id]">
+    <div class="intro">
+      <h1>{{item.name}}</h1>
+      <p>The <span>location:{{item.address}} <br> Rooms:{{item.bedroomCount}} <br>
+      Gests{{item.accomodatesCount}}</span></p>
+    </div>
+ </div>
+
+ <!-- <div class="card col-md-3 col-sm-6 col-xs-12">
+  <img src="./assets/images/house-3.png" alt="">
+  <div class="intro">
+    <h1>Place Name</h1>
+    <p>The <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, rerum quidem pariatur laudantium tenetur earum voluptas illo nobis iste dignissimos similique repellendus fuga id voluptatem error reprehenderit cupiditate culpa saepe.</span></p>
+  </div>
+</div>
+
+<div class="card col-md-3 col-sm-6 col-xs-12">
+  <img class="img-responsive" src="./assets/images/house-2.png" alt="">
+  <div class="intro">
+    <h1>Place Name</h1>
+    <p>The <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, rerum quidem pariatur laudantium tenetur earum voluptas illo nobis iste dignissimos similique repellendus fuga id voluptatem error reprehenderit cupiditate culpa saepe.</span></p>
+  </div>
+
+  
+</div> -->
+
+
+
+
+
+  
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- cards -->
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xl-8 col-lg-8 col-md-10 text-center">
-      <div class="mb-3">
-        <h1>Welcome To Our World</h1>
-        <p>Without clarity, you send a very garbled message out to the Universe. We know that the Law of Attraction says that we will attract what we focus on, so if we don’t have clarity, we will attract confusion.</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-4 col-md-6">
-      <div class="team">
-        <div class="team-avatar">
-          <img class="w-100" src="https://media-cdn.tripadvisor.com/media/photo-s/1b/f4/64/09/aerial-view.jpg" alt="">
-        </div>
-        <div class="team-content">
-          <div class=" team-content-inner">
-            <div class="d-flex">
-              <div class="team-info">
-                <h5 class="mb-0"><a href="#" class="avatar-name">Maldives</a></h5>
-                <span class="team-position">Located</span>
-              </div>
-              <div class="team-social ml-auto">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-dribbble"></i>
-                    </a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="team-contact mt-2">
-              <a class="text-white d-block" href="#">
-                <i class="fas fa-phone fa-flip-horizontal mr-1"></i>
-                Call Now  123 123 1234
-              </a>
-              <a class="text-white d-block" href="#">
-                <i class="far fa-envelope mr-1"></i>
-                mysupport@bootdey.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="team">
-        <div class="team-avatar">
-          <img class="w-100" src="https://www.maldives-360.com/assets/website/img/Maldives1.png" alt="">
-        </div>
-        <div class="team-content">
-          <div class=" team-content-inner">
-            <div class="d-flex">
-              <div class="team-info">
-                <h5 class="mb-0"><a href="#" class="avatar-name">John Doe</a></h5>
-                <span class="team-position">Design</span>
-              </div>
-              <div class="team-social ml-auto">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-dribbble"></i>
-                    </a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="team-contact mt-2">
-              <a class="text-white d-block" href="#">
-                <i class="fas fa-phone fa-flip-horizontal mr-1"></i>
-                Call Now  123 123 1234
-              </a>
-              <a class="text-white d-block" href="#">
-                <i class="far fa-envelope mr-1"></i>
-                mysupport@bootdey.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="team">
-        <div class="team-avatar">
-          <img class="w-100" src="https://cf.bstatic.com/xdata/images/hotel/max500/101393625.jpg?k=26eb3000614af47a71a4d2ee693d9cf9a8c6ee8b1c41c2a2af34044bb4f9151e&o=&hp=1" alt="">
-        </div>
-        <div class="team-content">
-          <div class=" team-content-inner">
-            <div class="d-flex">
-              <div class="team-info">
-                <h5 class="mb-0"><a href="#" class="avatar-name">John Doe</a></h5>
-                <span class="team-position">Community</span>
-              </div>
-              <div class="team-social ml-auto">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-dribbble"></i>
-                    </a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="team-contact mt-2">
-              <a class="text-white d-block" href="#">
-                <i class="fas fa-phone fa-flip-horizontal mr-1"></i>
-                Call Now  123 123 1234
-              </a>
-              <a class="text-white d-block" href="#">
-                <i class="far fa-envelope mr-1"></i>
-                mysupport@bootdey.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="team">
-        <div class="team-avatar">
-          <img class="w-100" src="https://www.eviliohousesoia.com/wp-content/uploads/sites/357/2019/01/Bougainvillea-House-Evilio-in-Oia-1024x683.jpg" alt="">
-        </div>
-        <div class="team-content">
-          <div class=" team-content-inner">
-            <div class="d-flex">
-              <div class="team-info">
-                <h5 class="mb-0"><a href="#" class="avatar-name">Santorini</a></h5>
-                <span class="team-position">Greece</span>
-              </div>
-              <div class="team-social ml-auto">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-dribbble"></i>
-                    </a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="team-contact mt-2">
-              <a class="text-white d-block" href="#">
-                <i class="fas fa-phone fa-flip-horizontal mr-1"></i>
-                Call Now  123 123 1234
-              </a>
-              <a class="text-white d-block" href="#">
-                <i class="far fa-envelope mr-1"></i>
-                mysupport@bootdey.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="team">
-        <div class="team-avatar">
-          <img class="w-100" src="https://www.e-architect.com/images/jpgs/spain/b-n-house-a200513-10.jpg" alt="">
-        </div>
-        <div class="team-content">
-          <div class=" team-content-inner">
-            <div class="d-flex">
-              <div class="team-info">
-                <h5 class="mb-0"><a href="#" class="avatar-name">Austria</a></h5>
-                <span class="team-position">south</span>
-              </div>
-              <div class="team-social ml-auto">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-dribbble"></i>
-                    </a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="team-contact mt-2">
-              <a class="text-white d-block" href="#">
-                <i class="fas fa-phone fa-flip-horizontal mr-1"></i>
-                Call Now  123 123 1234
-              </a>
-              <a class="text-white d-block" href="#">
-                <i class="far fa-envelope mr-1"></i>
-                mysupport@bootdey.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="team">
-        <div class="team-avatar">
-          <img class="img-fluid" src="https://360.elgouna.com/wp-content/uploads/2021/01/dawar-elomda-pool-el-gouna-egypt.jpeg" alt="">
-        </div>
-        <div class="team-content">
-          <div class=" team-content-inner">
-            <div class="d-flex">
-              <div class="team-info">
-                <h5 class="mb-0"><a href="#" class="avatar-name">Egypt</a></h5>
-                <span class="team-position">Gouna</span>
-              </div>
-              <div class="team-social ml-auto">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-dribbble"></i>
-                    </a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="team-contact mt-2">
-              <a class="text-white d-block" href="#">
-                <i class="fas fa-phone fa-flip-horizontal mr-1"></i>
-                Call Now  123 123 1234
-              </a>
-              <a class="text-white d-block" href="#">
-                <i class="far fa-envelope mr-1"></i>
-                mysupport@bootdey.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- <div class="row">
-    <div class="col-md-12 text-center mb-2">
-      Here are some tips and methods for motivating yourself.
-      <a class="btn btn-link" href="#">View All Projects</a>
-    </div>
-  </div> -->
-</div>
+
 
 
 <!-- serviecs part -->
