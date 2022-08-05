@@ -7,11 +7,11 @@ export class HostProperties {
   constructor() {}
   id: number = 0;
   name: string = '';
-  userId: number = 0;
+ // userId: number = 0;
   description: string = '';
-  propertyTypeId:PropertyTypes|null=null;
-  roomTypeId: RoomType|null=null ;
-  categoryId: Category|null=null;
+  propertyTypeId:number=0;
+  roomTypeId: number=0 ;
+  categoryId: number=0;
   countryId: number = 0;
   stateId: any;
   cityId: number = 0;
@@ -25,7 +25,7 @@ export class HostProperties {
   availabilityType: boolean = true;
   // wrwq
   price: number = 0;
-  currencyId:Currencies|null=null;
+  currencyId:number=0;
   priceType: any;
   // minimumStay: number = 0;
   // minimumStayType: any;
