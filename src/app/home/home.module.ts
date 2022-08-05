@@ -39,6 +39,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 
 import { MatSortModule } from '@angular/material/sort';
+import { HostPropertyComponent } from './host-property/host-property.component';
+import { AddPropertyComponent } from './host-property/add-property/add-property.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +55,8 @@ import { MatSortModule } from '@angular/material/sort';
     HostProfileComponent,
     UserViewComponent,
     ConfirmBookingComponent,
-    // HostPropertyComponent,
-    // AddPropertyComponent,
+    HostPropertyComponent,
+    AddPropertyComponent,
   ],
   imports: [
     CommonModule,
