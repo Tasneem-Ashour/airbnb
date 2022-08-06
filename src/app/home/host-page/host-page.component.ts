@@ -113,6 +113,7 @@ export class HostPageComponent {
   this.newProp.currencyId=cu
  }
  addNewProperty(){
+  this.newProp.url = this.form.value.uploadImage ?? '';
   this.hostService.AddProperty(this.newProp).subscribe((prop)=>{
     // this.hostService.test=66;
     // alert(this.hostService.test)
