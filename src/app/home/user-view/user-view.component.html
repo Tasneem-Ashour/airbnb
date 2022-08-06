@@ -1,29 +1,60 @@
+<div class="halimo">
+
+	<nav class="navbar navbar-expand-xl  navbar-dark" id="navbarNav">
+		<div class="container mb-3">
+			<!--Logo-->
+			<a href="#" class="navbar-brand logo">Vacation</a>
+	
+			<!--When the window get smaller, a menue button will apperar on the left-->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavv" aria-controls="navbarNavv" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+	
+			<!--Menue-->
+			<div class="collapse navbar-collapse ms-auto" id="navbarNavv">
+				<ul class="navbar-nav ms-auto">
+	
+	
+					<li class="nav-item">
+						<a >
+							<button type="submit" class="btn btn-outline-light btn-md" id="RegBtn"  routerLink="/home">back </button>
+						</a>
+	
+					</li>
+				</ul>
+			</div>
+		</div>
+	  </nav>
+</div>
+
+
+
 <div class="hosuse-details">
     <div class="hosuse-title">
-        <h1>{{HostProp.name}}</h1>
+        <h1>Place Name: {{HostProp.name}}</h1>
         <div class="row">
-            <div>
+            <!-- <div>
                 <li class="fas fa-star"></li>
                 <li class="fas fa-star"></li>
                 <li class="fas fa-star"></li>
                 <li class="fas fa-star"></li>
                 <li class="fas fa-star-half-alt"></li>
                 <span>245 Reviwes</span>
-            </div>
+            </div> -->
             <div>
                 <p>Location:{{HostProp.address}}</p>
             </div>
         </div>
     </div>
     <div class="gallery">
-        <div class="gallery-img-1"><img src="./assets/images/house-1.png" alt="" /> </div>
+        <div class="gallery-img-1"><img src="Hostprop.url" alt="" /> </div>
         <div><img src="./assets/images/house-2.png" alt="" /></div>
         <div><img src="./assets/images/house-3.png" alt="" /></div>
         <div><img src="./assets/images/house-4.png" alt="" /></div>
         <div><img src="./assets/images/house-5.png" alt="" /></div>
     </div>
     <div class="small-details">
-        <h2>{{HostProp.description}}</h2>
+        <!-- <h2>{{HostProp.description}}</h2> -->
         <p>{{HostProp.accomodatesCount}} guests &nbsp; {{HostProp.bedroomCount}} Rooms &nbsp; {{HostProp.bedCount}} beds &nbsp; &nbsp; {{HostProp.bathroomCount}} bathroom</p>
         <h4> {{HostProp.price}} {{HostProp.currency?.name}} / day </h4>
     </div>
@@ -72,14 +103,14 @@
         <img src="./assets/images/host.png" alt="" />
         <div>
             <h2>Hosted by {{HostProp.user?.firstName}}</h2>
-            <p><span>
+            <!-- <p><span>
                     <li class="fas fa-star"></li>
                     <li class="fas fa-star"></li>
                     <li class="fas fa-star"></li>
                     <li class="fas fa-star"></li>
                     <li class="fas fa-star-half-alt"></li>
                 </span> &nbsp; &nbsp; 245 reviews &nbsp; &nbsp; Response rate 100% &nbsp;&nbsp; Response time: 60 min
-            </p>
+            </p> -->
         </div>
     </div>
         <div class="container">
