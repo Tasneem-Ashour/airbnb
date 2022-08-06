@@ -72,7 +72,7 @@
     <div class="card col-md-3 col-sm-6 " *ngFor="let item of prop">
       <img
         class="img-responsive"
-        src="./assets/images/house-1.png"
+        [src]="item.url"
         alt=""
         [routerLink]="['/userView', item.id]"
       />

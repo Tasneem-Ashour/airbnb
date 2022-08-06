@@ -1,3 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.logo
+{
+    color: #fff !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 1.5em !important;
+    letter-spacing: 2px !important;
+
+}
+
+
+
+.navbar a
+{
+    color: #fff !important;
+}
+
+.navbar
+{
+    position:static !important;
+    background:none !important;
+}
+.halimo{
+  background: linear-gradient(135deg,#1c0766, #95b7e6)!important;
+
+}
+#signInBtn
+{
+    background-color: #6f263e !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+
+#signInBtn:hover
+{
+    background-color: #9d3a4b !important;
+}
+
+#RegBtn:hover
+{
+    color: #9d3a4b !important;
+}
+
+.btn
+{
+    border-radius: 20px !important;
+}
+
+/* end of css of navbar */
 .section {
 	position: relative;
 	height: 100vh;

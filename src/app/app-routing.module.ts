@@ -24,9 +24,9 @@ const routes: Routes = [
   { path: "host", component: HostPageComponent },
 
   { path: "view", component: ViewComponent },
-  { path: "booking", component: BookingComponent },
+  { path: "booking/:id", component: BookingComponent },
   { path: "userView", component: UserViewComponent },
-  { path: "confirmbooking", component: ConfirmBookingComponent },
+  { path: "confirmbooking/:id", component: ConfirmBookingComponent },
 
   { path: "hostProfile", component: HostPropertyComponent },
   { path: "userView/:id", component: UserViewComponent },

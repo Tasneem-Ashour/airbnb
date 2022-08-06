@@ -44,7 +44,7 @@
             <input type="text" placeholder="2 guest">
         </div> -->
         <p>Book your place now </p>
-        <button type="submit" routerLink="/booking">Booking Now </button>
+        <button type="submit"   [routerLink]="['/booking', HostProp.id]"        >Booking Now </button>
     </form>
 
     <ul class="details-list">

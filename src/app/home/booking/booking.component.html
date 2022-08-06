@@ -1,4 +1,32 @@
 <body>
+	<div class="halimo">
+
+	<nav class="navbar navbar-expand-xl  navbar-dark" id="navbarNav">
+		<div class="container mb-3">
+			<!--Logo-->
+			<a href="#" class="navbar-brand logo">Vacation</a>
+	
+			<!--When the window get smaller, a menue button will apperar on the left-->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavv" aria-controls="navbarNavv" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+	
+			<!--Menue-->
+			<div class="collapse navbar-collapse ms-auto" id="navbarNavv">
+				<ul class="navbar-nav ms-auto">
+	
+	
+					<li class="nav-item">
+						<a >
+							<button type="submit" class="btn btn-outline-light btn-md" id="RegBtn"  [routerLink]="['/userView', HostProp.id]">back </button>
+						</a>
+	
+					</li>
+				</ul>
+			</div>
+		</div>
+	  </nav>
+
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
@@ -68,7 +96,8 @@
 									</div>
 								</div>
 								<div class="form-btn">
-									<button class="submit-btn " (click)="addNewBook()" routerLink="/confirmbooking">Book Now</button>
+									<button class="submit-btn " (click)="addNewBook()"         [routerLink]="['/confirmbooking', HostProp.id]"
+									>Book Now</button>
 								</div>
 							</div>
 						</div>
@@ -77,4 +106,6 @@
 			</div>
 		</div>
 	</div>
+</div>
+
 </body>

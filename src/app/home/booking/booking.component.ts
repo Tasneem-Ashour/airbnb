@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import {MenuItem} from 'primeng/api';
 import { BookingService } from 'src/app/services/booking.service';
+import { HostService } from 'src/app/services/host.service';
 import { Booking } from 'src/app/_models/booking';
+import { PropetyById } from 'src/app/_models/propety-by-id';
 
 
 
@@ -14,15 +17,22 @@ import { Booking } from 'src/app/_models/booking';
 export class BookingComponent {
 
 
-  constructor(public bookingServices:BookingService) {
+  constructor(public bookingServices:BookingService , public ar:ActivatedRoute,public property:HostService ) {
 
   }
 
 
     // oject from booking to send it to API/////////////
   newBook=new Booking();
+  HostProp =new PropetyById();
+
 
   ngOnInit(): void {
+    this.ar.params.subscribe((a)=>{
+      this.property.geWithAllData(a['id']).subscribe((req)=>{
+        this.HostProp=req;
+      })
+    })
 
   }
   getRoomNumber(roomNo:any){
