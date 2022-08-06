@@ -35,7 +35,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a  class="nav-link" id="RegBtn" (click)="goToProfile()">Profile</a>
+                    <a  routerLink="/profile" class="nav-link" id="RegBtn">Profile</a>
                 </li>
 
                 <li class="nav-item">
@@ -45,6 +45,10 @@
                 <li class="nav-item pe-5">
                     <a routerLink="/host" class="nav-link" id="RegBtn">Become a Host</a>
                 </li>
+
+                <li class="nav-item ">
+                  <a routerLink="/hostProfile" class="nav-link" id="RegBtn" (click)="goToProfile()">Host Properties</a>
+              </li>
 
                 <li class="nav-item pe-1">
                     <a >

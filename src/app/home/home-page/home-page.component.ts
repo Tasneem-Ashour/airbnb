@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit {
   goToProfile(){
     this.ProfileService.getUserData().subscribe(a=>{
       if(!a.userType){
-        this.route.navigateByUrl("/profile")
+        this.route.navigateByUrl("/home")
       }else{
         this.route.navigateByUrl("/hostProfile")
       }
