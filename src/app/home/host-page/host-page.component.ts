@@ -17,25 +17,25 @@ import { SubCategory } from 'src/app/_models/sub-category';
   styleUrls: ['./host-page.component.css'],
 })
 export class HostPageComponent {
-  form = new FormGroup({
-    uploadImage: new FormControl<string>('', [Validators.required]),
-  });
 
-  constructor(
-    public hostService: HostService,
-    public img: PropertyImagesService
-  ) {}
+  form=new FormGroup({
+    uploadImage:new FormControl<string>('',[Validators.required]),
+  });
+  
+  constructor(public hostService: HostService , public img:PropertyImagesService) {}
   propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
   Cities: Cities[] = [];
   roomType: RoomType[] = [];
   category: Category[] = [];
-  subCategory: SubCategory[] = [];
+  subCategory:SubCategory[]=[];
   curency: Currencies[] = [];
-  // oject from hostProp to send it to API/////////////
-  newProp = new HostProperties();
+    // oject from hostProp to send it to API/////////////
+    newProp = new HostProperties();
 
-  status = '';
+
+
+    status = '';
 
   selectedCountry = '';
   selectedCity = '';
@@ -57,11 +57,9 @@ export class HostPageComponent {
     });
   }
   getAllCities() {
-    this.hostService
-      .getCityByContryId(this.newProp.countryId)
-      .subscribe((city) => {
-        this.Cities = city;
-      });
+    this.hostService.getCityByContryId(this.newProp.countryId).subscribe((city) => {
+      this.Cities = city;
+    });
   }
   getPropType() {
     this.hostService.getAllPropertyType().subscribe((req) => {
@@ -79,10 +77,10 @@ export class HostPageComponent {
       this.category = cat;
     });
   }
-  getSubCategory() {
-    this.hostService.getAllSubCategory().subscribe((sub) => {
-      this.subCategory = sub;
-    });
+  getSubCategory(){
+    this.hostService.getAllSubCategory().subscribe((sub)=>{
+      this.subCategory=sub
+    })
   }
   getCarency() {
     this.hostService.getCurrencies().subscribe((c) => {
@@ -90,16 +88,20 @@ export class HostPageComponent {
     });
   }
 
+
   //getting Data from user ////////////////////
-  getProPTypeID(propTypeID: any) {
-    this.newProp.propertyTypeId = propTypeID;
+  getProPTypeID(propTypeID:any){
+    this.newProp.propertyTypeId=propTypeID;
+     }
+  getRoomTypeId(roomTypeId:any){
+   this.newProp.roomTypeId=roomTypeId;
+
   }
-  getRoomTypeId(roomTypeId: any) {
-    this.newProp.roomTypeId = roomTypeId;
-  }
-  getCatID(categoryId: any) {
-    this.newProp.categoryId = categoryId;
-  }
+  getCatID(categoryId:any){
+    this.newProp.categoryId=categoryId;
+
+
+    }
   // getSubCatId(subId:any){
   //   this.newProp.subcategoryId=subId
   //   this.newProp.subcategoryId
@@ -108,39 +110,40 @@ export class HostPageComponent {
     this.newProp.countryId = country;
     this.getAllCities();
   }
-  getCityId(c: any) {
-    this.newProp.cityId = c;
-  }
-  getCurencyId(cu: any) {
-    this.newProp.currencyId = cu;
-  }
-  addNewProperty() {
-    this.newProp.url = this.form.value.uploadImage ?? '';
-    this.hostService.AddProperty(this.newProp).subscribe((prop) => {
-      // this.hostService.test=66;
-      // alert(this.hostService.test)
-      // console.log(this.newProp)
-      this.newProp = prop;
-    });
+  getCityId(c:any){
+    this.newProp.cityId=c
+ }
+ getCurencyId(cu:any){
+  this.newProp.currencyId=cu
+ }
+ addNewProperty(){
+  this.hostService.AddProperty(this.newProp).subscribe((prop)=>{
     // this.hostService.test=66;
     // alert(this.hostService.test)
     // console.log(this.newProp)
-  }
+    this.newProp=prop;
+  })
+  // this.hostService.test=66;
+  // alert(this.hostService.test)
+  // console.log(this.newProp)
 
-  uploadPhoto(target: EventTarget | null) {
-    if (!target) return;
-    var input = target as HTMLInputElement;
-    if (!input.files) return;
-    this.status = 'image uploading started';
-    this.img.uploadPropertyImage(input.files[0]).subscribe({
-      next: (res) => {
-        //console.log(res.image);
-        this.form.patchValue({ uploadImage: res.url });
-        this.status = 'image uploaded successfully';
-      },
-      error: () => {
-        this.status = 'Try again';
-      },
-    });
-  }
+ }
+
+ uploadPhoto(target:EventTarget|null){
+  if(!target) return;
+  var input=target as HTMLInputElement;
+  if(!input.files) return;
+  this.status ='image uploading started';
+  this.img.uploadPropertyImage(input.files[0]).subscribe({
+    next:(res)=>{
+console.log(res.image);
+this.form.patchValue({uploadImage:res.image});
+this.status='image uploaded successfully';
+    },
+    error:()=>{
+      this.status='Try again';
+    }
+ });
+ }
+
 }

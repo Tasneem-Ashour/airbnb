@@ -29,5 +29,5 @@ export class HostProperties {
   created: Date = new Date();
   modified: Date = new Date();
   status: boolean = true;
-  url: string = '';
+  Url: string = '';
 }

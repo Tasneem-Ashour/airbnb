@@ -41,15 +41,15 @@ responseData:any;
   Login(){
 
     if(!this.form.valid){
-        this.router.navigate(['/signin']);
+      return;
     }
-    //console.log(this.form.value);
+    console.log(this.form.value);
 
     const email = this.form.value.email;
     const password = this.form.value.password;
     this.authService.login(email!,password!).subscribe(
       resData =>{
-        //console.log(resData);
+        console.log(resData);
         this.responseData=resData;
         localStorage.setItem('token',this.responseData.token);
         this.authService.isAuth$.next(true);
@@ -59,7 +59,17 @@ responseData:any;
         error=>{console.log(error);}
         );
         this.router.navigateByUrl("/home")
-    
+    // this.form.reset();
+    //check if it null
+// this.authService.login(this.form.controls.email.value!,this.form.controls.password.value!).subscribe({next:(tokenDTO)=>{
+//   localStorage.setItem("token", tokenDTO); //.token
+
+
+//   //router.nav //nav.url // redirect
+
+// }});
+// this.isUserLogged=this.authService.isUserLogged;
+
 }
 
 
