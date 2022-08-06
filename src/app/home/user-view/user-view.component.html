@@ -35,14 +35,17 @@
     <div class="hosuse-title">
         <h1>Place Name: {{HostProp.name}}</h1>
         <div class="row">
-            <!-- <div>
-                <li class="fas fa-star"></li>
-                <li class="fas fa-star"></li>
-                <li class="fas fa-star"></li>
-                <li class="fas fa-star"></li>
-                <li class="fas fa-star-half-alt"></li>
+            <div>
+            <fa-icon [icon]="fastar"></fa-icon>
+            <fa-icon [icon]="fastar"></fa-icon>
+            <fa-icon [icon]="fastar"></fa-icon>
+            <fa-icon [icon]="fastar"></fa-icon>
+            <fa-icon [icon]="fastarhalf"></fa-icon>
+
+
+        
                 <span>245 Reviwes</span>
-            </div> -->
+            </div>
             <div>
                 <p>Location:{{HostProp.address}}</p>
             </div>
@@ -116,14 +119,14 @@
         <img src="./assets/images/host.png" alt="" />
         <div>
             <h2>Hosted by {{HostProp.user?.firstName}}</h2>
-            <!-- <p><span>
-                    <li class="fas fa-star"></li>
-                    <li class="fas fa-star"></li>
-                    <li class="fas fa-star"></li>
-                    <li class="fas fa-star"></li>
-                    <li class="fas fa-star-half-alt"></li>
+            <p><span>
+                <fa-icon [icon]="fastar"></fa-icon>
+                <fa-icon [icon]="fastar"></fa-icon>
+                <fa-icon [icon]="fastar"></fa-icon>
+                <fa-icon [icon]="fastar"></fa-icon>
+                <fa-icon [icon]="fastarhalf"></fa-icon>
                 </span> &nbsp; &nbsp; 245 reviews &nbsp; &nbsp; Response rate 100% &nbsp;&nbsp; Response time: 60 min
-            </p> -->
+            </p>
         </div>
     </div>
     <div class="container">

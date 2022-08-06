@@ -178,7 +178,7 @@ z
     font-size: 16px;
 }
 
-.details-list li i{
+.details-list li fa-icon{
     position: absolute;
     top:5px;
     left: -40px;
@@ -222,7 +222,7 @@ z
     font-weight: 500;
 }
 
-.host i{
+.host fa-icon{
 color: #ff5361;
 }
 
