@@ -71,7 +71,7 @@
                             <img src="https://via.placeholder.com/280x280/FF69B4/000000" alt="" width="35" class="img-fluid">
                           </div>
                           <div class="flex-lg-grow-1 ms-3">
-                            <h6 class="small mb-0"><a href="#" class="text-reset">New Villa in NewAlmin</a></h6>
+                            <h6 class="small mb-0"><a href="#" class="text-reset">{{this.HostProp.name}}</a></h6>
                             <span class="small">No.Room: {{this.confirmBooking.book.roomsCount}}</span>
 
                           </div>
@@ -96,8 +96,8 @@
                       <td class="text-danger text-end">-$10.00</td>
                     </tr> -->
                     <tr class="fw-bold">
-                      <td colspan="2">PRICE/day</td>
-                      <td class="text-end">$169,98</td>
+                      <td colspan="2">{{this.HostProp.price}} {{this.HostProp.currency?.name}}/day</td>
+                      <td class="text-end">{{this.HostProp.price}}</td>
                     </tr>
                   </tfoot>
                 </table>
@@ -115,9 +115,9 @@
                   <div class="col-lg-6">
                     <h3 class="h6">Place Details</h3>
                     <address>
-                      <strong>John Doe</strong><br>
-                      1355 Market St, Suite 900<br>
-                      San Francisco, CA 94103<br>
+                      <strong>{{this.HostProp.user?.firstName |uppercase}}  {{this.HostProp.user?.lastName |uppercase}}</strong><br>
+                      {{this.HostProp.address}}<br>
+                      {{this.HostProp.latitude}}<br>
                       No.Adults: {{this.confirmBooking.book.guestCount}}<br>
                       No.Children: {{this.confirmBooking.book.childrenCount}}<br>
                     </address>
