@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: "edit", component: UserEditProfileComponent },
   { path: "host", component: HostPageComponent },
 
-  { path: "", component: HomePageComponent },
   { path: "view", component: ViewComponent },
   { path: "booking", component: BookingComponent },
   { path: "userView", component: UserViewComponent },
@@ -31,6 +30,7 @@ const routes: Routes = [
 
   { path: "hostProfile", component: HostPropertyComponent },
   { path: "userView/:id", component: UserViewComponent },
+  { path: "", component: HomePageComponent },
 
 
 

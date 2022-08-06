@@ -6,6 +6,7 @@ export class Iprofile {
     public dateOfBirth: Date,
     public facebookId: string,
     public twitterId: string,
-    public about: string
+    public about: string,
+    public userType:Boolean=true
   ) {}
 }

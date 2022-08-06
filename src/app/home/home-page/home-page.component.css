@@ -1,8 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+/* body
+{
+    background: linear-gradient(45deg,#2b121c, #40679c);
+    min-height: 100vh;
+} */
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+
+.logo
+{
+    color: #fff !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 1.5em !important;
+    letter-spacing: 2px !important;
+
+}
+
+
+
+.navbar a
+{
+    color: #fff !important;
+}
+
+.navbar
+{
+    position:static !important;
+    background:none !important;
+}
+
+#signInBtn
+{
+    background-color: #6f263e !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+
+#signInBtn:hover
+{
+    background-color: #9d3a4b !important;
+}
+
+#RegBtn:hover
+{
+    color: #9d3a4b !important;
+}
+
+.btn
+{
+    border-radius: 20px !important;
+}
+
+
+
+
 *{
   margin:0 ;
-  padding: 0;
+  /* padding: 0; */
   box-sizing: border-box;
-  font-family:'poppins' , 'sans-serif';
+  /* font-family:'poppins' , 'sans-serif'; */
 }
 
 
@@ -48,7 +126,7 @@ nav{
 }
 
 .container{
-  padding: 0 7%;
+  /* padding: 0 ; */
 
 }
 
@@ -61,7 +139,7 @@ nav{
 }
 
 
-/* cards */
+
 
 .Cantainer{
   display: flex;
@@ -85,7 +163,6 @@ padding: 6px;
 box-sizing: border-box;
 position: absolute;
 margin-block-start: 330px;
-/* bottom: 70px; */
 background: rgb(27,27,27,.5);
 color: #fff;
 transition: 0.5s;
@@ -126,5 +203,6 @@ margin-block-start: 230px;
 @media (max-width: 575.98px) {
    .card {
       width: 50%;
-  } 
+  }
 }
+/* footer */

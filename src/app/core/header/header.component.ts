@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authservice.logout();
+    localStorage.removeItem("loggedIn")
     this.ShowNewNav();
   }
   profile: Iprofile | null = null;

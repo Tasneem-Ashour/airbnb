@@ -1,105 +1,134 @@
-<div class="body">
-  <div class="container-fluid">
-
-    <div class="container">
-
-      <div class="d-flex justify-content-between align-items-center py-3">
-        <h2 class="h5 mb-0" style="color:#fff;"><a href="#" class="text-muted"></a>Reservation Details</h2>
-      </div>
 
 
-      <div class="row">
-        <div class="col-lg-9">
+<div class="halimo">
+  <nav class="navbar navbar-expand-xl  navbar-dark" id="navbarNav">
+    <div class="container mb-3">
+        <!--Logo-->
+        <a href="#" class="navbar-brand logo">Vacation</a>
 
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="mb-3 d-flex justify-content-between">
-                <div>
-                  <span class="me-3">22-11-2021</span>
-                  <span class="me-3">#16123222</span>
-                  <span class="me-3">Visa -1234</span>
-                  <span class="badge rounded-pill bg-success">BOOKED</span>
+        <!--When the window get smaller, a menue button will apperar on the left-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavv" aria-controls="navbarNavv" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <!--Menue-->
+        <div class="collapse navbar-collapse ms-auto" id="navbarNavv">
+            <ul class="navbar-nav ms-auto">
+
+
+                <li class="nav-item">
+                    <a href="signUp.html">
+                        <button type="submit" class="btn btn-outline-light btn-md" id="RegBtn">Explore World </button>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <div class="body">
+    <div class="container-fluid">
+
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center py-3">
+          <h2 class="h5 mb-0" style="color:#fff;"><a href="#" class="text-muted"></a>Reservation Details</h2>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-9">
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="mb-3 d-flex justify-content-between">
+                  <div>
+                    <span class="me-3">22-11-2021</span>
+                    <span class="me-3">#16123222</span>
+                    <span class="me-3">Visa -1234</span>
+                    <span class="badge rounded-pill bg-success">BOOKED</span>
+                  </div>
+                  <div class="d-flex">
+                    <div class="dropdown">
+                      <button class="btn btn-link p-0 text-muted" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-three-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil"></i> Edit</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-printer"></i> Print</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="d-flex">
-                  <div class="dropdown">
-                    <button class="btn btn-link p-0 text-muted" type="button" data-bs-toggle="dropdown">
-                      <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li><a class="dropdown-item" href="#"><i class="bi bi-pencil"></i> Edit</a></li>
-                      <li><a class="dropdown-item" href="#"><i class="bi bi-printer"></i> Print</a></li>
-                    </ul>
+                <table class="table table-borderless">
+                  <tbody>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex mb-2">
+                          <div class="flex-shrink-0">
+                            <img src="https://via.placeholder.com/280x280/FF69B4/000000" alt="" width="35" class="img-fluid">
+                          </div>
+                          <div class="flex-lg-grow-1 ms-3">
+                            <h6 class="small mb-0"><a href="#" class="text-reset">New Villa in NewAlmin</a></h6>
+                            <span class="small">No.Room: {{this.confirmBooking.book.roomsCount}}</span>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td class="text-end"></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2">CheckInDate
+                        </td>
+                      <td class="text-end">{{this.confirmBooking.book.checkInDate}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">CheckOutDate</td>
+                      <td class="text-end">{{this.confirmBooking.book.checkOutDate}}</td>
+                    </tr>
+                    <!-- <tr>
+                      <td colspan="2">Discount (Code: NEWYEAR)</td>
+                      <td class="text-danger text-end">-$10.00</td>
+                    </tr> -->
+                    <tr class="fw-bold">
+                      <td colspan="2">PRICE/day</td>
+                      <td class="text-end">$169,98</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h3 class="h6">Payment Method</h3>
+                    <p>Visa -1234 <br>
+                    Total: $169,98 <span class="badge bg-success rounded-pill">PAID</span></p>
+                  </div>
+                  <div class="col-lg-6">
+                    <h3 class="h6">Place Details</h3>
+                    <address>
+                      <strong>John Doe</strong><br>
+                      1355 Market St, Suite 900<br>
+                      San Francisco, CA 94103<br>
+                      No.Adults: {{this.confirmBooking.book.guestCount}}<br>
+                      No.Children: {{this.confirmBooking.book.childrenCount}}<br>
+                    </address>
                   </div>
                 </div>
               </div>
-              <table class="table table-borderless">
-                <tbody>
-
-                  <tr>
-                    <td>
-                      <div class="d-flex mb-2">
-                        <div class="flex-shrink-0">
-                          <img src="https://via.placeholder.com/280x280/FF69B4/000000" alt="" width="35" class="img-fluid">
-                        </div>
-                        <div class="flex-lg-grow-1 ms-3">
-                          <h6 class="small mb-0"><a href="#" class="text-reset">New Villa in NewAlmin</a></h6>
-                          <span class="small">No.Room: {{this.confirmBooking.book.roomsCount}}</span>
-
-                        </div>
-                      </div>
-                    </td>
-                    <td></td>
-                    <td class="text-end"></td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="2">CheckInDate
-                      </td>
-                    <td class="text-end">{{this.confirmBooking.book.checkInDate}}</td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">CheckOutDate</td>
-                    <td class="text-end">{{this.confirmBooking.book.checkOutDate}}</td>
-                  </tr>
-                  <!-- <tr>
-                    <td colspan="2">Discount (Code: NEWYEAR)</td>
-                    <td class="text-danger text-end">-$10.00</td>
-                  </tr> -->
-                  <tr class="fw-bold">
-                    <td colspan="2">PRICE/day</td>
-                    <td class="text-end">$169,98</td>
-                  </tr>
-                </tfoot>
-              </table>
             </div>
           </div>
 
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <h3 class="h6">Payment Method</h3>
-                  <p>Visa -1234 <br>
-                  Total: $169,98 <span class="badge bg-success rounded-pill">PAID</span></p>
-                </div>
-                <div class="col-lg-6">
-                  <h3 class="h6">Place Details</h3>
-                  <address>
-                    <strong>John Doe</strong><br>
-                    1355 Market St, Suite 900<br>
-                    San Francisco, CA 94103<br>
-                    No.Adults: {{this.confirmBooking.book.guestCount}}<br>
-                    No.Children: {{this.confirmBooking.book.childrenCount}}<br>
-                  </address>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
       </div>
-    </div>
-      </div>
+        </div>
+  </div>
 </div>
-

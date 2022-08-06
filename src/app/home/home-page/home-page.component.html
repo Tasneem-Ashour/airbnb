@@ -1,8 +1,8 @@
 <div class="header">
-  <nav>
-    <!-- <img src="" alt="logo" class="logo">  -->
-    <a>
-      <i class="fa fa-globe" [routerLink]="['/home']"> vacation</i>
+  <!-- <nav>
+
+    <a routerLink="/home">
+      <i class="fa fa-globe" > vacation</i>
     </a>
     <ul class="nav-links">
       <li><a href="">link1</a></li>
@@ -11,17 +11,65 @@
       <li><a href="">link4</a></li>
     </ul>
     <a href="" class="register-btn">Register Now</a>
-  </nav>
+  </nav> -->
+  <nav class="navbar navbar-expand-xl  navbar-dark" id="navbarNav">
+    <div class="container mb-3">
+        <!--Logo-->
+        <a href="#" class="navbar-brand logo">Vacation</a>
+
+        <!--When the window get smaller, a menue button will apperar on the left-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavv" aria-controls="navbarNavv" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <!--Menue-->
+        <div class="collapse navbar-collapse ms-auto" id="navbarNavv">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" id="RegBtn">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#ex" class="nav-link" id="RegBtn">Explore World</a>
+                </li>
+
+                <li class="nav-item">
+                    <a  class="nav-link" id="RegBtn" (click)="goToProfile()">Profile</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" id="RegBtn">Contact</a>
+                </li>
+
+                <li class="nav-item pe-5">
+                    <a routerLink="/host" class="nav-link" id="RegBtn">Become a Host</a>
+                </li>
+
+                <li class="nav-item pe-1">
+                    <a >
+                        <button type="submit" class="btn" id="signInBtn" (click)="log()">{{this.btntxt}}</button>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a >
+                        <button type="submit" class="btn btn-outline-light" id="RegBtn" routerLink="/signup">Register</button>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
   <div class="container">
-    <h1>Find You Next Stay</h1>
+    <h1>Find Your Next Stay</h1>
   </div>
 </div>
 
-<!-- card -->
 
-<div class="Cantainer">
+<div class="Cantainer" id="ex">
   <div class="row clearfix">
-    <div class="card col-md-3 col-sm-6 col-xs-12" *ngFor="let item of prop">
+    <div class="card col-md-3 col-sm-6 " *ngFor="let item of prop">
       <img
         class="img-responsive"
         src="./assets/images/house-1.png"
@@ -42,3 +90,6 @@
     </div>
   </div>
 </div>
+
+
+

@@ -54,6 +54,7 @@ responseData:any;
         localStorage.setItem('token',this.responseData.token);
         this.authService.isAuth$.next(true);
          this.router.navigate(['']);
+         localStorage.setItem("loggedIn","true")
         },
         error=>{console.log(error);}
         );

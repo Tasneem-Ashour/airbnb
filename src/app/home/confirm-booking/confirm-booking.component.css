@@ -1,3 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth!important;
+}
+
+/* body
+{
+    background: linear-gradient(45deg,#2b121c, #40679c);
+    min-height: 100vh;
+} */
+::-webkit-scrollbar
+{
+    width: 8px ;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+/* end of tzbetet el font w scrool */
+
+.logo
+{
+    color: #fff !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 1.5em !important;
+    letter-spacing: 2px !important;
+
+}
+
+
+
+.navbar a
+{
+    color: #fff !important;
+}
+
+.navbar
+{
+    position:static !important;
+    background:none !important;
+}
+.halimo{
+  background: linear-gradient(135deg,#1c0766, #95b7e6)!important;
+
+}
+#signInBtn
+{
+    background-color: #6f263e !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+
+#signInBtn:hover
+{
+    background-color: #9d3a4b !important;
+}
+
+#RegBtn:hover
+{
+    color: #9d3a4b !important;
+}
+
+.btn
+{
+    border-radius: 20px !important;
+}
+
+/* end of css of navbar */
 .body{
   /* background:#eee; */
   background: linear-gradient(135deg,#1c0766, #95b7e6);

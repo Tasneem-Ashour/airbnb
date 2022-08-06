@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -5,8 +6,9 @@
 
 
  <!--<title>Responsive Regisration Form </title>-->
-<body class="accordion-item" >
- <div class="container">
+ <body class="accordion-item" >
+
+  <div class="container">
     <div class="d-flex align-items-center mb-3 pb-1">
         <!-- <i class="fa fa-futbol-o mb-3 mx-2" aria-hidden="true"></i> -->
         <i class="fa fa-house-user mb-3 mx-2" aria-hidden="true"></i>
@@ -94,7 +96,7 @@
              </div>
 
              <div class="details ID">
-                 <span class="title">Identity Details</span>
+                 <span class="title" style="color: #2fa7ab;">More Details</span>
 
                  <div class="fields">
                      <div class="input-field">
@@ -134,19 +136,19 @@
                         <input type="file" class="form-control" placeholder="Upload your place photo"[(ngModel)]="newProp.Url">
                     </div> -->
 
-                    <form action="" [formGroup]="form">
+                    <form  [formGroup]="form">
                         <div class="input-field">
                             <label>Upload Your place photo</label>
                             <input type="file" class="form-control" placeholder="Upload your place photo"
                                 (change)="uploadPhoto($event.target)">
-                            <label>{{status}}</label>
+
                         </div>
                     </form>
 
                  </div>
 
 
-             <input type="submit" value="Add Property" class="btn t-white1 bg-teal1 " (click)="addNewProperty()" routerLink="/hostProfile">
+             <input type="submit" value="Add Property" class="btn t-white1 bg-teal1 rounded" (click)="addNewProperty()" routerLink="/hostProfile">
 
              </div>
          </div>
