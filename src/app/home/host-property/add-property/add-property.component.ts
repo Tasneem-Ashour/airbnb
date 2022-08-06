@@ -160,8 +160,8 @@ export class AddPropertyComponent implements OnInit {
     this.status ='image uploading started';
     this.img.uploadPropertyImage(input.files[0]).subscribe({
       next:(res)=>{
-  console.log(res.image);
-  this.form.patchValue({uploadImage:res.image});
+  console.log(res.url);
+  this.form.patchValue({uploadImage:res.url});
   this.status='image uploaded successfully';
       },
       error:()=>{

@@ -30,8 +30,6 @@ export class PropertyImagesService {
       return this.http.put<PropertyImages>(`${environment.APIURL}/ArPropertyImages/Delete/${deletePropertyImage.id}`,deletePropertyImage);
     }
 
-    uploadImage(uploadImage:PropertyImages){
-      return this.http.post<PropertyImages>(`${environment.APIURL}/ArPropertyImages/UploadImg`,uploadImage.image)
-    }
+ 
    }
 
