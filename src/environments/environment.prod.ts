@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  APIURL:"https://localhost:7038/api",
+  APIURL:"https://vacationiti.azurewebsites.net/api",
 
 };
