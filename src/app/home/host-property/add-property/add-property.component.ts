@@ -49,7 +49,7 @@ export class AddPropertyComponent implements OnInit {
     NumberofBed: new FormControl('', Validators.required),
     NumberofBathroom: new FormControl('', Validators.required),
     NumberofGuest: new FormControl('', Validators.required),
-    uploadImage: new FormControl<string>('', [Validators.required]),
+    url: new FormControl<string>('', [Validators.required]),
   });
   propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
@@ -160,8 +160,8 @@ export class AddPropertyComponent implements OnInit {
     this.status ='image uploading started';
     this.img.uploadPropertyImage(input.files[0]).subscribe({
       next:(res)=>{
-  console.log(res.image);
-  this.form.patchValue({uploadImage:res.image});
+  //console.log(res.image);
+  this.form.patchValue({url:res.url});
   this.status='image uploaded successfully';
       },
       error:()=>{
