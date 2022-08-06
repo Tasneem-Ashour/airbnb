@@ -18,17 +18,17 @@ import { SubCategory } from 'src/app/_models/sub-category';
 })
 export class HostPageComponent {
 
-  form=new FormGroup({
-    uploadImage:new FormControl<string>('',[Validators.required]),
+  form = new FormGroup({
+    uploadImage: new FormControl<string>('', [Validators.required]),
   });
-  
-  constructor(public hostService: HostService , public img:PropertyImagesService) {}
+
+  constructor(public hostService: HostService , public img: PropertyImagesService) {}
   propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
   Cities: Cities[] = [];
   roomType: RoomType[] = [];
   category: Category[] = [];
-  subCategory:SubCategory[]=[];
+  // subCategory:SubCategory[]=[];
   curency: Currencies[] = [];
     // oject from hostProp to send it to API/////////////
     newProp = new HostProperties();
@@ -47,7 +47,7 @@ export class HostPageComponent {
     this.getRoomType();
     this.getPropCategory();
     this.getCarency();
-    this.getSubCategory();
+    // this.getSubCategory();
   }
 
   getAllCountries() {
@@ -77,11 +77,7 @@ export class HostPageComponent {
       this.category = cat;
     });
   }
-  getSubCategory(){
-    this.hostService.getAllSubCategory().subscribe((sub)=>{
-      this.subCategory=sub
-    })
-  }
+
   getCarency() {
     this.hostService.getCurrencies().subscribe((c) => {
       this.curency = c;
@@ -136,8 +132,8 @@ export class HostPageComponent {
   this.status ='image uploading started';
   this.img.uploadPropertyImage(input.files[0]).subscribe({
     next:(res)=>{
-console.log(res.image);
-this.form.patchValue({uploadImage:res.image});
+console.log(res.url);
+this.form.patchValue({uploadImage:res.url});
 this.status='image uploaded successfully';
     },
     error:()=>{
