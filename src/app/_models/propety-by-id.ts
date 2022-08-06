@@ -54,5 +54,5 @@ export class PropetyById {
         propertyType: PropertyTypes|null=null;
         roomType:RoomType|null=null;
         user:Arusers|null=null;
-    
+        url: string='';
 }

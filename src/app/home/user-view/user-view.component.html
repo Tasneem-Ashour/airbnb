@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="gallery">
-        <div class="gallery-img-1"><img src="Hostprop.url" alt="" /> </div>
+        <div class="gallery-img-1"><img [src]="HostProp.url" alt="" /> </div>
         <div><img src="./assets/images/house-2.png" alt="" /></div>
         <div><img src="./assets/images/house-3.png" alt="" /></div>
         <div><img src="./assets/images/house-4.png" alt="" /></div>
@@ -90,10 +90,9 @@
     <hr class="line">
     <div class="map">
         <h3>Location on map</h3>
-        <iframe
-            src={{HostProp.latitude}}
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src=
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6432902.801719637!2d19.98802039907179!3d38.06884819391429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b4ac711716c63%3A0x363a1775dc9a2d1d!2sGreece!5e0!3m2!1sen!2seg!4v1659797912132!5m2!1sen!2seg"
+         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <b>{{HostProp.address}}</b>
         <p>It's like a home away from home.</p>
     </div>
