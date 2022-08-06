@@ -45,8 +45,8 @@ AddProperty(AddProprty:HostProperties){
 }
 
 
-updateProperty(id:number){
-  return this.http.put(`${environment.APIURL}/ArProperties/update/${id}`,{});
+updateProperty(id:number ,AddProprty:HostProperties){
+  return this.http.put(`${environment.APIURL}/ArProperties/update/${id}`,AddProprty);
 }
 
 deleteProperty(id:number){

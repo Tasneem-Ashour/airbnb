@@ -83,13 +83,13 @@ export class HostPropertyComponent implements OnInit {
     });
   }
 
-  updateProperty(id:number){
+  // updateProperty(id:number){
     
-    this.hostServise.updateProperty(id).subscribe((req)=>{
-      console.log(req);
-      this.HostPropertyById();
-    });
-  }
+  //   this.hostServise.updateProperty(id).subscribe((req)=>{
+  //     console.log(req);
+  //     this.HostPropertyById();
+  //   });
+  // }
 
   deleteProperty(id: number) {
     this.hostServise.deleteProperty(id).subscribe((req) => {

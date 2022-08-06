@@ -71,7 +71,7 @@ export class AddPropertyComponent implements OnInit {
     if (this.editProperty) {
       this.newProp = this.editProperty;
     }
-    this.addNewProperty() ;
+    // this.addNewProperty() ;
     this.getAllCountries();
     this.getAllCities();
     this.getPropType();
@@ -143,13 +143,13 @@ export class AddPropertyComponent implements OnInit {
   getCurencyId(cu: any) {
     this.newProp.currencyId = cu;
   }
-  addNewProperty() {
-    this.hostService.AddProperty(this.newProp).subscribe((prop) => {
-      console.log(this.newProp);
+  // addNewProperty() {
+  //   this.hostService.AddProperty(this.newProp).subscribe((prop) => {
+  //     console.log(this.newProp);
 
-      this.newProp = prop;
-    });
-  }
+  //     this.newProp = prop;
+  //   });
+  // }
 
 
  
@@ -176,7 +176,7 @@ export class AddPropertyComponent implements OnInit {
 
    updateProperty(id:number){
     
-    this.hostService.updateProperty(id).subscribe((req)=>{
+    this.hostService.updateProperty(id,this.newProp).subscribe((req)=>{
       console.log(req);
       // this.HostPropertyById();
     });
