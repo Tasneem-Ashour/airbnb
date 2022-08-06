@@ -101,12 +101,12 @@
     </mat-form-field>
 
 
-    <div class="input-field">
+    <!-- <div class="input-field">
         <label>Upload Your place photo</label>
         <input type="file" class="form-control" placeholder="Upload your place photo"
             (change)="uploadPhoto($event.target)">
         <label>{{status}}</label>
-    </div>
+    </div> -->
     <!-- <mat-form-field appearance="outline">
         <mat-label>Upload Your place photo</mat-label>
         <input matInput type="file" placeholder=" Upload Your place photo" [(ngModel)]="newProp.Url"/>
@@ -115,7 +115,7 @@
 </div>
 <div mat-dialog-action [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 10px" mat-raised-button color="primary" (click)="addNewProperty()" >
+    <button style="margin-left: 10px" mat-raised-button  color="primary"  (click)="updateProperty(newProp.id)" >
         Save
     </button>
 </div>

@@ -22,6 +22,7 @@ import { HostProfileComponent } from './host-profile/host-profile.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { HostPropertyComponent } from './host-property/host-property.component';
 
 // to create curd using angular material
@@ -82,6 +83,7 @@ import { HostPropertyComponent } from './host-property/host-property.component';
     MatRadioModule,
     MatTableModule,
     MatSortModule,
+    FontAwesomeModule,
   ],
   exports: [
     SignInPageComponent,

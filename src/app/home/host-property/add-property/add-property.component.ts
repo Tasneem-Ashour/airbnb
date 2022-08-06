@@ -16,6 +16,7 @@ import {
 } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PropertyImagesService } from 'src/app/services/property-images.service';
+import { PropetyById } from 'src/app/_models/propety-by-id';
 @Component({
   selector: 'app-add-property',
   templateUrl: './add-property.component.html',
@@ -34,22 +35,22 @@ export class AddPropertyComponent implements OnInit {
   }
 
     form = new FormGroup({
-    PropertyName: new FormControl('', Validators.required),
-    PropertyDescription: new FormControl('', Validators.required),
-    PropertyType: new FormControl('', Validators.required),
-    RoomType: new FormControl('', Validators.required),
-    category: new FormControl('', Validators.required),
-    Address: new FormControl('', Validators.required),
-    PlaceLocation: new FormControl('', Validators.required),
-    Country: new FormControl('', Validators.required),
-    City: new FormControl('', Validators.required),
-    Price: new FormControl('', Validators.required),
-    Cuurency: new FormControl('', Validators.required),
-    NumberofBedRoom: new FormControl('', Validators.required),
-    NumberofBed: new FormControl('', Validators.required),
-    NumberofBathroom: new FormControl('', Validators.required),
-    NumberofGuest: new FormControl('', Validators.required),
-    uploadImage: new FormControl<string>('', [Validators.required]),
+    PropertyName: new FormControl(''),
+    PropertyDescription: new FormControl(''),
+    PropertyType: new FormControl(''),
+    RoomType: new FormControl(''),
+    category: new FormControl(''),
+    Address: new FormControl(''),
+    PlaceLocation: new FormControl(''),
+    Country: new FormControl(''),
+    City: new FormControl(''),
+    Price: new FormControl(''),
+    Cuurency: new FormControl(''),
+    NumberofBedRoom: new FormControl(''),
+    NumberofBed: new FormControl(''),
+    NumberofBathroom: new FormControl(''),
+    NumberofGuest: new FormControl(''),
+    uploadImage: new FormControl<string>(''),
   });
   propType: PropertyTypes[] = [];
   Countries: Countries[] = [];
@@ -60,6 +61,7 @@ export class AddPropertyComponent implements OnInit {
   curency: Currencies[] = [];
   // oject from hostProp to send it to API/////////////
   newProp = new HostProperties();
+  propid= new PropetyById();
 
   selectedCountry = '';
   selectedCity = '';
@@ -169,6 +171,19 @@ export class AddPropertyComponent implements OnInit {
       }
    });
    }
+
+
+
+   updateProperty(id:number){
+    
+    this.hostService.updateProperty(id).subscribe((req)=>{
+      console.log(req);
+      // this.HostPropertyById();
+    });
+
+
+  }
+
 
 
   // testData() {

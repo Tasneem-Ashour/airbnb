@@ -4,6 +4,8 @@ import { HostService } from 'src/app/services/host.service';
 import { Currencies } from 'src/app/_models/currencies';
 import { HostProperties } from 'src/app/_models/host-properties';
 import { PropetyById } from 'src/app/_models/propety-by-id';
+import { faHome , faBed, faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-user-view',
@@ -14,6 +16,9 @@ export class UserViewComponent implements OnInit {
 
   constructor(public property:HostService , public ar:ActivatedRoute) { }
 
+  fahome=faHome;
+  fabed=faBed;
+  fahand=faHandHoldingHeart;
   HostProp =new PropetyById();
 
   currencyName:Currencies[]=[];

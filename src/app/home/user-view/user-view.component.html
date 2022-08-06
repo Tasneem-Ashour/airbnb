@@ -1,30 +1,32 @@
 <div class="halimo">
 
-	<nav class="navbar navbar-expand-xl  navbar-dark" id="navbarNav">
-		<div class="container mb-3">
-			<!--Logo-->
-			<a href="#" class="navbar-brand logo">Vacation</a>
-	
-			<!--When the window get smaller, a menue button will apperar on the left-->
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavv" aria-controls="navbarNavv" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			  </button>
-	
-			<!--Menue-->
-			<div class="collapse navbar-collapse ms-auto" id="navbarNavv">
-				<ul class="navbar-nav ms-auto">
-	
-	
-					<li class="nav-item">
-						<a >
-							<button type="submit" class="btn btn-outline-light btn-md" id="RegBtn"  routerLink="/home">back </button>
-						</a>
-	
-					</li>
-				</ul>
-			</div>
-		</div>
-	  </nav>
+    <nav class="navbar navbar-expand-xl  navbar-dark" id="navbarNav">
+        <div class="container mb-3">
+            <!--Logo-->
+            <a href="#" class="navbar-brand logo">Vacation</a>
+
+            <!--When the window get smaller, a menue button will apperar on the left-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavv"
+                aria-controls="navbarNavv" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Menue-->
+            <div class="collapse navbar-collapse ms-auto" id="navbarNavv">
+                <ul class="navbar-nav ms-auto">
+
+
+                    <li class="nav-item">
+                        <a>
+                            <button type="submit" class="btn btn-outline-light btn-md" id="RegBtn"
+                                routerLink="/home">back </button>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>
 
 
@@ -55,7 +57,8 @@
     </div>
     <div class="small-details">
         <!-- <h2>{{HostProp.description}}</h2> -->
-        <p>{{HostProp.accomodatesCount}} guests &nbsp; {{HostProp.bedroomCount}} Rooms &nbsp; {{HostProp.bedCount}} beds &nbsp; &nbsp; {{HostProp.bathroomCount}} bathroom</p>
+        <p>{{HostProp.accomodatesCount}} guests &nbsp; {{HostProp.bedroomCount}} Rooms &nbsp; {{HostProp.bedCount}} beds
+            &nbsp; &nbsp; {{HostProp.bathroomCount}} bathroom</p>
         <h4> {{HostProp.price}} {{HostProp.currency?.name}} / day </h4>
     </div>
     <hr class="line">
@@ -75,13 +78,23 @@
             <input type="text" placeholder="2 guest">
         </div> -->
         <p>Book your place now </p>
-        <button type="submit"   [routerLink]="['/booking', HostProp.id]"        >Booking Now </button>
+        <button type="submit" [routerLink]="['/booking', HostProp.id]">Booking Now </button>
     </form>
 
     <ul class="details-list">
-        <li><i class="fas fa-home"></i>Place Type<span>{{HostProp.propertyType?.name}}</span></li>
-        <li><i class="fas fa-bed"></i>Room Type<span>{{HostProp.roomType?.name}}</span></li>
-        <li><i class="fas fa-hand-holding-heart"></i>Category Type <span>{{HostProp.category?.name}}</span></li>
+
+        <li>
+            <fa-icon [icon]="fahome"></fa-icon>
+            Place Type<span>{{HostProp.propertyType?.name}}</span>
+        </li>
+        <li>
+            <fa-icon [icon]="fabed"></fa-icon>
+            Room Type<span>{{HostProp.roomType?.name}}</span>
+        </li>
+        <li>
+            <fa-icon [icon]="fahand"></fa-icon>
+            Category Type <span>{{HostProp.category?.name}}</span>
+        </li>
 
 
     </ul>
@@ -90,9 +103,10 @@
     <hr class="line">
     <div class="map">
         <h3>Location on map</h3>
-        <iframe src=
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6432902.801719637!2d19.98802039907179!3d38.06884819391429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b4ac711716c63%3A0x363a1775dc9a2d1d!2sGreece!5e0!3m2!1sen!2seg!4v1659797912132!5m2!1sen!2seg"
-         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6432902.801719637!2d19.98802039907179!3d38.06884819391429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b4ac711716c63%3A0x363a1775dc9a2d1d!2sGreece!5e0!3m2!1sen!2seg!4v1659797912132!5m2!1sen!2seg"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         <b>{{HostProp.address}}</b>
         <p>It's like a home away from home.</p>
     </div>
@@ -112,14 +126,14 @@
             </p> -->
         </div>
     </div>
-        <div class="container">
-            <div class="footer">
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-youtube"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                    <hr>
-                    <p>Copyright &copy; 2022 ITI </p>
-            </div>
-         </div>
-       </div>
+    <div class="container">
+        <div class="footer">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-youtube"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <hr>
+            <p>Copyright &copy; 2022 ITI </p>
+        </div>
+    </div>
+</div>

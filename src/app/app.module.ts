@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import {StepsModule} from 'primeng/steps';
 import {MenuItem} from 'primeng/api';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -27,7 +28,8 @@ import {MenuItem} from 'primeng/api';
     ButtonModule,
     HomeModule,CoreModule,
     ReactiveFormsModule,
-    StepsModule
+    StepsModule,
+    FontAwesomeModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,
