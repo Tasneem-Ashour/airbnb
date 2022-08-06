@@ -7,7 +7,7 @@ import { UserAuthService } from './services/user-auth.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'airbnb';
+  title = 'Vacation';
   hah = true;
   old = false;
   isTokenIn: boolean = true;
