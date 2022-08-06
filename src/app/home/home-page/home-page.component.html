@@ -79,11 +79,13 @@
       <div class="intro">
         <h1>{{ item.name }}</h1>
         <p>
-          The
           <span
             >location:{{ item.address }} <br />
             Rooms:{{ item.bedroomCount }} <br />
-            Gests{{ item.accomodatesCount }}</span
+            Gests{{ item.accomodatesCount }}<br/>
+            Price:{{ item.price |currency }} &nbsp; {{item.currencyId.name}}<br/>
+
+            </span
           >
         </p>
       </div>
